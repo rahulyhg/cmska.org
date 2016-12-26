@@ -1,15 +1,8 @@
 var common = new function()
 {
     this._NO_LOADER_FRAME = false;
-    this.show_loader = function()
-    {
-        $('#overlay').removeClass('dnone');
-    }
-
-    this.hide_loader = function()
-    {
-        $('#overlay').addClass('dnone');
-    }
+    this.show_loader = function(){ $('#overlay').removeClass('dnone'); }
+    this.hide_loader = function(){$('#overlay').addClass('dnone'); }
 }
 
 var AJAX = false;
