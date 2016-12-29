@@ -33,9 +33,11 @@ trait admin_build_panel
             $_inp_submod[] = $this->get_menu_items()['items'][$this->get_menu_items()['items'][$_mod_id]['parent_id']]['altname'];
         }
         $_inp_submod[] = $this->get_menu_items()['items'][$_mod_id]['altname'];
-        $_inp_submod[] = 'php';
 
-        return MODS_DIR.DS.'module.'._MOD_.DS.(implode('.', $_inp_submod));
+        unset($_inp_submod[0]);
+        $_inp_submod = array_values($_inp_submod);
+
+        return MODS_DIR.DS.'module.'._MOD_.DS.$_inp_submod[0].DS.$_inp_submod[1].'.php';
     }
 
     public final function html_get_menu_items()

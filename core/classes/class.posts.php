@@ -54,6 +54,9 @@ class posts
         $SQL = 'INSERT INTO posts ("'.implode('", "', array_keys($_2db)).'") VALUES (\''.implode('\', \'', array_values($_2db)).'\') RETURNING id;';
       }
 
+
+      cache::clean( 'posts' );
+
       $_ID = $this->db->super_query( $SQL );
       $_ID = isset($_ID['id'])?self::integer($_ID['id']):0;
       echo $_ID;
@@ -249,6 +252,9 @@ class posts
         $_CATEG = &$GLOBALS['_CATEG'];
 
         $tpl->load( $skin );
+
+        $data = self::html_entity_decode( $data );
+        $data = self::htmlspecialchars_decode( $data );
 
         $tpl->set( '{post:id}',          self::integer($data['post']['id']));
         $tpl->set( '{post:url}',         self::get_url( $data ) );

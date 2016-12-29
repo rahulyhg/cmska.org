@@ -1,6 +1,6 @@
 <div class="elemblock editpost" id="posteditor">
 
-    <input type="hidden" name="post:id" value="{post:id}" />
+    <input type="hidden" name="post:id" value="{post:id}" data-save="1" />
 
     <div class="editor_nav">
         <ul class="reset">

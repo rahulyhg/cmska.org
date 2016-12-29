@@ -46,10 +46,12 @@ trait login
 			{
 				$this->logged = $this->check_login_pass( $login, $pass );
 				if( $this->logged ){ $token = $this->update_token(); }
+                define( '_TRY_PASS_LOG_IN', true );
 			}
 			elseif( $token )
 			{
 				$this->logged = $this->check_token( $token );
+                define( '_TRY_SESSION_LOG_IN', true );
 			}
 			
 			

@@ -18,7 +18,7 @@ class err_handler
     {
             ob_end_clean();
             self::show( self::get_text_from_level($errcode), str_replace( ROOT_DIR, '', $errstr ), str_replace( ROOT_DIR, '', $errfile ), $errline );
-            die();
+            exit;
     }
 
     static public final function process()
@@ -29,7 +29,7 @@ class err_handler
         {
             ob_end_clean();
             self::show( self::get_text_from_level( $error['type'] ), str_replace( ROOT_DIR, '', $error['message'] ), str_replace( ROOT_DIR, '', $error['file'] ), $error['line'] );
-            die();
+            exit;
         }
     }
 

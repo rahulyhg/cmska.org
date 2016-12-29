@@ -9,4 +9,9 @@ if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
 $tpl->load( 'login' );
 $tpl->compile( 'login' );
 
+if( defined('_TRY_PASS_LOG_IN') && !CURRENT_USER_ID )
+{
+    $tpl->info( 'Невдала спроба авторизації!', 'Введені Вами авторизаційні дані не є дійсними та не можуть бути використані для авторизації в системі!', 'warn' );
+}
+
 ?>
