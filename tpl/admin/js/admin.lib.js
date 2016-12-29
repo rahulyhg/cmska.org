@@ -12,7 +12,7 @@ var posts = new function()
     {
         var post = {};
             post['ajax']    = 1;
-            post['action']  = 1000;
+            post['action']  = 100;
             post['mod']     = 'admin';
             post['subaction'] = 1;
             post['save'] = {};

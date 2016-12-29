@@ -15,6 +15,51 @@ class posts
 {
     use basic, db_connect;
 
+    public final function save( $data = false )
+    {
+      if( !$data || !is_array($data) || !count($data) )
+      {
+        return false;
+      }
+      $data = self::stripslashes( $data );
+
+      $data['post:id']          = isset($data['post:id'])?self::integer($data['post:id']):false;
+      $data['post:alt_title']   = isset($data['post:alt_title'])?self::totranslit($data['post:alt_title']):false;
+      $data['post:title']       = isset($data['post:title'])?self::trim($data['post:title']):false;
+      $data['post:descr']       = isset($data['post:descr'])?self::trim($data['post:descr']):false;
+      $data['post:short_post']  = isset($data['post:short_post'])?self::trim($data['post:short_post']):false;
+      $data['post:full_post']   = isset($data['post:full_post'])?self::trim($data['post:full_post']):false;
+      $data['post:keywords']    = isset($data['post:keywords'])?self::trim($data['post:keywords']):false;
+
+      $_ID = self::integer( $data['post:id'] );
+
+      $_2db = array();
+      $_2db['title']            = $data['post:title'];
+      $_2db['alt_title']        = $data['post:alt_title'];
+      $_2db['descr']            = $data['post:descr'];
+      $_2db['short_post']       = $data['post:short_post'];
+      $_2db['full_post']        = $data['post:full_post'];
+      $_2db['keywords']         = $data['post:keywords'];
+
+      $_2db = array_map( array( &$this->db, 'safesql' ), $_2db );
+
+      $SQL = '';
+      if( $_ID )
+      {
+        foreach( $_2db as $k=>$v ){ $_2db[$k] = '"'.$k.'" = \''.$v.'\''; }
+        $SQL = 'UPDATE posts SET '.implode( ', ', $_2db ).' WHERE id=\''.$_ID.'\' RETURNING id;';
+      }
+      else
+      {
+        $SQL = 'INSERT INTO posts ("'.implode('", "', array_keys($_2db)).'") VALUES (\''.implode('\', \'', array_values($_2db)).'\') RETURNING id;';
+      }
+
+      $_ID = $this->db->super_query( $SQL );
+      $_ID = isset($_ID['id'])?self::integer($_ID['id']):0;
+      echo $_ID;
+      exit;
+    }
+
     public final static function get_tag_url( $tag )
     {
         if( !isset($GLOBALS['_TAGS']) || !is_object($GLOBALS['_TAGS']) )
