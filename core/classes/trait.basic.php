@@ -8,6 +8,18 @@ if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
 
 trait basic
 {
+    public final function __call( $name, $arguments )
+    {
+        echo self::err( 'Method "'. $name. '" don\'t exist! '."\n" );
+        exit;
+    }
+
+    public static function __callStatic($name, $arguments)
+    {
+        echo self::err( 'Вызов статического метода '.$name.' '. implode(', ', $arguments)."\n" );
+        exit;
+    }
+
 	static public final function err( $text )
 	{
         trigger_error( self::htmlentities( $text ), E_USER_ERROR );

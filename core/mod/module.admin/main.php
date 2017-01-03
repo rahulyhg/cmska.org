@@ -29,7 +29,10 @@ $tpl->compile( 'main_navigation' );
 $_inp_submod = $_admin->get_submod_name( _SUBMOD_ );
 if( !file_exists( $_inp_submod ) )
 {
-    common::err( 'ACCESS DENIED! File '.$_inp_submod.' not exists!' );
+    if( !is_dir(dirname($_inp_submod)) ){ mkdir(dirname($_inp_submod)); }
+    fclose( fopen( $_inp_submod, 'w' ) );
+
+    common::err( 'ACCESS DENIED! File '.str_replace( ROOT_DIR, '', $_inp_submod ).' not exists!' );
     exit;
 }
 

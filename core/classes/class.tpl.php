@@ -41,6 +41,7 @@ class tpl
 		if( !file_exists( $filename ) )
 		{
 			self::err( 'TEMPLATE NOT FOUND: '.$skin.'.tpl' );
+            exit;
 		}
 
 		if( !isset($this->cache[$skin]) )
@@ -233,6 +234,8 @@ class tpl
 
         return $data;
     }
+
+
 }
 
 ?>

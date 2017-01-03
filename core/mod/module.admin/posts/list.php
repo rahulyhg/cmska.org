@@ -13,10 +13,10 @@ if( ($post_id = common::integer( isset($_REQUEST['post_id'])?$_REQUEST['post_id'
     $_POSTS = new posts;
     $posts_count = 0;
 
+    $filter = array();
     $filter['post.id'] = $post_id;
     $filter['full_data'] = 1;
 
-    $_POSTS = new posts;
     $_POSTS->editpost_html( $_POSTS->get( $filter, $posts_count ), $tpl, 'post_edit' );
 
     if( !$posts_count )
@@ -33,7 +33,21 @@ if( ($post_id = common::integer( isset($_REQUEST['post_id'])?$_REQUEST['post_id'
 }
 else
 {
+    $_POSTS = new posts;
+    $posts_count = 0;
+    $filter = array();
 
+    $_POSTS->listposts_html( $_POSTS->get( $filter, $posts_count ), $tpl, 'post_list' );
+
+    if( !$posts_count )
+    {
+        $tpl->info( 'Записів не знайдено!', 'Записів не знайдено!', 'warn' );
+        return ;
+    }
+
+    $tpl->load( 'page_item' );
+    $tpl->set( '{data}', $tpl->result( 'post_list' ) );
+    $tpl->compile( 'page_item' );
 }
 
 /*$tpl->load(    'post_edit' );

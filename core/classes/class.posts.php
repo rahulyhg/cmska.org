@@ -63,6 +63,31 @@ class posts
       exit;
     }
 
+    public final function listposts_html( $data = array(), &$tpl = false /*OBJECT*/, $skin = 'post_list' )
+    {
+
+
+      foreach( $data as $post_id => $value )
+      {
+        $tpl->load( $skin );
+
+        foreach( array( 'post', 'categ' ) as $_tag_group )
+        {
+          $_inf = &$value[$_tag_group];
+          foreach( $_inf as $tag => $val )
+          {
+            $val = self::stripslashes($val);
+            $val = self::htmlspecialchars( $val );
+            $tpl->set( '{'.$_tag_group.':'.$tag.'}', $val );
+          }
+        }
+        $tpl->compile( $skin );
+      }
+
+
+      return false;
+    }
+
     public final static function get_tag_url( $tag )
     {
         if( !isset($GLOBALS['_TAGS']) || !is_object($GLOBALS['_TAGS']) )
@@ -245,7 +270,6 @@ class posts
         return $data['rows'];
     }
 
-
     public final function html( $data = array(), &$tpl = false /*OBJECT*/, $skin = 'postshort' )
     {
         if( !isset($GLOBALS['_CATEG']) || !is_object($GLOBALS['_CATEG']) ){ $GLOBALS['_CATEG'] = new categ; }
@@ -294,7 +318,6 @@ class posts
         $tpl->compile( $skin );
         return false;
     }
-
 
     public final function editpost_html( $data = array(), &$tpl = false /*OBJECT*/, $skin = 'post_edit' )
     {

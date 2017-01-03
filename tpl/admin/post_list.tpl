@@ -1,0 +1,4 @@
+<div>
+{post:id}
+
+</div>
