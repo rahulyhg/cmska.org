@@ -582,8 +582,8 @@ SELECT pg_catalog.setval('"user_groups_id_seq"', 1, true);
 -- Data for Name: users; Type: TABLE DATA; Schema: site; Owner: -
 --
 
-INSERT INTO "users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (1, 'admin', '6b5d3fde336ba463eb445a2d5bcfc30e', 'admin@cmska.org', '192.168.2.104', '8c7414f12c6460784168a78af73b24de', 1);
 INSERT INTO "users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (0, '--', '--', 'root@cmska.org', '0.0.0.0', '0', 0);
+INSERT INTO "users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (1, 'admin', '6b5d3fde336ba463eb445a2d5bcfc30e', 'admin@cmska.org', '185.103.42.183', '0da9f07cfd59f45cfe5204b0998cf704', 1);
 
 
 --
