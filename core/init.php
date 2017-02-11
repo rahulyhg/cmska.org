@@ -14,6 +14,7 @@ require( CLASSES_DIR.DS.'class.tpl.php' );
 require( CLASSES_DIR.DS.'class.admin.php' );
 require( CLASSES_DIR.DS.'class.categ.php' );
 require( CLASSES_DIR.DS.'class.tags.php' );
+require( CLASSES_DIR.DS.'class.bbcode.php' );
 require( CLASSES_DIR.DS.'class.posts.php' );
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -65,11 +66,7 @@ if( _MOD_ == 'logout' )
 
 if( !CURRENT_USER_ID && _MOD_ == 'admin' ){             header( 'Location: /' ); exit; }
 if( in_array( _MOD_, array('admin', 'forum') ) ){       define( 'CURRENT_SKIN', TPL_DIR.DS._MOD_ ); }
-else{ define( 'CURRENT_SKIN', TPL_DIR.DS.$_config['skin'] );
-    var_export($_SERVER);
-    var_export($_REQUEST);
-    var_export($_FILES);
-exit; }
+else{ define( 'CURRENT_SKIN', TPL_DIR.DS.$_config['skin'] ); }
 
 
 //////////////////////////////////////////////////////////////////////////////////////////

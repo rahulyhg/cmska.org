@@ -6,8 +6,9 @@ if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-if( !trait_exists( 'basic' ) ){ require( CLASSES_DIR.DS.'trait.basic.php' ); }
+if( !trait_exists( 'basic' ) ){      require( CLASSES_DIR.DS.'trait.basic.php' ); }
 if( !trait_exists( 'db_connect' ) ){ require( CLASSES_DIR.DS.'trait.db_connect.php' ); }
+if( !class_exists( 'bbcode' ) ){     require( CLASSES_DIR.DS.'class.bbcode.php' ); }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -24,6 +25,7 @@ class posts
       $data = self::stripslashes( $data );
 
       $data['post:id']          = isset($data['post:id'])?self::integer($data['post:id']):false;
+      $data['categ:id']         = isset($data['categ:id'])?self::integer($data['categ:id']):false;
       $data['post:alt_title']   = isset($data['post:alt_title'])?self::totranslit($data['post:alt_title']):false;
       $data['post:title']       = isset($data['post:title'])?self::trim($data['post:title']):false;
       $data['post:descr']       = isset($data['post:descr'])?self::trim($data['post:descr']):false;
@@ -33,6 +35,14 @@ class posts
 
       $_ID = self::integer( $data['post:id'] );
 
+      if( !$data['post:alt_title'] || strlen($data['post:alt_title']) < 1 )
+      {
+          $data['post:alt_title'] = self::totranslit($data['post:title']);
+      }
+
+      $data['post:short_post'] = bbcode::bbcode2html( $data['post:short_post'] );
+      $data['post:full_post']  = bbcode::bbcode2html( $data['post:full_post'] );
+
       $_2db = array();
       $_2db['title']            = $data['post:title'];
       $_2db['alt_title']        = $data['post:alt_title'];
@@ -40,6 +50,7 @@ class posts
       $_2db['short_post']       = $data['post:short_post'];
       $_2db['full_post']        = $data['post:full_post'];
       $_2db['keywords']         = $data['post:keywords'];
+      $_2db['category']         = $data['categ:id'];
 
       $_2db = array_map( array( &$this->db, 'safesql' ), $_2db );
 
@@ -54,7 +65,6 @@ class posts
         $SQL = 'INSERT INTO posts ("'.implode('", "', array_keys($_2db)).'") VALUES (\''.implode('\', \'', array_values($_2db)).'\') RETURNING id;';
       }
 
-
       cache::clean( 'posts' );
 
       $_ID = $this->db->super_query( $SQL );
@@ -65,8 +75,6 @@ class posts
 
     public final function listposts_html( $data = array(), &$tpl = false /*OBJECT*/, $skin = 'post_list' )
     {
-
-
       foreach( $data as $post_id => $value )
       {
         $tpl->load( $skin );
@@ -83,8 +91,6 @@ class posts
         }
         $tpl->compile( $skin );
       }
-
-
       return false;
     }
 
@@ -284,6 +290,7 @@ class posts
         $tpl->set( '{post:url}',         self::get_url( $data ) );
         $tpl->set( '{post:author_id}',   self::integer($data['post']['author_id']));
         $tpl->set( '{post:short_post}',  self::trim( self::stripslashes($data['post']['short_post']) ) );
+        if( isset($data['post']['full_post']) ){ $tpl->set( '{post:full_post}',   self::trim( self::stripslashes($data['post']['full_post']) ) ); }
         $tpl->set( '{post:created_time}',self::en_date( $data['post']['created_time'], 'Y.m.d H:i' ) );
         $tpl->set( '{categ:id}',         self::integer( $data['categ']['id'] ) );
         $tpl->set( '{categ:url}',        $_CATEG->get_url( self::integer($data['categ']['id']) ) );

@@ -63,10 +63,5 @@
             <div id="maessage"></div>
         </div>
 
-        <form enctype="multipart/form-data" action="/upload/" method="POST">
-        <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
-            <input type="file" name="myfile" />
-            <button type="submit">Ok</button>
-        </form>
     </body>
 </html>

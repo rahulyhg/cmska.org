@@ -23,7 +23,7 @@
 	<body>
 
         <div id="page">
-            <div class="wpage topnav noselect">
+            <nav class="wpage topnav noselect">
                 <ul class="reset nav">
                     <li><a href="/"><span>Головна сторінка</span></a></li>
                     <li><a href="/"><span>Правила сайту</span></a>
@@ -40,7 +40,7 @@
                     {global:login}
                 </ul>
                 <div class="clear"></div>
-            </div>
+            </nav>
             <div class="clear"></div>
 
             <div class="wpage logo noselect">
@@ -49,7 +49,7 @@
             </div>
             <div class="clear"></div>
 
-            <div class="wpage logonav">
+            <nav class="wpage logonav">
                 <ul class="reset logonav">
                     <li class="active"><a href=""><span>Головна</span></a></li>
                     <li><a href=""><span>Категорія 1</span></a></li>
@@ -67,16 +67,16 @@
                     <li><a href=""><span>Категорія 4</span></a></li>
                 </ul>
                 <div class="clear"></div>
-            </div>
+            </nav>
             <div class="clear"></div>
 
             <div class="wpage content">
-                <div id="content">
+                <main id="content">
 
                     {global:info}
                     {global:posts}
 
-                </div>
+                </main>
 
                 <aside id="aside">
                     <div class="frame">

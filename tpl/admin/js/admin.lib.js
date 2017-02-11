@@ -17,10 +17,15 @@ var posts = new function()
             post['subaction'] = 1;
             post['save'] = {};
 
+        //var b = '';
+
         $('#posteditor').find('[data-save="1"]').each(function()
         {
             post['save'][$(this).attr('name')] = $(this).val();
+            //b = b + "\n" + $(this).attr('name') + ':' + $(this).val();
         });
+
+
 
         $.ajax({ data: post }).done(function( _r )
         {
