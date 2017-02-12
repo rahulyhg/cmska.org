@@ -26,13 +26,11 @@ trait login
 		$login = false;
 		$pass  = false;
 		$token = false;
-        $rsakey = false;
 
 		if( isset($_POST['login']) && isset($_POST['pass']) )
 		{
 		  $login = self::filter( $_POST['login'] );
 		  $pass  = self::passencode( $_POST['pass'] );
-          $rsakey = self::filter( $_POST['security'] );
 		}
 		elseif( isset($_SESSION['token']) ){ $token  = strip_tags( $_SESSION['token'] ); }
 		elseif( isset($_COOKIE['token']) ){  $token  = strip_tags( $_COOKIE['token'] ); }
@@ -47,7 +45,7 @@ trait login
 			if( $login && $pass )
 			{
 				$this->logged = $this->check_login_pass( $login, $pass );
-				if( $this->logged ){ $token = $this->update_token( $rsakey ); }
+				if( $this->logged ){ $token = $this->update_token(); }
                 define( '_TRY_PASS_LOG_IN', true );
 			}
 			elseif( $token )
@@ -118,18 +116,13 @@ trait login
 
         return $data;
     }
-	
-	private final function update_token( $rsakey = false )
+
+	private final function update_token(  )
 	{
 		$token = str_shuffle( sha1( mt_rand( 0, 99999 ) ) );
 		$token = self::passencode( $token.USER_IP );
 
-        if( $rsakey )
-        {
-            $rsakey = ', rsakey = \''.$this->db->safesql($rsakey).'\' ';
-        }else{ $rsakey = ''; }
-
-		$SQL = 'UPDATE users SET token=\''.$token.'\', last_ip=\''.USER_IP.'\''.$rsakey.' WHERE id = '.abs(intval(CURRENT_USER_ID)).';';
+		$SQL = 'UPDATE users SET token=\''.$token.'\', last_ip=\''.USER_IP.'\' WHERE id = '.abs(intval(CURRENT_USER_ID)).';';
 		$this->db->query( $SQL );
 		
 		return $token;

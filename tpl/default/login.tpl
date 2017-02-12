@@ -6,7 +6,7 @@
             <form method="post" action="/" name="loginform" if="floginform">
                 <p><input class="input" type="text" name="login" /></p>
                 <p><input class="input" type="password" name="pass" /></p>
-                <p title="Оберіть ступінь шифрування"><keygen name="security" keytype="rsa"></p>
+                <!-- p title="Оберіть ступінь шифрування"><keygen name="security" keytype="rsa"></p -->
                 <div class="fbutton">
                     <button class="button" type="submit">Вхід</button>
                 </div>

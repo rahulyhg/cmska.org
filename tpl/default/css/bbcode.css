@@ -1,0 +1,12 @@
+h2.bb_h2{ font-size: 1.2em; font-weight: bold; }
+h3.bb_h3{ font-size: 1.0em; font-weight: bold; font-style: italic; }
+
+[class^="bb_"].align_left{ text-align: left; }
+[class^="bb_"].align_right{ text-align: right; }
+[class^="bb_"].align_center{ text-align: center; }
+[class^="bb_"].align_justify{ text-align: justify; }
+
+.bb_sup{ position: relative; top: -0.3em; }
+.bb_sub{ position: relative; bottom: -0.3em; }
+.bb_sub + .bb_sup{ margin-left: -0.55em; }
+.bb_sup + .bb_sub{ margin-left: -0.55em; }

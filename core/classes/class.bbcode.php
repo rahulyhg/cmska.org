@@ -35,19 +35,25 @@ class bbcode
         if( $html2bbcode )
         {
             $mask = '!<('.implode('|',self::$simple_tags).') class=\"bb_\1\">(.+?)</\1>!is';
-            while( preg_match( $mask, $text ) )
-            {
-                $text = preg_replace( $mask, '[$1]$2[/$1]', $text );
-            }
+            while( preg_match( $mask, $text ) ){ $text = preg_replace( $mask, '[$1]$2[/$1]', $text ); }
+
+            $mask = '!<('.implode('|',self::$simple_tags).') class=\"bb_\1 align_(left|right|center|justify)\">(.+?)</\1>!is';
+            while( preg_match( $mask, $text ) ){ $text = preg_replace( $mask, '[$1|$2]$3[/$1]', $text ); }
+
             $text = str_replace( '<br>', '[br]', $text );
         }
         else
         {
             $mask = '!\[('.implode('|',self::$simple_tags).')\](.+?)\[\/\1\]!is';
-            while( preg_match( $mask, $text ) )
-            {
-                $text = preg_replace( $mask, '<$1 class=\"bb_$1\">$2</$1>', $text );
-            }
+            while( preg_match( $mask, $text ) ){ $text = preg_replace( $mask, '<$1 class=\"bb_$1\">$2</$1>', $text ); }
+
+            $mask = '!\[('.implode('|',self::$simple_tags).')\|(left|right|center|justify)\](.+?)\[\/\1\]!is';
+            while( preg_match( $mask, $text ) ){ $text = preg_replace( $mask, '<$1 class=\"bb_$1 align_$2\">$3</$1>', $text ); }
+
+            $mask = '!\[(left|right|center|justify)\](.+?)\[\/\1\]!is';
+            while( preg_match( $mask, $text ) ){ $text = preg_replace( $mask, '<p class=\"bb_p align_$1\">$2</p>', $text ); }
+
+
             $text = str_replace( '[br]', '<br>', $text );
         }
         return $text;

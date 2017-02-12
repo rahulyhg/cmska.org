@@ -52,6 +52,8 @@ class posts
       $_2db['keywords']         = $data['post:keywords'];
       $_2db['category']         = $data['categ:id'];
 
+      if( !$_ID ){ $_2db['author_id'] = CURRENT_USER_ID; }
+
       $_2db = array_map( array( &$this->db, 'safesql' ), $_2db );
 
       $SQL = '';
@@ -79,7 +81,7 @@ class posts
       {
         $tpl->load( $skin );
 
-        foreach( array( 'post', 'categ' ) as $_tag_group )
+        foreach( array( 'post', 'categ', 'usr' ) as $_tag_group )
         {
           $_inf = &$value[$_tag_group];
           foreach( $_inf as $tag => $val )
@@ -161,14 +163,18 @@ class posts
         $SELECT['categ.altname']        = 'categ.altname';
         $SELECT['categ.name']           = 'categ.name';
 
+        $SELECT['usr.login']           = 'usr.login';
+        $SELECT['usr.email']           = 'usr.email';
+
         if( $filters['full_data'] )
         {
             $SELECT['posts.full_post']        = 'post.full_post';
         }
 
-        $FROM['posts']  = 'posts';
+        $FROM['posts']       = 'posts';
         $FROM['categories']  = 'LEFT JOIN categories as categ ON ( categ.id = posts.category )';
         $FROM['posts_tags']  = 'LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )';
+        $FROM['users']       = 'LEFT JOIN users as usr ON ( usr.id = posts.author_id )';
 
         if( !$filters['nullpost'] )
         {
@@ -244,6 +250,7 @@ class posts
             $SQL  =  $this->db->query( $SQL );
             while( $row = $this->db->get_row($SQL) )
             {
+                $row['post.created_time'] = self::en_date( $row['post.created_time'], 'Y.m.d H:i' );
                 $data['rows'][$row['post.id']] = array();
                 foreach( $row as $k => $v )
                 {

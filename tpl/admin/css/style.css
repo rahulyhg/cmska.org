@@ -242,7 +242,8 @@ input[type="submit"].type8:disabled, input[type="button"].type8:disabled, button
 #page_frame #content .editpost select>option[data-level="2"]{ padding-left: 40px; }
 #page_frame #content .editpost select>option[data-level="3"]{ padding-left: 60px; }
 
-
+#page_frame #content .mainbox .post_list{ border: 1px solid #339900 }
+#page_frame #content .mainbox .post_list .elem{}
 
 
 
