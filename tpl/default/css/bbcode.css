@@ -1,5 +1,5 @@
-h2.bb_h2{ font-size: 1.2em; font-weight: bold; }
-h3.bb_h3{ font-size: 1.0em; font-weight: bold; font-style: italic; }
+h2.bb_h2{ font-size: 1.0em; font-weight: bold; text-align: center; margin: 10px 20px 5px 20px; }
+h3.bb_h3{ font-size: 1.0em; font-weight: bold; text-align: left;  }
 
 [class^="bb_"].align_left{ text-align: left; }
 [class^="bb_"].align_right{ text-align: right; }

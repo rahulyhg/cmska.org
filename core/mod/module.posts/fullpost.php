@@ -10,6 +10,9 @@ $skin = 'postfull';
 
 $post_id = common::integer(preg_replace( '!^(.+?)\/(\d+?)-(.+?)$!', '$2', $_SERVER['REQUEST_URI'] ));
 
+var_export( $post_id );
+exit;
+
 if( $post_id )
 {
     $filter = array();

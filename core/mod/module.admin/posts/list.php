@@ -45,8 +45,11 @@ else
         return ;
     }
 
+    $tpl->load( 'posts_filters' );
+    $tpl->compile( 'posts_filters' );
+
     $tpl->load( 'page_item' );
-    $tpl->set( '{data}', $tpl->result( 'post_list' ) );
+    $tpl->set( '{data}', '<div id="posts_filters_frame">'.$tpl->result( 'posts_filters' ).'</div><div id="post_list_frame">'.$tpl->result( 'post_list' ).'</div>' );
     $tpl->compile( 'page_item' );
 }
 

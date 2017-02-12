@@ -1,6 +1,6 @@
 @charset "windows-1251";
-article,aside,figcaption,figure,footer,header,hgroup,nav,section,time,ul,ol{ display: block; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-box-sizing: border-box; }
-html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input,textarea,span{margin: 0; padding: 0; -moz-box-sizing: border-box; box-sizing: border-box; }
+article,aside,figcaption,figure,footer,header,main,hgroup,nav,section,time,ul,ol,h1,h2,h3{ display: block; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-box-sizing: border-box; }
+html,body,div,main,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input,textarea,span{margin: 0; padding: 0; -moz-box-sizing: border-box; box-sizing: border-box; }
 input, textarea, select, button, body{  }
 body{ color: #222222; background: #FFFFFF; overflow-y: scroll; overflow-x: hidden; }
 *{
@@ -251,7 +251,9 @@ button:hover{ background-color: #66A7E1; opacity: 1.0; }
 #page #content .article.short .attr_panel{ width: 420px; position: absolute; bottom: 0px; right: 0px; background: #FFFFFF }
 
 #page #content .article.full{ padding-right: 10px; }
-#page #content .article.full h1{ font-size: 16px; text-align: center; margin: 10px 0px 10px 0px; }
+#page #content .article.full h1{ display: block; font-size: 16px; text-align: center; margin: 10px 0px 10px 0px; }
+#page #content .article.full h2{ }
+#page #content .article.full code{ font-size: 12px; border: 1px solid #888888; padding: 7px 5px 7px 5px; margin: 5px 0px 5px 0px; display: block; max-height: 200px; overflow: auto; color: #222222; background: #E1EEF9; }
 #page #content .article.full .text{ line-height: 1.5; font-size: 16px; }
 #page #content .article.full .text p{ margin: 0px 0px 5px 0px; text-indent: 7mm; position: relative; }
 #page #content .article.full .attr_panel{  }

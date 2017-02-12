@@ -7,8 +7,6 @@ if( preg_match( '!^\/index\.(htm|html)$!i', $_SERVER['REQUEST_URI'], $data ) )
     header( 'Location: '.HOME.'' ); exit;
 }
 
-$_SERVER['REQUEST_URI'] = preg_replace( '!\/$!i', '', $_SERVER['REQUEST_URI'] );
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 if( preg_match( '!\/tag:(.+)(\/|)$!i', $_SERVER['REQUEST_URI'], $data ) )

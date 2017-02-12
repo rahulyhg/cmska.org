@@ -24,14 +24,14 @@ class posts
       }
       $data = self::stripslashes( $data );
 
-      $data['post:id']          = isset($data['post:id'])?self::integer($data['post:id']):false;
-      $data['categ:id']         = isset($data['categ:id'])?self::integer($data['categ:id']):false;
-      $data['post:alt_title']   = isset($data['post:alt_title'])?self::totranslit($data['post:alt_title']):false;
-      $data['post:title']       = isset($data['post:title'])?self::trim($data['post:title']):false;
-      $data['post:descr']       = isset($data['post:descr'])?self::trim($data['post:descr']):false;
-      $data['post:short_post']  = isset($data['post:short_post'])?self::trim($data['post:short_post']):false;
-      $data['post:full_post']   = isset($data['post:full_post'])?self::trim($data['post:full_post']):false;
-      $data['post:keywords']    = isset($data['post:keywords'])?self::trim($data['post:keywords']):false;
+      $data['post:id']          = isset($data['post:id'])?          self::integer($data['post:id']):false;
+      $data['categ:id']         = isset($data['categ:id'])?         self::integer($data['categ:id']):false;
+      $data['post:alt_title']   = isset($data['post:alt_title'])?   self::totranslit($data['post:alt_title']):false;
+      $data['post:title']       = isset($data['post:title'])?       self::trim($data['post:title']):false;
+      $data['post:descr']       = isset($data['post:descr'])?       self::trim($data['post:descr']):false;
+      $data['post:short_post']  = isset($data['post:short_post'])?  self::trim($data['post:short_post']):false;
+      $data['post:full_post']   = isset($data['post:full_post'])?   self::trim($data['post:full_post']):false;
+      $data['post:keywords']    = isset($data['post:keywords'])?    self::trim($data['post:keywords']):false;
 
       $_ID = self::integer( $data['post:id'] );
 
@@ -80,6 +80,9 @@ class posts
       foreach( $data as $post_id => $value )
       {
         $tpl->load( $skin );
+
+        $edit_url = '/index.php?mod='._MOD_.'&submod='._SUBMOD_.'&post_id='.$post_id;
+        $tpl->set( '{edit_url}', $edit_url );
 
         foreach( array( 'post', 'categ', 'usr' ) as $_tag_group )
         {
@@ -290,17 +293,17 @@ class posts
 
         $tpl->load( $skin );
 
-        $data = self::html_entity_decode( $data );
-        $data = self::htmlspecialchars_decode( $data );
+        $data = self::stripslashes( $data );
 
         $tpl->set( '{post:id}',          self::integer($data['post']['id']));
         $tpl->set( '{post:url}',         self::get_url( $data ) );
         $tpl->set( '{post:author_id}',   self::integer($data['post']['author_id']));
-        $tpl->set( '{post:short_post}',  self::trim( self::stripslashes($data['post']['short_post']) ) );
-        if( isset($data['post']['full_post']) ){ $tpl->set( '{post:full_post}',   self::trim( self::stripslashes($data['post']['full_post']) ) ); }
-        $tpl->set( '{post:created_time}',self::en_date( $data['post']['created_time'], 'Y.m.d H:i' ) );
+        $tpl->set( '{post:short_post}',  self::trim( $data['post']['short_post'] ) );
+        $tpl->set( '{post:created_time}',$data['post']['created_time'] );
         $tpl->set( '{categ:id}',         self::integer( $data['categ']['id'] ) );
         $tpl->set( '{categ:url}',        $_CATEG->get_url( self::integer($data['categ']['id']) ) );
+
+        if( isset($data['post']['full_post']) ){ $tpl->set( '{post:full_post}',   self::trim( $data['post']['full_post'] ) ); }
 
         foreach( $data as $key => $value )
         {
@@ -338,6 +341,10 @@ class posts
       foreach( $data as $post_id => $value )
       {
         $tpl->load( $skin );
+
+        $tpl->set( '{post:short_post}', bbcode::html2bbcode( self::stripslashes($value['post']['short_post']) ) );
+        $tpl->set( '{post:full_post}', bbcode::html2bbcode( self::stripslashes($value['post']['full_post']) ) );
+
         foreach( $value as $_tag_group => $_inf )
         {
           foreach( $_inf as $tag => $val )

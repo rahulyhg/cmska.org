@@ -30,7 +30,7 @@ trait basic
     {
         if( !is_scalar( $data ) && !is_array( $data ) ){ self::err( ''.__CLASS__.'::'.__METHOD__.' accepts string or array only!' ); }
         if( is_array($data) ){ return array_map( 'self::filter', $data ); }
-        return self::trim( filter_var( strip_tags($data), FILTER_UNSAFE_RAW, FILTER_FLAG_ENCODE_LOW | FILTER_FLAG_STRIP_BACKTICK | FILTER_FLAG_ENCODE_AMP ) );
+        return self::trim( filter_var( $data, FILTER_UNSAFE_RAW, FILTER_FLAG_ENCODE_LOW | FILTER_FLAG_STRIP_BACKTICK | FILTER_FLAG_ENCODE_AMP ) );
     }
 
     static public final function htmlspecialchars_decode( $data )

@@ -242,9 +242,21 @@ input[type="submit"].type8:disabled, input[type="button"].type8:disabled, button
 #page_frame #content .editpost select>option[data-level="2"]{ padding-left: 40px; }
 #page_frame #content .editpost select>option[data-level="3"]{ padding-left: 60px; }
 
-#page_frame #content .mainbox .post_list{ border: 1px solid #339900 }
-#page_frame #content .mainbox .post_list .elem{}
+#page_frame #content #posts_filters_frame{ width: 25%; float: right; padding-left: 5px; border-left: 3px solid #222222; position: relative; left: -3px; }
+#page_frame #content #post_list_frame{ width: 75%; float: left; padding-right: 5px; border-right: 3px solid #222222; }
 
+#page_frame #content .mainbox .post_list{ padding: 5px 2px 5px 2px; margin: 0px 0px 2px 0px; background: #EEEEEE; cursor: pointer; }
+#page_frame #content .mainbox .post_list:first-of-type{ border-top: 1px solid #555555; }
+#page_frame #content .mainbox .post_list:last-of-type{ border-bottom: 1px solid #555555; }
+#page_frame #content .mainbox .post_list:nth-of-type(odd) { background: none; }
+#page_frame #content .mainbox .post_list:hover{ background: #E0FFD6; }
+#page_frame #content .mainbox .post_list>.elem[data-role]{ display: inline-block; float: left; overflow: hidden; padding: 2px; }
+#page_frame #content .mainbox .post_list>.elem[data-role]:last-of-type{ float: right; }
+#page_frame #content .mainbox .post_list>.elem[data-role="postid"]{ width: 6%; text-align: center; }
+#page_frame #content .mainbox .post_list>.elem[data-role="posttitle"]{ width: 50%; text-align: left; }
+#page_frame #content .mainbox .post_list>.elem[data-role="categname"]{ width: 17%; text-align: center; }
+#page_frame #content .mainbox .post_list>.elem[data-role="usrlogin"]{ width: 12%; text-align: center; }
+#page_frame #content .mainbox .post_list>.elem[data-role="postcreated_time"]{  width: 15%; text-align: right;}
 
 
 

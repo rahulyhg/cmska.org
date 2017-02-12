@@ -126,6 +126,8 @@ $(document).ready(function()
         $(this).parent().find('textarea').addClass('active').focus();
     });
 
-    $('.editpost button[data-role="save"]').click(function(){ posts.save( $('#posteditor') ); });
+    $('.editpost button[data-role="save"]').click(function(){ posts.save( $('#posteditor') ); window.location.reload(); });
+
+    $('#page_frame #content .mainbox #post_list_frame .post_list').click( function(){ window.location = $(this).attr('data-editurl'); } );
 
 });
