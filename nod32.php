@@ -13,6 +13,9 @@ define ( 'UPDATES_DIR',     ROOT_DIR.DS.'nod' );
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+phpinfo();
+exit;
+
 header( 'Content-type: text/plain; charset=Windows-1251' );
 
 nod32::load_updates();
@@ -21,8 +24,8 @@ class nod32
 {
 	static public final function load_updates()
 	{
-		var_export( self::get( 'http://ndekc.ck.ua/' ) );
-		//var_export( self::get( 'http://update.eset.com/eset_upd/update.ver' ) );
+
+		var_export( self::get( 'http://update.eset.com/eset_upd/update.ver' ) );
 		
 	}
 	
