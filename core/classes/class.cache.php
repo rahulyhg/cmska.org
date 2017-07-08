@@ -30,7 +30,7 @@ class cache
     {
         if( isset($GLOBALS['_MEMCACHE']) && is_object($GLOBALS['_MEMCACHE']) )
         {
-            self::mem_init( '127.0.0.1', 11211 );
+            self::mem_init( 'unix:/var/run/memcached.sock', 0 );
             return true;
         }
 
@@ -104,7 +104,7 @@ $_MEMCACHE = false;
 
 if( defined('CACHE_TYPE') && CACHE_TYPE == 'MEM' )
 {
-    cache::mem_init( '127.0.0.1', 11211 );
+    cache::mem_init( 'unix:/var/run/memcached.sock', 0 );
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
