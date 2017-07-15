@@ -16,6 +16,8 @@ require( CLASSES_DIR.DS.'class.categ.php' );
 require( CLASSES_DIR.DS.'class.tags.php' );
 require( CLASSES_DIR.DS.'class.bbcode.php' );
 require( CLASSES_DIR.DS.'class.posts.php' );
+require( CLASSES_DIR.DS.'class.upload.php' );
+require( CLASSES_DIR.DS.'class.images.php' );
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -84,12 +86,12 @@ else
 
 if( _AJAX_ )
 {
-	require( CORE_DIR.DS.'router.ajax.php' );
-    
+    require( CORE_DIR.DS.'router.ajax.php' );
+
 }
 else
 {
-	require( CORE_DIR.DS.'router.static.php' );
+    require( CORE_DIR.DS.'router.static.php' );
     require( MODS_DIR.DS.'login.php' );
 }
 

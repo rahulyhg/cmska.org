@@ -63,5 +63,7 @@
             <div id="maessage"></div>
         </div>
 
+        <div id="ajax"></div>
+
     </body>
 </html>

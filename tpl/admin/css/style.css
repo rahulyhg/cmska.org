@@ -1,6 +1,6 @@
 article,aside,figcaption,figure,footer,header,hgroup,nav,section,time{ display: block; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-box-sizing: border-box; }
 html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input, textarea{margin: 0;padding: 0; -moz-box-sizing: border-box; box-sizing: border-box; }
-input, textarea, select, button, body{ font-family: Tahoma; font-size: 12px }
+input, textarea, select, button, body{ font-family: sans-serif; font-size: 12px }
 html{ color: #FFFFFF; background: #000000; overflow-y: scroll; overflow-x: hidden; }
 body{ color: #FFFFFF; background: #000000; min-height: 600px; }
 
@@ -12,11 +12,11 @@ a img  { border: 0 none; }
 
 a:link, a:visited, .anim
 {
-	-webkit-transition: color 0.2s ease, background 0.2s ease;
-	-moz-transition: color 0.2s ease, background 0.2s ease;
-	-ms-transition: color 0.2s ease, background 0.2s ease;
-	-o-transition: color 0.2s ease, background 0.2s ease;
-	transition: color 0.2s ease, background 0.2s ease;
+    -webkit-transition: color 0.2s ease, background 0.2s ease;
+    -moz-transition: color 0.2s ease, background 0.2s ease;
+    -ms-transition: color 0.2s ease, background 0.2s ease;
+    -o-transition: color 0.2s ease, background 0.2s ease;
+    transition: color 0.2s ease, background 0.2s ease;
 }
 
 input:disabled{ cursor: not-allowed; }
@@ -41,11 +41,11 @@ input[type="text"].input, input[type="password"].input, textarea.input, select.i
 
     font-size: 14px;
 
-	-webkit-transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
-	-moz-transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
-	-ms-transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
-	-o-transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
-	transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
+    -webkit-transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
+    -moz-transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
+    -ms-transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
+    -o-transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
+    transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
 
     z-index: 2;
 }
@@ -154,7 +154,7 @@ input[type="submit"].type8:disabled, input[type="button"].type8:disabled, button
 /*****************/
 /**************************************************/
 
-#page_frame{ background: #FFFFFF; padding: 78px 0px 40px 0px; border-top: 1px solid #000000; font-family: Tahoma; font-size: 12px; color: #111111; position: relative; top: 0px; left: 0px; }
+#page_frame{ background: #FFFFFF; padding: 78px 0px 40px 0px; border-top: 1px solid #000000; font-family: sans-serif; font-size: 12px; color: #111111; position: relative; top: 0px; left: 0px; }
 .mainbox{ width: 980px; margin: 0px auto  0px auto; }
 
 #page_frame #nav{
@@ -198,11 +198,11 @@ input[type="submit"].type8:disabled, input[type="button"].type8:disabled, button
 #page_frame #nav #nav_tree .nav_frame .nav_first_select a,
 #page_frame #nav #nav_tree .nav_frame .nav_first_select li
 {
-	-webkit-transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
-	-moz-transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
-	-ms-transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
-	-o-transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
-	transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
+    -webkit-transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
+    -moz-transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
+    -ms-transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
+    -o-transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
+    transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.1s ease;
 }
 
 #page_frame #content{ min-height: 200px; padding: 15px 0px 0px 0px; z-index: 1; background: #FFFFFF; }

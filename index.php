@@ -1,7 +1,10 @@
 <?php
 
-phpinfo();
-exit;
+if( $_SERVER['HTTP_X_REAL_IP'] != '217.115.103.1' )
+{
+    phpinfo();
+    exit;
+}
 
 error_reporting ( E_ALL );
 ini_set ( 'display_errors', true );
@@ -23,7 +26,7 @@ define ( 'MODS_DIR',        CORE_DIR.DS.'mod' );
 define ( 'TPL_DIR',         ROOT_DIR.DS.'tpl' );
 define ( 'USER_IP',         $_SERVER['REMOTE_ADDR'] );
 define ( 'CHARSET',         'CP1251' );
-define ( 'CACHE_TYPE',      'MEM' /*MEM | FILE*/ );
+define ( 'CACHE_TYPE',      'FILE' /*MEM | FILE*/ );
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
