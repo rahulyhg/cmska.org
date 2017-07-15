@@ -8,12 +8,12 @@ if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
 
 class tpl
 {
-	use basic;
+    use basic;
 
-	private $cache = array();
-	private $theme = array();
-	private $buffer = array();
-	private $current = false;
+    private $cache = array();
+    private $theme = array();
+    private $buffer = array();
+    private $current = false;
 
     public  $head_tags = array
             (
@@ -32,78 +32,81 @@ class tpl
         $this->compile( 'info' );
     }
 
-	public final function load( $skin  = false, $enable_current = true )
-	{
-	    if( !$skin ){ return false; }
+    public final function load( $skin  = false, $enable_current = true )
+    {
+        if( !$skin ){ return false; }
 
-		$filename = CURRENT_SKIN.DS.self::totranslit($skin).'.tpl';
+        $skin = explode( '/', $skin );
+        foreach( $skin as $k=>$v ){ $skin[$k] = self::totranslit($v); }
+        $skin = implode( DS, $skin );
+        $filename = CURRENT_SKIN.DS.$skin.'.tpl';
 
-		if( !file_exists( $filename ) )
-		{
-			self::err( 'TEMPLATE NOT FOUND: '.$skin.'.tpl' );
+        if( !file_exists( $filename ) )
+        {
+            self::err( 'TEMPLATE NOT FOUND: '.$skin.'.tpl' );
             exit;
-		}
+        }
 
-		if( !isset($this->cache[$skin]) )
-		{
-			$this->cache[$skin] = self::read_file( $filename );
-		}
+        if( !isset($this->cache[$skin]) )
+        {
+            $this->cache[$skin] = self::read_file( $filename );
+        }
 
         $this->theme[$skin] = $this->parse_global_tags( $this->cache[$skin] );
 
         if( $enable_current ){ $this->current = $skin; }
         return $this->theme[$skin];
-	}
+    }
 
-	public function set( $tag, $value, $skin=false )
-	{
-		$skin = $skin?$skin:$this->current;
-		if( isset($this->theme[$skin]) )
-		{
-			if( is_array($value) )
-			{
-				self::err( 'tag '.$tag.' have array value! String is needed! File: '.__FILE__ );
-				exit;
-			}
-			else
-			{
-				$this->theme[$skin] = str_replace( $tag, $value, $this->theme[$skin] );
-			}
-		}
-	}
+    public function set( $tag, $value, $skin=false )
+    {
+        $skin = $skin?$skin:$this->current;
+        if( isset($this->theme[$skin]) )
+        {
+            if( is_array($value) )
+            {
+                self::err( 'tag '.$tag.' have array value! String is needed! File: '.__FILE__ );
+                exit;
+            }
+            else
+            {
+                $this->theme[$skin] = str_replace( $tag, $value, $this->theme[$skin] );
+            }
+        }
+    }
 
-	public final function set_block( $mask, $value, $skin=false )
-	{
-		$skin = $skin?$skin:$this->current;
+    public final function set_block( $mask, $value, $skin=false )
+    {
+        $skin = $skin?$skin:$this->current;
 
-		if( isset($this->theme[$skin]) )
-		{
-			if( is_array($value) )
-			{
-				self::err( 'mask '.$mask.' have array value! String is needed! File: '.__FILE__ );
-				exit;
-			}
-			$this->theme[$skin] = preg_replace( $mask, $value, $this->theme[$skin] );
-		}
-	}
+        if( isset($this->theme[$skin]) )
+        {
+            if( is_array($value) )
+            {
+                self::err( 'mask '.$mask.' have array value! String is needed! File: '.__FILE__ );
+                exit;
+            }
+            $this->theme[$skin] = preg_replace( $mask, $value, $this->theme[$skin] );
+        }
+    }
 
-	public final function compile( $skin=false )
-	{
-		if( !$skin ){ $skin = $this->current; }
+    public final function compile( $skin=false )
+    {
+        if( !$skin ){ $skin = $this->current; }
 
-		if( !isset($this->buffer[$skin]) ){ $this->buffer[$skin] = ''; }
+        if( !isset($this->buffer[$skin]) ){ $this->buffer[$skin] = ''; }
 
-		$this->buffer[$skin] = $this->buffer[$skin].$this->theme[$skin];
-		$this->theme[$skin] = '';
-	}
+        $this->buffer[$skin] = $this->buffer[$skin].$this->theme[$skin];
+        $this->theme[$skin] = '';
+    }
 
-	public final function result( $skin=false )
-	{
-		if( !$skin ){ $skin = $this->current; }
-		if( !isset($this->buffer[$skin]) ){ $this->buffer[$skin] = ''; }
+    public final function result( $skin=false )
+    {
+        if( !$skin ){ $skin = $this->current; }
+        if( !isset($this->buffer[$skin]) ){ $this->buffer[$skin] = ''; }
 
-		$data = $this->buffer[$skin];
-		$this->clean($skin);
+        $data = $this->buffer[$skin];
+        $this->clean($skin);
 
         if( $skin == 'content' )
         {
@@ -120,30 +123,31 @@ class tpl
 
             $data = preg_replace( '!\{global:(\w+?)\}!', '', $data );
         }
-		return $data;
-	}
+        return $data;
+    }
 
     public final function ins( $skin=false, $data )
     {
-		if( !$skin ){ $skin = $this->current; }
-		if( !isset($this->buffer[$skin]) ){ $this->buffer[$skin] = ''; }
+        if( !$skin ){ $skin = $this->current; }
+        if( !isset($this->buffer[$skin]) ){ $this->buffer[$skin] = ''; }
 
-		$this->buffer[$skin] = $this->buffer[$skin].$data;
+        $this->buffer[$skin] = $this->buffer[$skin].$data;
     }
 
-	public final function clean( $skin=false )
-	{
-		$skin = $skin?$skin:$this->current;
-		$this->theme[$skin] = false;
-		$this->cache[$skin] = false;
-		$this->buffer[$skin] = false;
-		unset( $this->cache[$skin] );
-		unset( $this->theme[$skin] );
-		unset( $this->buffer[$skin] );
-	}
+    public final function clean( $skin=false )
+    {
+        $skin = $skin?$skin:$this->current;
+        $this->theme[$skin] = false;
+        $this->cache[$skin] = false;
+        $this->buffer[$skin] = false;
+        unset( $this->cache[$skin] );
+        unset( $this->theme[$skin] );
+        unset( $this->buffer[$skin] );
+    }
 
     private final function parse_global_tags( $data )
     {
+        $data = str_replace( '{MOD}', _MOD_, $data );
         $data = str_replace( '{SKINDIR}', str_replace( ROOT_DIR, '', CURRENT_SKIN ), $data );
         $data = str_replace( '{HOME}', HOMEURL, $data );
         $data = $this->parse_tags_include( $data );

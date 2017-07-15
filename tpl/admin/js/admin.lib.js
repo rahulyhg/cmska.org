@@ -5,6 +5,15 @@ var common = new function()
     this.hide_loader = function(){$('#overlay').addClass('dnone'); }
 }
 
+function close_dialog( dialog_id )
+{
+        if( $( '#'+dialog_id ).hasClass('ui-dialog-content') )
+        {
+            $('#'+dialog_id).dialog("close");
+        }
+        $('#'+dialog_id).remove();
+}
+
 var AJAX = false;
 var posts = new function()
 {
@@ -129,5 +138,12 @@ $(document).ready(function()
     $('.editpost button[data-role="save"]').click(function(){ posts.save( $('#posteditor') ); window.location.reload(); });
 
     $('#page_frame #content .mainbox #post_list_frame .post_list').click( function(){ window.location = $(this).attr('data-editurl'); } );
+
+
+    $('#upload_window form button').click(function()
+    {
+        //alert( $(this).parents('html').html() );
+        uploading.get_config();
+    });
 
 });

@@ -15,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="{SKINDIR}/css/jquery-ui.theme.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="{SKINDIR}/css/style.css" media="screen" />
 
+        <script src="/tpl/js/lang-ua.js" type="text/javascript"></script>
         <script src="/tpl/js/jquery.js" type="text/javascript"></script>
         <script src="/tpl/js/jquery-ui.js" type="text/javascript"></script>
         <script src="{SKINDIR}/js/admin.lib.js" type="text/javascript"></script>

@@ -30,7 +30,7 @@ option::-moz-focus-inner{border:0;padding:0;}
 #content .label, #content .labelinfo{ font-weight: bold; color: #003366; font-size: 12px; font-style: italic; }
 #content .labelinfo{ opacity: 0.6; }
 
-input[type="text"].input, input[type="password"].input, textarea.input, select.input
+input[type="text"].input, input[type="file"].input, input[type="password"].input, textarea.input, select.input
 {
     border: 1px solid #0F4C00;
     border-radius: 3px;
@@ -53,6 +53,69 @@ input[type="text"].input, input[type="password"].input{ padding: 4px 5px 6px 5px
 textarea.input{ resize: vertical; min-height: 80px; max-height: 300px; }
 select.input{ padding: 5px 5px 5px 5px; }
 select.input option{ cursor: pointer; }
+
+input[type="checkbox"]
+{
+    vertical-align: top;
+    margin: 0px 3px 0px 0px;
+    width: 17px;
+    height: 17px;
+}
+
+/**/
+
+/* Прячем оригинальный чекбокс. */
+.checkbox:not(checked) {
+    position: absolute;
+    display: none;
+    opacity: 0;
+}
+.checkbox:not(checked) + label {
+    position: relative; /* будем позиционировать псевдочекбокс относительно label */
+    padding: 0 0 0 60px; /* оставляем слева от label место под псевдочекбокс */
+    left: -17px;
+}
+/* Оформление первой части чекбокса в выключенном состоянии (фон). */
+.checkbox:not(checked) + label:before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 0;
+    width: 50px;
+    height: 26px;
+    border-radius: 15px;
+    background: #CDD1DA;
+    box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+}
+/* Оформление второй части чекбокса в выключенном состоянии (переключатель). */
+.checkbox:not(checked) + label:after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 9px;
+    background: #FFF;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+    transition: all .2s; /* анимация, чтобы чекбокс переключался плавно */
+}
+/* Меняем фон чекбокса, когда он включен. */
+.checkbox:checked + label:before {
+    background: #9FD468;
+}
+/* Сдвигаем переключатель чекбокса, когда он включен. */
+.checkbox:checked + label:after {
+    left: 26px;
+    border: 1px solid #FFFFFF;
+}
+/* Показываем получение фокуса. */
+.checkbox:focus + label:before {
+    /*box-shadow: 0 0 0 3px rgba(255,255,0,.5);*/
+}
+
+/**/
 
 input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus, select.input:focus
 {
@@ -320,4 +383,17 @@ input[type="submit"].type8:disabled, input[type="button"].type8:disabled, button
 #overlay .close{ position: fixed; top: 10px; right: 10px; width: 50px; height: 50px; z-index: 1005; background: url(../img/overlay-close.png) no-repeat 50% 50%; border-radius: 25px; cursor: pointer; opacity: 0.3; }
 #overlay .close:hover{ opacity: 1.0; }
 
+#upload_frame #uploaded_files{ height: 200px; border-bottom: 1px solid #4D4D4D; padding: 10px 10px 10px 10px; margin-bottom: 10px; overflow-y: scroll; overflow-x: hidden; }
+#upload_frame #upload_config{ height: 100px; margin-bottom: 10px; }
+#upload_frame #upload_frame{ border: none; padding: 0px; }
+#upload_frame #upload_frame iframe, #upload_window{ width: 100%; border: none; overflow-y: hidden; }
+#upload_frame #upload_frame iframe, #upload_window, #upload_frame #upload_frame{ height: 37px; }
+#upload_window, #upload_window body{ background: #FFFFFF; color: #4D4D4D; }
+#upload_window form{ padding: 2px; }
+#upload_window form input[type="file"]{ border: 1px solid #BFBFBF; border-radius: 3px; width: 410px; cursor: pointer; padding: 2px; }
+#upload_window form button{ float: right; position: relative; top: 3px; }
+#upload_config .label{ display: inline-block; padding-top: 3px; text-transform: uppercase; cursor: pointer; font-weight: bold; font-size: 0.9em; }
+#upload_config table{ width: 100%; }
+#upload_config table tr{}
+#upload_config table tr td{ width: 50%; }
 

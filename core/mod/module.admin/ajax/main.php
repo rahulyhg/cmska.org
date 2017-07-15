@@ -9,6 +9,13 @@ switch( _ACTION_ )
     $_action_file = 'posts_edit';
   break;
 
+  case 10: //UPLOAD
+    $_action_file = 'upload';
+  break;
+  case 11: //UPLOAD
+    $_action_file = 'upload_iframe';
+  break;
+
   default:
     ajax::set_error( 1, 'Action "'._ACTION_.'" not defined!' );
 }

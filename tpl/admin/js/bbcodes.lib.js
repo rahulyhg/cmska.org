@@ -16,6 +16,19 @@ var bbcode = new function()
     }
 }
 
+var uploading = new function()
+{
+    this.config_id = "upload_config";
+
+    this.get_config = function()
+    {
+        var cf = $('#'+uploading.config_id, window.parent.document);
+
+        alert( cf.html() );
+    }
+
+}
+
 $(document).ready( function()
 {
     $('.bbpanel [data-btype="simple"]').click(function()
@@ -26,23 +39,36 @@ $(document).ready( function()
 
     $('.bbpanel [data-func="file"]').click(function()
     {
-        alert(1);
         var did = 'upload_frame';
+            close_dialog( did );
 
-        if( $( '#'+did ).hasClass('ui-dialog-content') ){ $('#'+did).dialog("close"); }
-        $('#'+did).remove();
-        $('#ajax').append('<div id="'+did+'" title="Uplod form">123</div>');
+        var post = {};
+            post['ajax']    = 1;
+            post['action']  = 10;
+            post['mod']     = 'admin';
+            post['subaction'] = 0;
+
+        $.ajax({ data: post }).done(function( _r )
+        {
+            try{ _r = jQuery.parseJSON( _r ); }catch(err){ alert( 'ERROR: '+err+"\n\n"+_r ); return false; }
+            if( parseInt(_r['error'])>0 ){ alert( _r['error_text'] ); return false; }
+
+            $('#ajax').append('<div id="'+did+'" title="'+lng.upload.form_title+'">'+_r['template']+'</div>');
+
+
+            return false;
+        });
 
         var bi = 0;
         var dialog = {};
             dialog["zIndex"]  = 1001;
             dialog["modal"]   = true;
-            dialog["width"]   = '700';
+            dialog["width"]   = '560';
 
             dialog["buttons"] = {};
             dialog["buttons"][bi] = {};
-            dialog["buttons"][bi]["text"]  = "–°–∫–∞—Å—É–≤–∞—Ç–∏";
-            dialog["buttons"][bi]["click"] = function(){  };
+            dialog["buttons"][bi]["text"]  = "—Í‡ÒÛ‚‡ÚË";
+            dialog["buttons"][bi]["click"] = function(){ close_dialog( did ); };
             dialog["buttons"][bi]["class"] = "type1";
             dialog["buttons"][bi]["data-role"] = "close_button";
 
