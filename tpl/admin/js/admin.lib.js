@@ -50,6 +50,33 @@ var posts = new function()
 
 
 /**********************************************************************************************/
+
+var uploading = new function()
+{
+    this.config_id = "upload_config";
+
+    this.get_config = function()
+    {
+        var cf = $('#'+uploading.config_id, window.parent.document);
+        cf.find('input').each( function()
+        {
+            var name = $(this).attr('name');
+            var val  = $(this).val();
+
+            if( $(this).attr('type') == 'checkbox' )
+            {
+                val = $(this).is(":checked")?1:0;
+            }
+
+            $('#upload_window form [name="'+name+'"]').remove();
+            $('#upload_window form input[type="file"]').after( '<input type="hidden" name="'+name+'" value="'+val+'">' );
+
+        } );
+    }
+
+}
+
+/**********************************************************************************************/
 $(document).ready(function()
 {
     $.ajaxSetup({
@@ -142,7 +169,6 @@ $(document).ready(function()
 
     $('#upload_window form button').click(function()
     {
-        //alert( $(this).parents('html').html() );
         uploading.get_config();
     });
 

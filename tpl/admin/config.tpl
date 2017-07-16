@@ -1,4 +1,4 @@
-<div class="elemblock admpage editpost" id="posteditor">
+<div class="elemblock admpage config" id="posteditor">
 
     <input type="hidden" name="post:id" value="{post:id}" data-save="1" />
 

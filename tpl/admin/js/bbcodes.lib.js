@@ -16,19 +16,6 @@ var bbcode = new function()
     }
 }
 
-var uploading = new function()
-{
-    this.config_id = "upload_config";
-
-    this.get_config = function()
-    {
-        var cf = $('#'+uploading.config_id, window.parent.document);
-
-        alert( cf.html() );
-    }
-
-}
-
 $(document).ready( function()
 {
     $('.bbpanel [data-btype="simple"]').click(function()
@@ -52,10 +39,7 @@ $(document).ready( function()
         {
             try{ _r = jQuery.parseJSON( _r ); }catch(err){ alert( 'ERROR: '+err+"\n\n"+_r ); return false; }
             if( parseInt(_r['error'])>0 ){ alert( _r['error_text'] ); return false; }
-
             $('#ajax').append('<div id="'+did+'" title="'+lng.upload.form_title+'">'+_r['template']+'</div>');
-
-
             return false;
         });
 

@@ -24,6 +24,15 @@ trait admin_build_panel
 
     }
 
+    public final function make_checkbox( $info, $name, $value = 1, $is_checked = false, $id=false )
+    {
+        if( !$id ){ $id = 'chbox-'.md5( microtime(true) . rand(0, 10000) ); }
+
+        $html = '<input class="input checkbox" type="checkbox" id="'.$id.'" name="'.$name.'" value="'.$value.'">'.
+                    '<label class="label" for="'.$id.'">'.$info.'</label>';
+        return $html;
+    }
+
     public final function get_submod_name( $_mod_id = 0 )
     {
         $_inp_submod = array();

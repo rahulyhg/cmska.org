@@ -12,8 +12,13 @@ switch( _ACTION_ )
   case 10: //UPLOAD
     $_action_file = 'upload';
   break;
+
   case 11: //UPLOAD
     $_action_file = 'upload_iframe';
+  break;
+
+  case 12: //UPLOAD
+    $_action_file = 'upload_process';
   break;
 
   default:

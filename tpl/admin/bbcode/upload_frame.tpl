@@ -14,8 +14,8 @@
         <script src="{SKINDIR}/js/bbcodes.lib.js" type="text/javascript"></script>
     </head>
     <body>
-        <form name="file" action="/index.php?ajax=1&mod={MOD}&action=12" method="post">
-            <input class="input" type="file" name="file" required multiple>
+        <form name="file" enctype="multipart/form-data" action="/index.php?ajax=1&mod={MOD}&action=12" method="post">
+            <input class="input" type="file" name="upfiles[]" required multiple>
             <button class="button type2">Завантажити</button>
         </form>
     </body>
