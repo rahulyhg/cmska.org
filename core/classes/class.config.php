@@ -24,6 +24,7 @@ class config
 	static public final function set( $config )
 	{
 		$config = array_merge( self::get(), $config );
+		$config['key'] = !isset($config['key'])?md5( str_shuffle(microtime(1)) ):$config['key'];
 		
 		ob_start();
 			var_export( $config );

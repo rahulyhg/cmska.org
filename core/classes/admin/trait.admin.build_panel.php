@@ -24,14 +24,30 @@ trait admin_build_panel
 
     }
 
-    public final function make_checkbox( $info, $name, $value = 1, $is_checked = false, $id=false )
+    public final static function make_checkbox( $info=false, $name, $value = 1, $attr = array(), &$id=false )
     {
-        if( !$id ){ $id = 'chbox-'.md5( microtime(true) . rand(0, 10000) ); }
+        if( !$id ){ $id = 'chbox-'.md5( microtime(true) . rand(0, 10000) . $name ); }
 
-        $html = '<input class="input checkbox" type="checkbox" id="'.$id.'" name="'.$name.'" value="'.$value.'">'.
+        $html = '<input data-save="1" class="input checkbox" type="checkbox" id="'.$id.'" name="'.$name.'" value="'.$value.'" '.((isset($attr['checked']) && abs(intval($attr['checked'])))?'checked="checked"':'').'>'.
                     '<label class="label" for="'.$id.'">'.$info.'</label>';
         return $html;
     }
+
+    public final static function make_textinput( $info=false, $name, $value = 1, $attr = array(), &$id=false )
+    {
+        if( !$id ){ $id = 'chbox-'.md5( microtime(true) . rand(0, 10000) . $name ); }
+
+        $html = '<input data-save="1" class="input" type="text" id="'.$id.'" name="'.$name.'" value="'.$value.'"'.((isset($attr['disabled']) && abs(intval($attr['disabled'])))?' disabled':'').'>';
+        return $html;
+    }    
+
+    public final static function make_textarea( $info=false, $name, $value = 1, $attr = array(), &$id=false )
+    {
+        if( !$id ){ $id = 'chbox-'.md5( microtime(true) . rand(0, 10000) . $name ); }
+
+        $html = '<textarea data-save="1" class="input textarea" type="text" id="'.$id.'" name="'.$name.'" '.((isset($attr['disabled']) && abs(intval($attr['disabled'])))?' disabled':'').'>'.$value.'</textarea>';
+        return $html;
+    }    
 
     public final function get_submod_name( $_mod_id = 0 )
     {

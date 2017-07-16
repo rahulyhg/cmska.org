@@ -130,21 +130,21 @@ $(document).ready(function()
         }
     );
 
-    $('.editpost .editor_nav ul li[data-area]')
+    $('.admpage .admpage_nav ul li[data-area]')
     .click(
         function()
         {
-            $(this).parents('.editor_nav').find('li.active').removeClass('active');
+            $(this).parents('.admpage_nav').find('li.active').removeClass('active');
             $(this).addClass('active');
 
-            $('.editpost .main_editor[data-area]').addClass( 'dnone' );
-            $('.editpost .main_editor[data-area]').removeClass( 'active' );
-            $('.editpost .main_editor[data-area="'+$(this).attr('data-area')+'"]').removeClass( 'dnone' );
-            $('.editpost .main_editor[data-area="'+$(this).attr('data-area')+'"]').addClass( 'active' );
+            $('.admpage .adm_page_part[data-area]').addClass( 'dnone' );
+            $('.admpage .adm_page_part[data-area]').removeClass( 'active' );
+            $('.admpage .adm_page_part[data-area="'+$(this).attr('data-area')+'"]').removeClass( 'dnone' );
+            $('.admpage .adm_page_part[data-area="'+$(this).attr('data-area')+'"]').addClass( 'active' );
         }
     );
 
-    $('.editpost .main_editor select.input[data-bigsize]')
+    $('.admpage .adm_page_part select.input[data-bigsize]')
         .focusin(function()
         {
             $(this)
@@ -170,6 +170,38 @@ $(document).ready(function()
     $('#upload_window form button').click(function()
     {
         uploading.get_config();
+    });
+
+    $('#configeditor button[data-role="save"]').click(function()
+    {
+        var save = {};
+
+        $('#configeditor [data-save="1"]').each(function()
+        {
+           save[$(this).attr('name')] = $(this).val();
+           if( $(this).attr('type') == 'checkbox' )
+           {
+                save[$(this).attr('name')] = $(this).is(':checked')?1:0;
+           } 
+        });
+
+
+        var post = {};
+            post['ajax']    = 1;
+            post['action']  = 2;
+            post['mod']     = 'admin';
+            post['save'] = save;
+
+
+        $.ajax({ data: post }).done(function( _r )
+        {
+            try{ _r = jQuery.parseJSON( _r ); }catch(err){ alert( 'ERROR: '+err+"\n\n"+_r ); return false; }
+            if( parseInt(_r['error'])>0 ){ alert( _r['error_text'] ); return false; }
+
+
+            return false;
+        });        
+               
     });
 
 });

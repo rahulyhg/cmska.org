@@ -2,7 +2,7 @@
 
     <input type="hidden" name="post:id" value="{post:id}" data-save="1" />
 
-    <div class="editor_nav">
+    <div class="admpage_nav">
         <ul class="reset">
             <li class="active anim" data-area="main">Основні дані</li>
             <li class="anim" data-area="seometa">SEO</li>
@@ -17,22 +17,7 @@
         </div>
     </div>
 
-    <div class="main_editor active" data-area="main">
-
-<!--
-{post:id}
-{post:title}
-
-{post:descr}
-{post:short_post}
-{post:author_id}
-{post:created_time}
-
-{post:full_post}
-{categ:id}
-{categ:altname}
-{categ:name}
--->
+    <div class="adm_page_part active" data-area="main">
 
         <div class="editor_line">
             <div class="frame"><label class="label">Категорія:</label></div>
@@ -66,7 +51,7 @@
 
     </div>
 
-    <div class="main_editor dnone" data-area="seometa">
+    <div class="adm_page_part dnone" data-area="seometa">
 
         <div class="editor_line">
             <div class="frame"><label class="label">Текст гіперпосилання:</label><span class="labelinfo">тільки латиниця, до 64 символів</span></div>
@@ -88,13 +73,13 @@
             <div class="frame"><input class="input" type="text" name="post:keywords" data-save="1" value="{post:keywords}"></div>
         </div>
     </div>
-    <div class="main_editor dnone" data-area="votes">
+    <div class="adm_page_part dnone" data-area="votes">
         <div><input class="input checkbox" type="checkbox" id="ch111"><label class="label" for="ch111">testing 1</label></div>
         <div><input class="input checkbox" type="checkbox" id="ch112"><label class="label red" for="ch112">testing 2</label></div>
         <div><input class="input checkbox" type="checkbox" id="ch113"><label class="label blue" for="ch113">testing 3</label></div>
     </div>
-    <div class="main_editor dnone" data-area="access">3</div>
-    <div class="main_editor dnone" data-area="linked_data">4</div>
+    <div class="adm_page_part dnone" data-area="access">3</div>
+    <div class="adm_page_part dnone" data-area="linked_data">4</div>
 
     <div class="clear"></div>
 

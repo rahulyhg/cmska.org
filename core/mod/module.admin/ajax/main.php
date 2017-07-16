@@ -5,6 +5,11 @@ if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
 $_action_file = false;
 switch( _ACTION_ )
 {
+
+  case 2: //SAVE CONFIG
+    $_action_file = 'save_config';
+  break;
+
   case 100:
     $_action_file = 'posts_edit';
   break;
@@ -20,6 +25,8 @@ switch( _ACTION_ )
   case 12: //UPLOAD
     $_action_file = 'upload_process';
   break;
+
+
 
   default:
     ajax::set_error( 1, 'Action "'._ACTION_.'" not defined!' );
