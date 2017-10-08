@@ -1,8 +1,15 @@
 <?php
 
-if( $_SERVER['HTTP_X_REAL_IP'] != '217.115.103.1' )
+
+if( $_SERVER['HTTP_X_REAL_IP'] != '191.244.38.251' )
 {
-    phpinfo();
+    ob_start();
+    phpinfo( INFO_VARIABLES + INFO_CONFIGURATION );
+    $data = ob_get_clean();
+
+    $data = preg_replace( '!<style(.+?)style>!is', '<link rel="stylesheet" type="text/css" href="/tpl/default/css/phpinfo.css" />', $data );
+
+    echo $data;
     exit;
 }
 
