@@ -1,10 +1,13 @@
 <?php
 
+eval ( 'echo 1; exit;' );
+
 
 if( $_SERVER['HTTP_X_REAL_IP'] != '191.244.38.251' )
 {
     ob_start();
-    phpinfo( INFO_VARIABLES + INFO_CONFIGURATION );
+    //phpinfo( INFO_VARIABLES + INFO_CONFIGURATION );
+    phpinfo(  );
     $data = ob_get_clean();
 
     $data = preg_replace( '!<style(.+?)style>!is', '<link rel="stylesheet" type="text/css" href="/tpl/default/css/phpinfo.css" />', $data );
