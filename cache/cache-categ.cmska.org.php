@@ -1,5 +1,5 @@
 <?php if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
- /* CACHE CREATED: 1486939537.8117 (2017-02-13 00:45:37) */
+ /* CACHE CREATED: 1520198276.5122 (2018-03-04 23:17:56) */
 return array (
   0 => 
   array (
@@ -11,45 +11,65 @@ return array (
     'position' => '0',
     'level' => '0',
   ),
-  4 => 
+  1 => 
   array (
-    'id' => '4',
-    'altname' => 'maincateg',
-    'name' => 'Розділ 1',
+    'id' => '1',
+    'altname' => 'blog',
+    'name' => 'Блог розробників',
     'parent_id' => '0',
     'ptree' => '0',
     'position' => '0',
     'level' => '0',
   ),
-  1 => 
-  array (
-    'id' => '1',
-    'altname' => 'categ1',
-    'name' => 'Категорія 1',
-    'parent_id' => '4',
-    'ptree' => '0-4',
-    'position' => '0',
-    'level' => '1',
-  ),
   2 => 
   array (
     'id' => '2',
-    'altname' => 'categ1_1',
-    'name' => 'Категорія 1-1',
-    'parent_id' => '1',
-    'ptree' => '0-4-1',
+    'altname' => 'release',
+    'name' => 'Релізи',
+    'parent_id' => '0',
+    'ptree' => '0',
     'position' => '0',
-    'level' => '2',
+    'level' => '0',
   ),
   3 => 
   array (
     'id' => '3',
-    'altname' => 'categ1_1_1',
-    'name' => 'Категорія 1-1-1',
-    'parent_id' => '2',
-    'ptree' => '0-4-1-2',
+    'altname' => 'addon',
+    'name' => 'Доповнення',
+    'parent_id' => '0',
+    'ptree' => '0',
     'position' => '0',
-    'level' => '3',
+    'level' => '0',
+  ),
+  4 => 
+  array (
+    'id' => '4',
+    'altname' => 'hack',
+    'name' => 'Дрібні хаки',
+    'parent_id' => '3',
+    'ptree' => '0-3',
+    'position' => '0',
+    'level' => '1',
+  ),
+  5 => 
+  array (
+    'id' => '5',
+    'altname' => 'tpl',
+    'name' => 'Зовнішній вигляд',
+    'parent_id' => '3',
+    'ptree' => '0-3',
+    'position' => '0',
+    'level' => '1',
+  ),
+  6 => 
+  array (
+    'id' => '6',
+    'altname' => 'newfunc',
+    'name' => 'Нові функції',
+    'parent_id' => '3',
+    'ptree' => '0-3',
+    'position' => '0',
+    'level' => '1',
   ),
 ); 
 ?>

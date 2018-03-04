@@ -132,6 +132,8 @@ button:hover{ background-color: #66A7E1; opacity: 1.0; }
 #page .topnav ul.nav>li>a:active{ color: #339900; }
 #page .topnav ul.nav>li:first-of-type>a{ padding-left: 0px; }
 #page .topnav ul.nav>li:last-of-type>a>span{ border-right: none; }
+#page .topnav .submenu{ top: 30px; }
+
 #page ul.nav>li .submenu a{ #333333 }
 #page ul.nav>li .submenu a:hover{ #398DD8 }
 
@@ -140,46 +142,49 @@ button:hover{ background-color: #66A7E1; opacity: 1.0; }
 #page .submenu
 {
     position: absolute;
-    top: 30px;
+    top: 40px;
     z-index: 10;
     display: none;
     border: 1px solid #CCCCCC;
     border-top: none;
-    min-width: 150px;
-    max-width: 350px;
+    width: 150px;
     box-shadow: 0 0 10px #CCCCCC;
     padding: 0px 0px 5px 0px;
+    text-align: left;
 }
+
 #page .submenu ul.subnav>li{ display: block; }
 #page .submenu ul.subnav>li:hover{}
 #page .submenu ul.subnav>li>a{ color: #333333; display: block; padding: 5px 10px 5px 10px; }
 #page .submenu ul.subnav>li>a:hover{ color: #398dd8; }
 
-#page .logo{ border: 3px solid #000000; border-left: none; border-right: none; padding: 5px 0px; }
-#page .logo a{ color: #222222; display: block; width: 200px; padding: 30px 0px 10px 0px; position: relative; overflow: hidden; }
+
+
+#page .logo{ border: 3px solid #000000; border-left: none; border-right: none; padding: 5px 0px;  }
+#page .logo a{ color: #222222; display: block; width: 100%; padding: 17px 0px 10px 0px; position: relative; overflow: hidden; }
 #page .logo a>b, #page .logo a>b+i{ color: #555555; display: block; width: 100%; text-align: center; text-transform: uppercase; font-style: normal; font-weight: bold; position: relative; }
 #page .logo a>b{ font-size: 24px;  }
 #page .logo a>b>u{ color: #398DD8; text-decoration: none; font-size: 24px; }
 #page .logo a>b+i{ font-size: 10px; top: -5px; color: #555555 }
 
-#page .logonav ul.logonav{ height: 40px; border-bottom: 1px solid #BBBBBB; }
-#page .logonav ul.logonav>li, #page .logonav ul.logonav>li>a{ height: 30px; position: relative; }
-#page .logonav ul.logonav>li{ display: block; float: left; margin: 4px 0px 5px 5px; }
+#page .logonav ul.logonav{ height: 50px; border-bottom: 3px solid #000000;; text-align: center; }
+#page .logonav ul.logonav>li, #page .logonav ul.logonav>li>a{ height: 40px; position: relative; }
+#page .logonav ul.logonav>li{ display: inline-block;  margin: 4px 0px 5px 5px; width: 150px; }
 #page .logonav ul.logonav>li:first-of-type{ margin-left: 0px;}
 #page .logonav ul.logonav>li>a{ display: block; background: #FFFFFF; color: #222222; font-weight: bold; text-transform: uppercase; padding: 0px 15px 0px 15px; }
 #page .logonav ul.logonav>li>a:hover, #page .logonav ul.logonav>li:hover>a, #page .logonav ul.logonav>li.active>a{ background: #398DD8; color: #FFFFFF; z-index: 11; }
-#page .logonav ul.logonav>li>a>span{ display: block; padding: 8px 0px 0px 0px; font-size: 11px;  }
+#page .logonav ul.logonav>li>a>span{ display: block; padding: 13px 0px 0px 0px; font-size: 11px;  }
 #page .logonav ul.logonav>li>.submenu{ display: none;  }
 #page .logonav ul.logonav>li:hover>.submenu{ display: block; background: #FFFFFF }
 
 #page .topnav ul.nav>li#alogin{ float: right; width: 150px; text-align: right; }
 #page .topnav ul.nav>li#alogin>a{ text-align: right; }
 #page .topnav ul.nav>li#alogin>a>span{ text-align: right; margin-right: 0px; padding-right: 0px; }
-#page .topnav ul.nav>li#alogin .submenu{ width: 100px; right: 0px; text-align: center; }
+#page .topnav ul.nav>li#alogin .submenu{ width: 120px; right: 0px; text-align: center; }
 
 #page .content{ margin-top: 5px; position: relative; z-index: 8; }
 
-#page #content{ width: 65%; padding: 0px 5px 5px 0px; border-right: 1px solid #AAAAAA; z-index: 9; position: relative; top: 0px; left: 0px; }
+#page #content{ width: 65%; padding: 0px 5px 5px 0px; margin: 0px 0px 5px 0px; border-right: 1px solid #AAAAAA; z-index: 9; position: relative; top: 0px; left: 0px; }
 #page #aside{ position: absolute; top: 0px; right: 1px; width: 35%; padding: 0px 0px 5px 5px; border-left: 1px solid #AAAAAA; z-index: 10; }
 
 #page #content .cblock{ margin: 0px 0px 5px 0px;  }
@@ -190,6 +195,7 @@ button:hover{ background-color: #66A7E1; opacity: 1.0; }
 #page #content .info.notice{ border-color: #FF6600; background-color: #FFE699; color: #333333; }
 #page #content .info.good{ border-color: #0F4C00; background-color: #CAFFBD; color: #333333; }
 
+#page .footer{ border-top: 3px solid #000000; }
 
 
 #loginform{ padding: 25px 0px 25px 0px; }

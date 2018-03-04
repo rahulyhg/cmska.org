@@ -49,6 +49,7 @@ class posts
       $_2db['descr']            = $data['post:descr'];
       $_2db['short_post']       = $data['post:short_post'];
       $_2db['full_post']        = $data['post:full_post'];
+      $_2db['svector']          = self::strip_tags( self::stripslashes( $data['post:full_post'] ) );
       $_2db['keywords']         = $data['post:keywords'];
       $_2db['category']         = $data['categ:id'];
 

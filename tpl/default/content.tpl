@@ -27,16 +27,7 @@
             <nav class="wpage topnav noselect">
                 <ul class="reset nav">
                     <li><a href="/"><span>Головна сторінка</span></a></li>
-                    <li><a href="/"><span>Правила сайту</span></a>
-                        <div class="submenu">
-                            <ul class="reset subnav">
-                                <li><a href="/">testing</a></li>
-                                <li><a href="/">testing</a></li>
-                                <li><a href="/">testing</a></li>
-                                <li><a href="/">testing</a></li>
-                            </ul>
-                        </div>
-                    </li>
+                    <li><a href="/"><span>Правила сайту</span></a></li>
                     <li><a href="/"><span>Зворотній зв'язок</span></a></li>
                     {global:login}
                 </ul>
@@ -52,20 +43,22 @@
 
             <nav class="wpage logonav">
                 <ul class="reset logonav">
-                    <li class="active"><a href=""><span>Головна</span></a></li>
-                    <li><a href=""><span>Категорія 1</span></a></li>
-                    <li><a href=""><span>Категорія 2</span></a>
+                    <li><a href=""><span>Про систему</span></a></li>
+                    <li><a href=""><span>Завантажити</span></a></li>
+                    <li class="active"><a href=""><span>Блог розробників</span></a></li>
+                    <li><a href=""><span>Релізи</span></a></li>
+                    <li><a href=""><span>Доповнення</span></a>
                         <div class="submenu">
                             <ul class="reset subnav">
-                                <li><a href="/">testing</a></li>
-                                <li><a href="/">testing</a></li>
-                                <li><a href="/">testing</a></li>
-                                <li><a href="/">testing</a></li>
+                                <li><a href="/">Дрібні хаки</a></li>
+                                <li><a href="/">Зовнішній вигляд</a></li>
+                                <li><a href="/">Нові функції</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li><a href=""><span>Категорія 3</span></a></li>
-                    <li><a href=""><span>Категорія 4</span></a></li>
+
+
+                    <li><a href=""><span>Форум</span></a></li>
                 </ul>
                 <div class="clear"></div>
             </nav>
@@ -90,7 +83,7 @@
             <div class="clear"></div>
 
             <div class="wpage footer">
-                footer
+                f<br>o<br>o<br>t<br>e<br>r
                 <div class="clear"></div>
             </div>
             <div class="clear"></div>

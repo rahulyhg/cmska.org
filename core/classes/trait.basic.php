@@ -47,6 +47,13 @@ trait basic
         return abs(intval($data));
 	}
 
+    static public final function strip_tags( $data )
+    {
+        if( !is_scalar( $data ) && !is_array( $data )  ){ self::err( ''.__CLASS__.'::'.__METHOD__.' accepts string or array only!' ); }
+        if( is_array($data) ){ return array_map( 'self::strip_tags', $data ); }
+        return strip_tags( $data );
+    }
+
     static public final function trim( $data )
     {
         if( !is_scalar( $data ) && !is_array( $data )  ){ self::err( ''.__CLASS__.'::'.__METHOD__.' accepts string or array only!' ); }
@@ -194,7 +201,7 @@ trait basic
 
         $str = self::strtolower( $str );
 
-        $str = self::trim( strip_tags( $str ) );
+        $str = self::trim( self::strip_tags( $str ) );
         $str = preg_replace( '![^a-z0-9\_\-]+!mi', '', $str );
         $str = preg_replace( '![.]+!i', '.', $str );
         $str = self::strtolower( $str );
