@@ -1,5 +1,11 @@
 <?php
 
+$shema = explode(':',$_SERVER['SCRIPT_URI']);
+$shema = reset( $shema );
+$shema = strtolower($shema);
+var_export($shema);
+exit;
+
 if( $_SERVER['HTTP_X_REAL_IP'] != '109.227.107.17' )
 {
     ob_start();
@@ -11,6 +17,8 @@ if( $_SERVER['HTTP_X_REAL_IP'] != '109.227.107.17' )
     echo $data;
     exit;
 }
+
+
 
 error_reporting ( E_ALL );
 ini_set ( 'display_errors', true );
