@@ -1,12 +1,6 @@
 <?php
 
-$shema = explode(':',$_SERVER['SCRIPT_URI']);
-$shema = reset( $shema );
-$shema = strtolower($shema);
-var_export($shema);
-exit;
-
-if( $_SERVER['HTTP_X_REAL_IP'] != '109.227.107.17' )
+if( $_SERVER['HTTP_X_REAL_IP'] != '109.227.107.17' && strpos( $_SERVER['HTTP_X_REAL_IP'], '192.168' ) === false )
 {
     ob_start();
 	phpinfo();
