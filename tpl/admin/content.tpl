@@ -19,7 +19,9 @@
         <script src="/tpl/js/jquery.js" type="text/javascript"></script>
         <script src="/tpl/js/jquery-ui.js" type="text/javascript"></script>
         <script src="{SKINDIR}/js/admin.lib.js" type="text/javascript"></script>
+        <script src="/tpl/js/uploader.js" type="text/javascript"></script>   
         <script src="{SKINDIR}/js/bbcodes.lib.js" type="text/javascript"></script>
+
     </head>
     <body>
         <div id="page_frame">

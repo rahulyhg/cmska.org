@@ -10,6 +10,8 @@ a img  { border: 0 none; }
 .clear{ clear: both; }
 .dnone{ display: none; }
 
+#ajax{ display: none; }
+
 a:link, a:visited, .anim
 {
     -webkit-transition: color 0.2s ease, background 0.2s ease;
@@ -188,8 +190,27 @@ input[type="submit"],input[type="button"],button
 button::-moz-focus-inner{ border: 0; padding: 0; }
 
 /**************************************************/
-/*****************/
-input[type="submit"], input[type="button"], button, .ui-dialog-buttonpane button.ui-widget.ui-button{ margin: 0px 1px 0px 1px; color: #FFFFFF; font-weight: bold; font-size: 11px; font-family: Arial, Helvetica, sans-serif; /*font-variant: small-caps;*/ letter-spacing: 1px; background: url(../img/buttons.png) 0px 0px no-repeat; width: 100px; height: 27px; border: none; }
+
+input[type="submit"], input[type="button"], button, .ui-dialog-buttonpane button.ui-widget.ui-button{ margin: 0px 2px 0px 2px; color: #FFFFFF; font-weight: bold; font-size: 12px; font-family: Arial, Helvetica, sans-serif; letter-spacing: 1px; background: #FA2200; border: none; border-radius: 5px; width: 120px; height: 40px; opacity: 0.7; transition: all .2s; }
+input[type="submit"]:enabled:hover, input[type="button"]:enabled:hover, button:enabled:hover, .ui-dialog-buttonpane button.ui-widget.ui-button:enabled:hover{ opacity: 1.0; }
+input[type="submit"]:enabled:active, input[type="button"]:enabled:active, button:enabled:active, .ui-dialog-buttonpane button.ui-widget.ui-button:enabled:active{ opacity: 1.0; }
+
+
+
+input[type="submit"].type2, input[type="button"].type2, button.type2, .ui-dialog-buttonpane button.ui-widget.ui-button.type2{ background-color: #03A800; }
+input[type="submit"].type3, input[type="button"].type3, button.type3, .ui-dialog-buttonpane button.ui-widget.ui-button.type3{ background-color: #00AECC; }
+input[type="submit"].type4, input[type="button"].type4, button.type4, .ui-dialog-buttonpane button.ui-widget.ui-button.type4{ background-color: #006DCC; }
+input[type="submit"].type5, input[type="button"].type5, button.type5, .ui-dialog-buttonpane button.ui-widget.ui-button.type5{ background-color: #A700CC; }
+input[type="submit"].type6, input[type="button"].type6, button.type6, .ui-dialog-buttonpane button.ui-widget.ui-button.type6{ background-color: #222222; }
+
+input[type="submit"]:disabled, input[type="button"]:disabled, button:disabled, .ui-dialog-buttonpane button.ui-widget.ui-button:disabled{ background-color: #999999!important; cursor: not-allowed; }
+
+button[data-role="close_button"]{ float: left; }
+button[data-role="save_button"]{ float: right; }
+
+
+/*
+input[type="submit"], input[type="button"], button, .ui-dialog-buttonpane button.ui-widget.ui-button{ margin: 0px 1px 0px 1px; color: #FFFFFF; font-weight: bold; font-size: 11px; font-family: Arial, Helvetica, sans-serif; letter-spacing: 1px; background: url(../img/buttons.png) 0px 0px no-repeat; width: 100px; height: 27px; border: none; }
 input[type="submit"]:enabled:hover, input[type="button"]:enabled:hover, button:enabled:hover, .ui-dialog-buttonpane button.ui-widget.ui-button:enabled:hover{ background-position: 0px -27px; }
 input[type="submit"]:enabled:active, input[type="button"]:enabled:active, button:enabled:active, .ui-dialog-buttonpane button.ui-widget.ui-button:enabled:active{ background-position: 0px -81px; }
 input[type="submit"]:disabled, input[type="button"]:disabled, button:disabled, .ui-dialog-buttonpane button.ui-widget.ui-button:disabled{ background-position: 0px -54px; cursor: not-allowed; }
@@ -228,7 +249,7 @@ input[type="submit"].type8, input[type="button"].type8, button.type8, button.typ
 input[type="submit"].type8:enabled:hover, input[type="button"].type8:enabled:hover, button.type8:enabled:hover, button.type8.ui-widget.ui-button:enabled:hover{ background-position: -700px -27px; }
 input[type="submit"].type8:enabled:active, input[type="button"].type8:enabled:active, button.type8:enabled:active, button.type8.ui-widget.ui-button:enabled:active{ background-position: -700px -81px; }
 input[type="submit"].type8:disabled, input[type="button"].type8:disabled, button.type8:disabled, button.type8.ui-widget.ui-button:disabled{ background-position: -700px -54px; }
-/*****************/
+*/
 /**************************************************/
 
 #page_frame{ background: #FFFFFF; padding: 78px 0px 40px 0px; border-top: 1px solid #000000; font-family: sans-serif; font-size: 12px; color: #111111; position: relative; top: 0px; left: 0px; }
@@ -408,15 +429,15 @@ input[type="submit"].type8:disabled, input[type="button"].type8:disabled, button
 #overlay .close{ position: fixed; top: 10px; right: 10px; width: 50px; height: 50px; z-index: 1005; background: url(../img/overlay-close.png) no-repeat 50% 50%; border-radius: 25px; cursor: pointer; opacity: 0.3; }
 #overlay .close:hover{ opacity: 1.0; }
 
-#upload_frame #uploaded_files{ height: 200px; border-bottom: 1px solid #4D4D4D; padding: 10px 10px 10px 10px; margin-bottom: 10px; overflow-y: scroll; overflow-x: hidden; }
-#upload_frame #upload_config{ height: 100px; margin-bottom: 10px; }
-#upload_frame #upload_frame{ border: none; padding: 0px; }
+#upload_frame #upload_config{ margin: 0px; }
+#upload_frame #upload_frame{ border: none; padding: 0px;  }
 #upload_frame #upload_frame iframe, #upload_window{ width: 100%; border: none; overflow-y: hidden; }
-#upload_frame #upload_frame iframe, #upload_window, #upload_frame #upload_frame{ height: 37px; }
+#upload_frame #upload_frame iframe, #upload_window, #upload_frame #upload_frame{ height: 400px; }
 #upload_window, #upload_window body{ background: #FFFFFF; color: #4D4D4D; }
 #upload_window form{ padding: 2px; }
-#upload_window form input[type="file"]{ border: 1px solid #BFBFBF; border-radius: 3px; width: 410px; cursor: pointer; padding: 2px; }
-#upload_window form button{ float: right; position: relative; top: 3px; }
+#upload_window form input[type="file"]{ border: 1px solid #BFBFBF; border-radius: 3px; width: 410px;  cursor: pointer; padding: 3px;  }
+#upload_window form button{ float: right; position: relative; top: 0px; width: 100px; padding: 5px; background-color: #007199; height: 32px;  }
+
 #upload_config .label{ display: inline-block; text-transform: uppercase; cursor: pointer; font-weight: bold; font-size: 0.9em; }
 #upload_config table{ width: 100%; }
 #upload_config table tr{}

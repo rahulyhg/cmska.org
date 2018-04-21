@@ -1,18 +1,27 @@
 var common = new function()
 {
     this._NO_LOADER_FRAME = false;
-    this.show_loader = function(){ $('#overlay').removeClass('dnone'); } // TESTING GIT
-    this.hide_loader = function(){$('#overlay').addClass('dnone'); }
-}
 
-function close_dialog( dialog_id )
-{
+    this.show_loader  = function(){ $('#overlay').removeClass('dnone'); }
+
+    this.hide_loader  = function(){$('#overlay').addClass('dnone'); }
+
+    this.close_dialog = function( dialog_id )
+    {
         if( $( '#'+dialog_id ).hasClass('ui-dialog-content') )
         {
             $('#'+dialog_id).dialog("close");
         }
         $('#'+dialog_id).remove();
+    }
+
+    this.se = function( text = 'ololo!', type = 'error' )
+    {
+        alert( text );
+    }
 }
+
+
 
 var AJAX = false;
 var posts = new function()
@@ -38,8 +47,8 @@ var posts = new function()
 
         $.ajax({ data: post }).done(function( _r )
         {
-            try{ _r = jQuery.parseJSON( _r ); }catch(err){ alert( 'ERROR: '+err+"\n\n"+_r ); return false; }
-            if( parseInt(_r['error'])>0 ){ alert( _r['error_text'] ); return false; }
+            try{ _r = jQuery.parseJSON( _r ); }catch(err){ common.se( 'ERROR: '+err+"\n\n"+_r, 'warning' ); return false; }
+            if( parseInt(_r['error'])>0 ){ common.se( _r['error_text'], 'warning' ); return false; }
 
 
             return false;
@@ -79,13 +88,15 @@ var uploading = new function()
 /**********************************************************************************************/
 $(document).ready(function()
 {
+  
+
     $.ajaxSetup({
         "url":          $('html head base').attr('href'),
         "global":       false,
         "crossDomain":  false,
         "type":         "POST",
         "dataType":     "text",
-        "async":        false,
+        "async":        true,
         "cache":        false,
         "timeout":      false,
         "beforeSend":   function()
@@ -98,7 +109,7 @@ $(document).ready(function()
                           AJAX = false;
                           common.hide_loader();
                         },
-        "error":        function( jqXHRo, err_type ){ alert( 'AJAX ERROR: '+err_type ); },
+        "error":        function( jqXHRo, err_type ){ common.se( 'AJAX ERROR: '+err_type, 'warning' ); },
     });
 
     $('#overlay .close').click(function(){ common.hide_loader(); });
@@ -195,8 +206,8 @@ $(document).ready(function()
 
         $.ajax({ data: post }).done(function( _r )
         {
-            try{ _r = jQuery.parseJSON( _r ); }catch(err){ alert( 'ERROR: '+err+"\n\n"+_r ); return false; }
-            if( parseInt(_r['error'])>0 ){ alert( _r['error_text'] ); return false; }
+            try{ _r = jQuery.parseJSON( _r ); }catch(err){ common.se( 'ERROR: '+err+"\n\n"+_r, 'warning' ); return false; }
+            if( parseInt(_r['error'])>0 ){ common.se( _r['error_text'], 'warning' ); return false; }
 
 
             return false;

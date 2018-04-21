@@ -612,17 +612,16 @@ button.ui-button::-moz-focus-inner {
 }
 .ui-dialog .ui-dialog-buttonpane {
     text-align: left;
-    border-width: 1px 0 0 0;
-    background-image: none;
-    margin-top: .5em;
-    padding: .3em 1em .5em .4em;
+    border: none;
+    background: none;
+    margin-top: 10px;
+    padding: 10px;
 }
 .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
-    float: right;
+
 }
 .ui-dialog .ui-dialog-buttonpane button {
-    margin: .5em .4em .5em 0;
-    cursor: pointer;
+    margin: 2px;
 }
 .ui-dialog .ui-resizable-n {
     height: 2px;

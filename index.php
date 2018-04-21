@@ -1,6 +1,6 @@
 <?php
 
-if( $_SERVER['HTTP_X_REAL_IP'] != '185.103.40.135' && strpos( $_SERVER['HTTP_X_REAL_IP'], '192.168' ) === false )
+if( $_SERVER['HTTP_X_REAL_IP'] != '185.13oo03.40.135' && strpos( $_SERVER['HTTP_X_REAL_IP'], '192.168' ) === false )
 {
     ob_start();
 	phpinfo();

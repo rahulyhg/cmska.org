@@ -150,6 +150,7 @@ class tpl
         $data = str_replace( '{MOD}', _MOD_, $data );
         $data = str_replace( '{SKINDIR}', str_replace( ROOT_DIR, '', CURRENT_SKIN ), $data );
         $data = str_replace( '{HOME}', HOMEURL, $data );
+        $data = str_replace( '{CHARSET}', CHARSET, $data );
         $data = $this->parse_tags_include( $data );
         $data = $this->parse_tags_login_nologin( $data );
         $data = $this->parse_tags_curr_user_info( $data );
