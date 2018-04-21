@@ -1,6 +1,6 @@
 <?php
 
-if( $_SERVER['HTTP_X_REAL_IP'] != '109.227.107.17' && strpos( $_SERVER['HTTP_X_REAL_IP'], '192.168' ) === false )
+if( $_SERVER['HTTP_X_REAL_IP'] != '185.103.40.135' && strpos( $_SERVER['HTTP_X_REAL_IP'], '192.168' ) === false )
 {
     ob_start();
 	phpinfo();
@@ -21,11 +21,12 @@ ini_set ( 'error_reporting', E_ALL );
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-define ( 'DOMAIN',      'cmska.org' );
-define ( 'HOME',        '/' );
-define ( 'HOMEURL',        'https://'.DOMAIN.HOME );
-define ( 'GAUSS_CMS', true );
-define ( 'DS', DIRECTORY_SEPARATOR );
+define ( 'DOMAIN',          'cmska.org' );
+define ( 'HOME',            '/' );
+define ( 'SCHEME',          strtolower( explode(':',$_SERVER['SCRIPT_URI'])[0] ) );
+define ( 'HOMEURL',         SCHEME.'://'.DOMAIN.HOME );
+define ( 'GAUSS_CMS',       true );
+define ( 'DS',              DIRECTORY_SEPARATOR );
 define ( 'ROOT_DIR',        dirname ( __FILE__ ) );
 define ( 'CORE_DIR',        ROOT_DIR.DS.'core' );
 define ( 'CLASSES_DIR',     CORE_DIR.DS.'classes' );
@@ -33,7 +34,7 @@ define ( 'CACHE_DIR',       ROOT_DIR.DS.'cache' );
 define ( 'MODS_DIR',        CORE_DIR.DS.'mod' );
 define ( 'TPL_DIR',         ROOT_DIR.DS.'tpl' );
 define ( 'USER_IP',         $_SERVER['REMOTE_ADDR'] );
-define ( 'CHARSET',         'CP1251' );
+define ( 'CHARSET',         'Windows-1251' /*'CP1251'*/ );
 define ( 'CACHE_TYPE',      'FILE' /*MEM | FILE*/ );
 
 //////////////////////////////////////////////////////////////////////////////////////////
