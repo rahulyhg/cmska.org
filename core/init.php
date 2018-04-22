@@ -17,7 +17,6 @@ require( CLASSES_DIR.DS.'class.tags.php' );
 require( CLASSES_DIR.DS.'class.bbcode.php' );
 require( CLASSES_DIR.DS.'class.posts.php' );
 require( CLASSES_DIR.DS.'class.upload.php' );
-require( CLASSES_DIR.DS.'class.images.php' );
 
 //////////////////////////////////////////////////////////////////////////////////////////
 

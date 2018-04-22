@@ -243,6 +243,32 @@ ALTER SEQUENCE "site"."categories_id_seq" OWNED BY "site"."categories"."id";
 
 
 --
+-- Name: files; Type: TABLE; Schema: site; Owner: -
+--
+
+CREATE TABLE "site"."files" (
+    "sha1" character varying(40) DEFAULT ''::character varying NOT NULL,
+    "load_time" timestamp without time zone DEFAULT ("now"())::timestamp without time zone NOT NULL,
+    "orig_name" character varying(255) DEFAULT ''::character varying NOT NULL,
+    "size" integer DEFAULT 0 NOT NULL,
+    "user_id" bigint DEFAULT 0 NOT NULL,
+    "post_id" bigint DEFAULT 0 NOT NULL
+);
+
+
+--
+-- Name: images; Type: TABLE; Schema: site; Owner: -
+--
+
+CREATE TABLE "site"."images" (
+    "post_id" bigint DEFAULT 0 NOT NULL,
+    "user_id" bigint DEFAULT 0 NOT NULL,
+    "serv_name" character varying(32) DEFAULT ''::character varying NOT NULL,
+    "load_time" timestamp without time zone DEFAULT ("now"())::timestamp without time zone NOT NULL
+);
+
+
+--
 -- Name: posts; Type: TABLE; Schema: site; Owner: -
 --
 
@@ -517,6 +543,18 @@ SELECT pg_catalog.setval('"site"."categories_id_seq"', 6, true);
 
 
 --
+-- Data for Name: files; Type: TABLE DATA; Schema: site; Owner: -
+--
+
+
+
+--
+-- Data for Name: images; Type: TABLE DATA; Schema: site; Owner: -
+--
+
+
+
+--
 -- Data for Name: posts; Type: TABLE DATA; Schema: site; Owner: -
 --
 
@@ -580,8 +618,8 @@ SELECT pg_catalog.setval('"site"."user_groups_id_seq"', 1, true);
 -- Data for Name: users; Type: TABLE DATA; Schema: site; Owner: -
 --
 
+INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (1, 'admin', '6b5d3fde336ba463eb445a2d5bcfc30e', 'admin@cmska.org', '217.115.100.95', 'bfc451d54f0a8abe5f7d2b54356ab835', 1);
 INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (0, '--', '--', 'root@cmska.org', '0.0.0.0', '0', 0);
-INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (1, 'admin', '6b5d3fde336ba463eb445a2d5bcfc30e', 'admin@cmska.org', '185.103.40.135', 'b7920ab9c5ee1eb08defdb8901702fdf', 1);
 
 
 --

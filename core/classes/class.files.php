@@ -1,0 +1,26 @@
+<?php
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+if( !trait_exists( 'basic'  ) ){ require( CLASSES_DIR.DS.'trait.basic.php' ); }
+if( !trait_exists( 'db_connect'  ) ){ require( CLASSES_DIR.DS.'trait.db_connect.php' ); }
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+class files
+{
+    use basic, db_connect;
+
+    static final function _upload_process( $file, $config )
+    {
+
+        return $file;
+    }
+
+}
+
+?>

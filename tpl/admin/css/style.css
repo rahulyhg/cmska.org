@@ -429,20 +429,17 @@ input[type="submit"].type8:disabled, input[type="button"].type8:disabled, button
 #overlay .close{ position: fixed; top: 10px; right: 10px; width: 50px; height: 50px; z-index: 1005; background: url(../img/overlay-close.png) no-repeat 50% 50%; border-radius: 25px; cursor: pointer; opacity: 0.3; }
 #overlay .close:hover{ opacity: 1.0; }
 
+#file_list{ border: none; padding: 0px; min-height: 400px; width: 400px; float: left; overflow: scroll; overflow-x: hidden; }
+#upload_frame{ border: none; padding: 0px; min-height: 400px; width: 250px; float: right; }
 #upload_frame #upload_config{ margin: 0px; }
-#upload_frame #upload_frame{ border: none; padding: 0px;  }
-#upload_frame #upload_frame iframe, #upload_window{ width: 100%; border: none; overflow-y: hidden; }
-#upload_frame #upload_frame iframe, #upload_window, #upload_frame #upload_frame{ height: 400px; }
-#upload_window, #upload_window body{ background: #FFFFFF; color: #4D4D4D; }
-#upload_window form{ padding: 2px; }
-#upload_window form input[type="file"]{ border: 1px solid #BFBFBF; border-radius: 3px; width: 410px;  cursor: pointer; padding: 3px;  }
-#upload_window form button{ float: right; position: relative; top: 0px; width: 100px; padding: 5px; background-color: #007199; height: 32px;  }
+#upload_frame form{ padding: 2px; }
+#upload_frame form input[type="file"]{ border: 1px solid #BFBFBF; border-radius: 3px; width: 100%;  cursor: pointer; padding: 3px;  }
+#upload_frame form .button-panel{ text-align: center; padding-top: 5px; }
+#upload_frame form .button-panel button{ position: relative; top: 0px; width: 80%; padding: 5px; background-color: #007199; height: 32px;  }
 
 #upload_config .label{ display: inline-block; text-transform: uppercase; cursor: pointer; font-weight: bold; font-size: 0.9em; }
-#upload_config table{ width: 100%; }
-#upload_config table tr{}
-#upload_config table tr td{ width: 50%; height: 30px; }
-#upload_config table tr td input[type="text"]{ width: 80px; }
-#upload_config table tr td span{ padding: 2px; }
-#upload_config table tr td+td{ text-align: right; }
+#upload_config input[type="text"]{ width: 100px; }
+#upload_config .conf{ padding: 2px; text-align: left; }
+#upload_config .conf.ptop{ padding-top: 15px; }
+#upload_config span{ padding: 2px; }
 

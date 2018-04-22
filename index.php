@@ -1,6 +1,6 @@
 <?php
 
-if( $_SERVER['HTTP_X_REAL_IP'] != '185.13oo03.40.135' && strpos( $_SERVER['HTTP_X_REAL_IP'], '192.168' ) === false )
+if( $_SERVER['HTTP_X_REAL_IP'] != '217.115.100.95' && strpos( $_SERVER['HTTP_X_REAL_IP'], '192.168' ) === false )
 {
     ob_start();
 	phpinfo();
@@ -33,6 +33,7 @@ define ( 'CLASSES_DIR',     CORE_DIR.DS.'classes' );
 define ( 'CACHE_DIR',       ROOT_DIR.DS.'cache' );
 define ( 'MODS_DIR',        CORE_DIR.DS.'mod' );
 define ( 'TPL_DIR',         ROOT_DIR.DS.'tpl' );
+define ( 'UPL_DIR',         ROOT_DIR.DS.'uploads' );
 define ( 'USER_IP',         $_SERVER['REMOTE_ADDR'] );
 define ( 'CHARSET',         'Windows-1251' /*'CP1251'*/ );
 define ( 'CACHE_TYPE',      'FILE' /*MEM | FILE*/ );

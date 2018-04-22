@@ -98,6 +98,8 @@ $(document).ready(function()
         "dataType":     "text",
         "async":        true,
         "cache":        false,
+        // "processData" : false,
+        // "contentType" : false,
         "timeout":      false,
         "beforeSend":   function()
                         {

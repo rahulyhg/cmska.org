@@ -22,7 +22,9 @@ var uploader = new function()
             var dialog = {};
                 dialog["zIndex"]  = 1001;
                 dialog["modal"]   = true;
-                dialog["width"]   = '560';
+                dialog["width"]   = '660';
+
+
 
                 /*dialog["buttons"] = {};
                 dialog["buttons"][bi] = {};
@@ -38,14 +40,68 @@ var uploader = new function()
                 dialog["buttons"][bi]["class"] = "type2";
                 dialog["buttons"][bi]["data-role"] = "save_button";   */
 
+                uploader.config();
+                uploader.init_check();
+                uploader.submit();
 
             $('#'+did).dialog( dialog );
         } );
     }
+
+
+    this.submit = function()
+    {
+        $('#upload_frame form').submit(function( event )
+        {
+            if( !$(this).find('input[type="file"]').prop('files').length ){ return false; }
+
+            var form = $(this);
+            var _files;
+            _files = form.find('input[type="file"]').prop('files');
+
+            event.stopPropagation();
+            event.preventDefault();
+
+            if( typeof _files == 'undefined' ) return false;
+
+            var _fdata = new FormData();
+            $.each( _files, function( key, value ){ _fdata.append( key, value ); });
+
+            _fdata.append( 'my_file_upload', 1 );
+
+            form.find('#upload_config input[type="checkbox"]').each(function(){ _fdata.append( 'config['+$(this).attr('name')+']', $(this).prop('checked')?1:0 ); });
+            form.find('#upload_config input[type="text"]').each(function(){ _fdata.append( 'config['+$(this).attr('name')+']', $(this).val() ); });
+
+            $.ajax({
+                "url"         : form.attr('action'),
+                "type"        : 'POST',
+                "data"        : _fdata,
+                "cache"       : false,
+                "dataType"    : 'text',
+                "processData" : false,
+                "contentType" : false
+            }).done(function( _r )
+            {
+                //form.find('input[type="file"]').val( false );
+                form.find('button[type="submit"]').attr( 'disabled', true );
+                common.hide_loader();
+                alert( _r );
+            });
+
+            return false;
+        });
+    }
+
+
+    this.init_check = function()
+    {
+        $('#upload_frame form input[type="file"]').change(function(){ uploader.check_files($(this)); });
+    }
+
     this.config = function()
     {
-        $('#upload_window').find('button[type="submit"]').attr( 'disabled', true );
-        $('#upload_window input[type="checkbox"][data-value]').each(function()
+        $('#upload_frame').find('button[type="submit"]').attr( 'disabled', true );
+        $('#upload_frame input[type="checkbox"][data-value]').each(function()
         {
             if( parseInt($(this).attr('data-value'))>0 )
             {
@@ -90,9 +146,3 @@ var uploader = new function()
         button.attr( 'disabled', false );
     }
 }
-
-$(document).ready( function()
-{
-    uploader.config();
-    $('#upload_window form input[type="file"]').change(function(){ uploader.check_files($(this)); });
-});

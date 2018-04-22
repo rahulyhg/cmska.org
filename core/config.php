@@ -7,6 +7,8 @@ return array (
   'site_descr' => 'Жопа кита',
   'enable_chpu' => '1',
   'key' => '7cd6f64604720b18a38211f16c8822e1',
+  'upload.max.filesize' => (1024*1024),
+  'upload.max.imagesize' => (1024*1024),
   'upload.image.ext' => '.jpg,.jpeg,.png',
   'upload.image.compress' => 1,
   'upload.image.compress.x' => 800,

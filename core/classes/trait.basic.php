@@ -26,6 +26,32 @@ trait basic
 		exit;
 	}
 
+    static public final function fileExt( $data )
+    {
+        if( !is_scalar( $data ) && !is_array( $data ) ){ self::err( ''.__CLASS__.'::'.__METHOD__.' accepts string or array only!' ); }
+        if( is_array($data) ){ return array_map( 'self::'.__METHOD__, $data ); }
+
+        $data = explode('.', $data);
+        $data = end( $data );
+        $data = self::strtolower( $data );
+        $data = self::filter( $data );
+
+        $data = preg_replace( '!\W*!', '', $data );
+
+        return $data;
+    }
+
+    static public final function iniBytes2normalBytes( $data )
+    {
+        if( !is_scalar( $data ) && !is_array( $data ) ){ self::err( ''.__CLASS__.'::'.__METHOD__.' accepts string or array only!' ); }
+        if( is_array($data) ){ return array_map( 'self::iniBytes2normalBytes', $data ); }
+
+        if( strpos($data,'G') !== false ){ $data = intval(str_replace('G','',$data)) * 1024 * 1024 * 1024; }
+        if( strpos($data,'M') !== false ){ $data = intval(str_replace('M','',$data)) * 1024 * 1024; }
+        if( strpos($data,'K') !== false ){ $data = intval(str_replace('K','',$data)) * 1024; }
+        return $data;
+    }
+
     static public final function filter( $data )
     {
         if( !is_scalar( $data ) && !is_array( $data ) ){ self::err( ''.__CLASS__.'::'.__METHOD__.' accepts string or array only!' ); }
@@ -116,6 +142,15 @@ trait basic
         return urlencode( $data );
     }
 
+    static public final function fileinfo( $data )
+    {
+        if( !is_scalar( $data ) && !is_array( $data )  ){ self::err( ''.__CLASS__.'::'.__METHOD__.' accepts string or array only!' ); }
+        if( is_array($data) ){ return array_map( 'self::'.__METHOD__, $data ); }
+        $finfo = new finfo( FILEINFO_MIME_TYPE );
+        $imtype = $finfo->file( $data );
+        unset( $finfo );
+        return $imtype;
+    }
     static public final function urldecode( $data )
     {
         if( !is_scalar( $data ) && !is_array( $data )  ){ self::err( ''.__CLASS__.'::'.__METHOD__.' accepts string or array only!' ); }
