@@ -1,5 +1,5 @@
 <?php if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
- /* CACHE CREATED: 1524231131.4371 (2018-04-20 16:32:11) */
+ /* CACHE CREATED: 1524510161.9109 (2018-04-23 22:02:41) */
 return array (
   'count' => 4,
   'rows' => 
@@ -16,6 +16,9 @@ return array (
         'author_id' => '1',
         'created_time' => '2018.03.04 22:28',
         'keywords' => '',
+        'posted' => '1',
+        'fixed' => '0',
+        'static' => '0',
       ),
       'categ' => 
       array (
@@ -44,6 +47,9 @@ return array (
         'author_id' => '1',
         'created_time' => '2017.02.12 23:54',
         'keywords' => '',
+        'posted' => '1',
+        'fixed' => '0',
+        'static' => '0',
       ),
       'categ' => 
       array (
@@ -72,6 +78,9 @@ return array (
         'author_id' => '1',
         'created_time' => '2017.02.12 22:03',
         'keywords' => '',
+        'posted' => '1',
+        'fixed' => '0',
+        'static' => '0',
       ),
       'categ' => 
       array (
@@ -100,6 +109,9 @@ return array (
         'author_id' => '1',
         'created_time' => '2017.02.12 16:38',
         'keywords' => '',
+        'posted' => '1',
+        'fixed' => '0',
+        'static' => '0',
       ),
       'categ' => 
       array (

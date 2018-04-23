@@ -317,7 +317,18 @@ input[type="submit"].type8:disabled, input[type="button"].type8:disabled, button
 
 #page_frame #content .admpage{ position: relative; }
 #page_frame #content .admpage .frame{ position: relative; }
-#page_frame #content .admpage .frame .input{ width: 100% }
+#page_frame #content .admpage .frame.w33p{ width: 33%; }
+#page_frame #content .admpage .frame.w50p{ width: 50%; }
+#page_frame #content .admpage .frame.w70p{ width: 70%; }
+#page_frame #content .admpage .frame.w30p{ width: 30%; }
+#page_frame #content .admpage .frame.lf_left{ float: left; }
+#page_frame #content .admpage .frame.lf_right{ float: right; }
+#page_frame #content .admpage .frame[data-role="checkbox"]{ padding: 10px 10px 0px 10px; text-align: left; }
+
+#page_frame #content .admpage .frame .input[type="text"],
+#page_frame #content .admpage .frame .select,
+#page_frame #content .admpage .frame .textarea{ width: 100% }
+
 #page_frame #content .admpage .frame input.input{ text-align: center; }
 #page_frame #content .admpage .frame input.input:focus{ text-align: left; }
 #page_frame #content .admpage .frame .labelinfo{ position: absolute; top: 0px; right: 0px; }

@@ -37,13 +37,15 @@ var posts = new function()
 
         //var b = '';
 
-        $('#posteditor').find('[data-save="1"]').each(function()
+        $('#posteditor').find('[data-save="1"]').not('input[type="checkbox"]').each(function()
         {
             post['save'][$(this).attr('name')] = $(this).val();
-            //b = b + "\n" + $(this).attr('name') + ':' + $(this).val();
         });
 
-
+        $('#posteditor').find('input[type="checkbox"][data-save="1"]').each(function()
+        {
+            post['save'][$(this).attr('name')] = parseInt( $(this).prop('checked')?1:0 );
+        });
 
         $.ajax({ data: post }).done(function( _r )
         {
@@ -51,44 +53,15 @@ var posts = new function()
             if( parseInt(_r['error'])>0 ){ common.se( _r['error_text'], 'warning' ); return false; }
 
 
-            return false;
+            return true;
         });
+        return true;
     }
-}
-
-
-
-/**********************************************************************************************/
-
-var uploading = new function()
-{
-    this.config_id = "upload_config";
-
-    this.get_config = function()
-    {
-        var cf = $('#'+uploading.config_id, window.parent.document);
-        cf.find('input').each( function()
-        {
-            var name = $(this).attr('name');
-            var val  = $(this).val();
-
-            if( $(this).attr('type') == 'checkbox' )
-            {
-                val = $(this).is(":checked")?1:0;
-            }
-
-            $('#upload_window form [name="'+name+'"]').remove();
-            $('#upload_window form input[type="file"]').after( '<input type="hidden" name="'+name+'" value="'+val+'">' );
-
-        } );
-    }
-
 }
 
 /**********************************************************************************************/
 $(document).ready(function()
 {
-  
 
     $.ajaxSetup({
         "url":          $('html head base').attr('href'),
@@ -120,6 +93,11 @@ $(document).ready(function()
     {
         $(this).val( $(this).attr('data-value') );
         $(this).scrollTop( $(this).find(':selected').position().top );
+    });
+
+    $('input[type="checkbox"][data-value]').each(function()
+    {
+        $(this).attr( 'checked', parseInt($(this).attr('data-value'))?true:false );
     });
 
 
@@ -175,7 +153,10 @@ $(document).ready(function()
         $(this).parent().find('textarea').addClass('active').focus();
     });
 
-    $('.editpost button[data-role="save"]').click(function(){ posts.save( $('#posteditor') ); window.location.reload(); });
+    $('.editpost button[data-role="save"]').click(function()
+    {
+        if( posts.save( $('#posteditor') ) ){ /*window.location.reload();*/ }
+    });
 
     $('#page_frame #content .mainbox #post_list_frame .post_list').click( function(){ window.location = $(this).attr('data-editurl'); } );
 

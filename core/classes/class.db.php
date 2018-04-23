@@ -6,10 +6,17 @@ if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+if( !trait_exists( 'basic' ) ){      require( CLASSES_DIR.DS.'trait.basic.php' ); }
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
 define( 'QUERY_CACHABLE', ' -- %QUERY_CACHABLE' );
 
 class db
 {
+    use basic;
+
+    const   QUERY_LOG  = true;
     private $db_id = false;
     private $query_id = false;
     private $connected = false;
@@ -72,11 +79,18 @@ class db
         return pg_escape_string( $source );
     }
 
+    public final function log( $query )
+    {
+        $line = date('Y.m.d H:i:s').':'."\n".str_repeat('-',32)."\n".$query."\n".str_repeat('-',32)."\n";
+        self::write_file( CACHE_DIR.DS.'sql.log', $line, true );
+    }
+
     public final function query( $SQL )
     {
         if( !$this->connected || !$this->db_id || !pg_ping($this->db_id) ){ $this->connect(); }
 
         $this->query_id = pg_query( $this->db_id, $SQL );
+        if( self::QUERY_LOG ){ self::log( $SQL ); }
 
         if( !isset($this->counters['queries']) ){ $this->counters['queries'] = 0; }
         if( !isset($this->counters['cached']) ){ $this->counters['cached'] = 0; }

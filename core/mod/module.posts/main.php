@@ -13,12 +13,14 @@ $skin = 'postshort';
 $filter = array();
 $url = '/index.php';
 
+$filter['post.posted']  = 1;
+
 if( _CATEG_ID ){    $filter['post.categ'] = _CATEG_ID; }
 if( _TAG_ID ){      $filter['tag.id'] = _TAG_ID; }
 if( _POST_ID )
 {
-    $filter['post.id'] = _POST_ID;
-    $filter['full_data'] = 1;
+    $filter['post.id']      = _POST_ID;
+    $filter['full_data']    = 1;
     $skin = 'postfull';
 }
 

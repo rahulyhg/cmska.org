@@ -20,9 +20,16 @@
     <div class="adm_page_part active" data-area="main">
 
         <div class="editor_line">
+            <div class="frame w33p lf_left" data-role="checkbox"><input class="input checkbox"  data-save="1" data-value="{post:posted}" type="checkbox" id="ch_posted" name="post:posted"><label class="label" for="ch_posted">Опублікувати</label></div>
+            <div class="frame w33p lf_left" data-role="checkbox"><input class="input checkbox"  data-save="1" data-value="{post:fixed}" type="checkbox"  id="ch_fixed"  name="post:fixed" ><label class="label blue" for="ch_fixed">Зафіксувати публікацію</label></div>
+            <div class="frame w33p lf_right" data-role="checkbox"><input class="input checkbox" data-save="1" data-value="{post:static}" type="checkbox" id="ch_static" name="post:static"><label class="label blue" for="ch_static">Статичний режим виводу</label></div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="editor_line">
             <div class="frame"><label class="label">Категорія:</label></div>
             <div class="frame">
-                <select size="3" data-bigsize="8" class="input" data-save="1" name="categ:id" data-value="{categ:id}">
+                <select size="3" data-bigsize="8" class="input select" data-save="1" name="categ:id" data-value="{categ:id}">
                     {categ:list}
                 </select>
             </div>
@@ -49,13 +56,17 @@
             </div>
         </div>
 
+
     </div>
 
     <div class="adm_page_part dnone" data-area="seometa">
 
         <div class="editor_line">
             <div class="frame"><label class="label">Текст гіперпосилання:</label><span class="labelinfo">тільки латиниця, до 64 символів</span></div>
-            <div class="frame"><input class="input" type="text" name="post:alt_title" data-save="1" value="{post:alt_title}"></div>
+            <div class="frame">
+                <input class="input" type="text" name="post:alt_title" data-save="1" value="{post:alt_title}">
+            </div>
+
         </div>
 
         <div class="editor_line">
@@ -65,7 +76,7 @@
 
         <div class="editor_line">
             <div class="frame"><label class="label">Опис публікації:</label><span class="labelinfo">&lt;meta name=&quot;description&quot; content=&quot;...</span></div>
-            <div class="frame"><textarea rows="2" class="input" type="text" data-save="1" name="post:descr">{post:descr}</textarea></div>
+            <div class="frame"><textarea rows="2" class="input textarea" type="text" data-save="1" name="post:descr">{post:descr}</textarea></div>
         </div>
 
         <div class="editor_line">
@@ -77,12 +88,10 @@
         <div><input class="input checkbox" type="checkbox" id="ch111"><label class="label" for="ch111">testing 1</label></div>
         <div><input class="input checkbox" type="checkbox" id="ch112"><label class="label red" for="ch112">testing 2</label></div>
         <div><input class="input checkbox" type="checkbox" id="ch113"><label class="label blue" for="ch113">testing 3</label></div>
+
     </div>
     <div class="adm_page_part dnone" data-area="access">3</div>
     <div class="adm_page_part dnone" data-area="linked_data">4</div>
 
     <div class="clear"></div>
-
-
-
 </div>

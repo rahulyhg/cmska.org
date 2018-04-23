@@ -26,6 +26,11 @@ class posts
 
       $data['post:id']          = isset($data['post:id'])?          self::integer($data['post:id']):false;
       $data['categ:id']         = isset($data['categ:id'])?         self::integer($data['categ:id']):false;
+
+      $data['post:posted']      = isset($data['post:posted'])?      self::integer($data['post:posted']):0;
+      $data['post:fixed']       = isset($data['post:fixed'])?       self::integer($data['post:fixed']):0;
+      $data['post:static']      = isset($data['post:static'])?      self::integer($data['post:static']):0;
+
       $data['post:alt_title']   = isset($data['post:alt_title'])?   self::totranslit($data['post:alt_title']):false;
       $data['post:title']       = isset($data['post:title'])?       self::trim($data['post:title']):false;
       $data['post:descr']       = isset($data['post:descr'])?       self::trim($data['post:descr']):false;
@@ -51,6 +56,9 @@ class posts
       $_2db['full_post']        = $data['post:full_post'];
       $_2db['svector']          = self::strip_tags( self::stripslashes( $data['post:full_post'] ) );
       $_2db['keywords']         = $data['post:keywords'];
+      $_2db['posted']           = $data['post:posted'];
+      $_2db['fixed']            = $data['post:fixed'];
+      $_2db['static']           = $data['post:static'];
       $_2db['category']         = $data['categ:id'];
 
       if( !$_ID ){ $_2db['author_id'] = CURRENT_USER_ID; }
@@ -136,6 +144,9 @@ class posts
         $filters['post.categ']  = self::integer( (isset($filters['post.categ'])?$filters['post.categ']:false) );
         $filters['post.id']     = self::integer( (isset($filters['post.id'])?$filters['post.id']:false) );
         $filters['tag.id']      = self::integer( (isset($filters['tag.id'])?$filters['tag.id']:false) );
+        $filters['post.posted'] = self::integer( (isset($filters['post.posted'])?$filters['post.posted']:false) );
+        $filters['post.fixed']  = self::integer( (isset($filters['post.fixed'])?$filters['post.fixed']:false) );
+        $filters['post.static'] = self::integer( (isset($filters['post.static'])?$filters['post.static']:false) );
 
         /////////////////
         if( $filters['nullpost'] )
@@ -145,6 +156,9 @@ class posts
           $filters['full_data'] = true;
           $filters['post.categ'] = false;
           $filters['post.id'] = false;
+          $filters['post.posted'] = false;
+          $filters['post.fixed'] = false;
+          $filters['post.static'] = false;
           $filters['tag.id'] = false;
         }
         /////////////////
@@ -162,17 +176,20 @@ class posts
         $SELECT['posts.author_id']       = 'post.author_id';
         $SELECT['posts.created_time']    = 'post.created_time';
         $SELECT['posts.keywords']        = 'post.keywords';
+        $SELECT['posts.posted']          = 'post.posted';
+        $SELECT['posts.fixed']           = 'post.fixed';
+        $SELECT['posts.static']          = 'post.static';
 
         $SELECT['categ.id']              = 'categ.id';
-        $SELECT['categ.altname']        = 'categ.altname';
-        $SELECT['categ.name']           = 'categ.name';
+        $SELECT['categ.altname']         = 'categ.altname';
+        $SELECT['categ.name']            = 'categ.name';
 
-        $SELECT['usr.login']           = 'usr.login';
-        $SELECT['usr.email']           = 'usr.email';
+        $SELECT['usr.login']             = 'usr.login';
+        $SELECT['usr.email']             = 'usr.email';
 
         if( $filters['full_data'] )
         {
-            $SELECT['posts.full_post']        = 'post.full_post';
+            $SELECT['posts.full_post'] = 'post.full_post';
         }
 
         $FROM['posts']       = 'posts';
@@ -184,6 +201,7 @@ class posts
         {
           $WHERE['posts.id'] = 'posts.id > 0';
           $WHERE['categ.id'] = 'categ.id > 0';
+          if( $filters['post.posted'] ){ $WHERE['post.posted'] = 'posts.posted = '.$filters['post.posted']; }
         }
         else
         {
@@ -205,6 +223,8 @@ class posts
             $WHERE['tags.id'] = 'ptags.tag_id = '.$filters['tag.id'];
         }
 
+        $ORDER['posts.posted']       = 'posts.posted ASC';
+        $ORDER['posts.fixed']        = 'posts.fixed DESC';
         $ORDER['posts.created_time'] = 'posts.created_time DESC';
 
         if( $SELECT && is_array($SELECT) && count($SELECT) )
