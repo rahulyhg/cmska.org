@@ -99,7 +99,9 @@ class upload
         if( !is_dir( $save_dir ) )
         {
             if( !mkdir( $save_dir ) ){ self::err( 'Помилка створення каталогу!'."\n" ); }
+            if( !mkdir( $save_dir.DS.'mini' ) ){ self::err( 'Помилка створення каталогу!'."\n" ); }
             chmod( $save_dir, 0777 );
+            chmod( $save_dir.DS.'mini', 0777 );
         }
 
         if( move_uploaded_file( $file['tmp_name'], $save_dir.DS.$filename ) )

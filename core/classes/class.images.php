@@ -13,6 +13,8 @@ if( !trait_exists( 'db_connect'  ) ){ require( CLASSES_DIR.DS.'trait.db_connect.
 
 class images
 {
+    const PNG_COMPRESS_LEVEL = 7;
+
     use basic, db_connect;
     static public final function _upload_process( $file, $config )
     {
@@ -37,10 +39,27 @@ class images
             $config[$key] = self::integer( !isset($config[$key])?$config[$key]:$config[$key] );
         }
 
-        $_cl = new images;
-        $file = $_cl->any2png( $file, $config );
+        $file = self::any2png( $file, $config );
 
-        $_cl->ins2db( $file );
+        if( $config['upload.image.compress'] )
+        {
+            self::compress( $file['filename'], $config['upload.image.compress.x'], $config['upload.image.compress.y'] );
+        }
+
+        if( $config['upload.image.mini'] )
+        {
+            $file['mini'] = self::makemini( $file['filename'], $config['upload.image.mini.x'], $config['upload.image.mini.y'], $config['upload.image.mini.proportion'] );
+        }else{ $file['mini'] = false; }
+
+        if( $config['upload.image.watermark'] && file_exists(UPL_DIR.DS.'watermak.png') )
+        {
+            self::watermark( $file['filename'] );
+        }
+
+        $file['size']     = filesize( $file['filename'] );
+
+
+        self::ins2db( $file );
         return $file;
     }
 
@@ -61,7 +80,7 @@ class images
         // exif_imagetype($file)
     }
 
-    private final function any2png( $file, $config = array() )
+    static private final function any2png( $file, $config = array() )
     {
         $im = false;
 
@@ -84,19 +103,9 @@ class images
         $_fnm = preg_replace( '!\.(\w+?)$!i', '.png', basename( $file['filename'] ) );
         $_newfile = $_dir.DS.$_fnm;
 
-        imagepng( $im, $_newfile, 7 );
+        imagepng( $im, $_newfile, self::PNG_COMPRESS_LEVEL );
 
         if( $_newfile != $file['filename'] ){ unlink( $file['filename'] ); }
-
-        if( $config['upload.image.compress'] )
-        {
-            self::compress( $_newfile, $config['upload.image.compress.x'], $config['upload.image.compress.y'] );
-        }
-
-        if( $config['upload.image.mini'] )
-        {
-            //self::makemini( $_newfile, $config['upload.image.mini.x'], $config['upload.image.mini.y'], $config['upload.image.mini.proportion'] );
-        }
 
         $file['filename'] = $_newfile;
         $file['ext']      = 'png';
@@ -104,11 +113,27 @@ class images
         $file['size']     = filesize( $file['filename'] );
         $file['name']     = basename( $file['filename'] );
 
-
         return $file;
     }
 
-    private final function makemini( $file, $x = 200, $y = 100, $prop = false )
+    static private final function watermark( $file )
+    {
+        $wm = imagecreatefrompng( UPL_DIR.DS.'watermak.png' );
+        $im = imagecreatefrompng( $file );
+
+        $wm_s = array( 'w' => imagesx($wm), 'h' => imagesy($wm) );
+        $im_s = array( 'w' => imagesx($im), 'h' => imagesy($im) );
+
+        if( $wm_s['w'] >= $im_s['w'] || $wm_s['h'] >= $im_s['h'] ){ return false; }
+
+        imagecopy( $im, $wm, rand($wm_s['w'], $im_s['w'] - $wm_s['w']), rand($wm_s['h'], $im_s['h'] - $wm_s['h']), 0, 0, $wm_s['w'], $wm_s['h'] );
+        imagedestroy( $wm );
+
+        imagepng( $im, $file, self::PNG_COMPRESS_LEVEL );
+        return true;
+    }
+
+    static private final function makemini( $file, $x = 200, $y = 100, $prop = false )
     {
         $im = imagecreatefrompng( $file );
 
@@ -124,14 +149,70 @@ class images
         {
             $koef = $sizes['old']['w'] / $sizes['old']['h'];
 
-            if( $sizes['old']['w'] >= $sizes['old']['h'] ){ $sizes['new']['h'] = ceil( $sizes['new']['w'] / $koef ); }
-            if( $sizes['old']['h'] >= $sizes['old']['w'] ){ $sizes['new']['w'] = ceil( $sizes['new']['h'] * $koef ); }
+            if( $x && $y )
+            {
+                if( $sizes['old']['w'] >= $sizes['old']['h'] )
+                {
+                    $sizes['new']['h'] = ceil( $sizes['new']['w'] / $koef );
+                }
+
+                if( $sizes['old']['h'] >= $sizes['old']['w'] )
+                {
+                    $sizes['new']['w'] = ceil( $sizes['new']['h'] * $koef );
+                }
+            }
+
+            if( !$x && $y ){ $sizes['new']['w'] = ceil( $sizes['new']['h'] * $koef ); }
+            if( $x && !$y ){ $sizes['new']['h'] = ceil( $sizes['new']['w'] / $koef ); }
+        }
+        else
+        {
+            if( !$sizes['new']['w'] || !$sizes['new']['h'] ){ return false; }
         }
 
+        $sizes['copy'] = array();
+        $sizes['copy']['w'] = array();
+        $sizes['copy']['w']['from'] = 0;
+        $sizes['copy']['w']['to'] = 0;
+        $sizes['copy']['h'] = array();
+        $sizes['copy']['h']['from'] = 0;
+        $sizes['copy']['h']['to'] = 0;
+
+        $koef = $sizes['new']['w'] / $sizes['new']['h'];
+
+        if( ( $sizes['old']['w'] / $sizes['old']['h'] ) >= $koef )
+        {
+            $sizes['copy']['h']['from'] = 0;
+            $sizes['copy']['h']['to'] = $sizes['old']['h'];
+
+            $sizes['copy']['w']['to'] = $sizes['copy']['h']['to'] * $koef;
+            $sizes['copy']['w']['from'] = $sizes['old']['w']/2 - $sizes['copy']['w']['to']/2;
+            if( $sizes['copy']['w']['from'] < 0 ){ $sizes['copy']['w']['from'] = 0; }
+        }
+        else
+        {
+            $sizes['copy']['w']['from'] = 0;
+            $sizes['copy']['w']['to'] = $sizes['old']['w'];
+
+            $sizes['copy']['h']['to'] = $sizes['copy']['w']['to'] / $koef;
+            $sizes['copy']['h']['from'] = $sizes['old']['h']/2 - $sizes['copy']['h']['to']/2;
+            if( $sizes['copy']['h']['from'] < 0 ){ $sizes['copy']['h']['from'] = 0; }
+        }
+
+        $new_im = imagecreatetruecolor( $sizes['new']['w'], $sizes['new']['h'] );
+
+        imagecopyresized( $new_im, $im, 0, 0, $sizes['copy']['w']['from'], $sizes['copy']['h']['from'], $sizes['new']['w'], $sizes['new']['h'], $sizes['copy']['w']['to'], $sizes['copy']['h']['to'] );
+        imagedestroy( $im );
+
+        $file = dirname($file).DS.'mini'.DS.basename($file);
+        imagepng( $new_im, $file, self::PNG_COMPRESS_LEVEL );
+        return $file;
     }
 
-    private final function compress( $file, $x, $y )
+    static private final function compress( $file, $x, $y )
     {
+        if( !$x && !$y ){ return false; }
+
         $im = imagecreatefrompng( $file );
 
         $sizes = array();
@@ -142,31 +223,55 @@ class images
         $sizes['new']['w'] = $x;
         $sizes['new']['h'] = $y;
 
+        if( $sizes['new']['h'] == 0 ){ $sizes['new']['h'] = $sizes['old']['h'] * 1000000; }
+        if( $sizes['new']['w'] == 0 ){ $sizes['new']['w'] = $sizes['old']['w'] * 1000000; }
+
         if( $sizes['old']['w'] <= $sizes['new']['w'] && $sizes['old']['h'] <= $sizes['new']['h'] )
         {
             imagedestroy( $im );
             return false;
         }
 
-        $koef = ( $sizes['old']['w'] + 1 ) / ( $sizes['old']['h'] + 1 );
+        $koef = ( $sizes['old']['w'] ) / ( $sizes['old']['h'] );
 
-        if( $sizes['old']['w'] >= $sizes['old']['h'] ){ $sizes['new']['h'] = ceil( $sizes['new']['w'] / $koef ); }
-        if( $sizes['old']['h'] >= $sizes['old']['w'] ){ $sizes['new']['w'] = ceil( $sizes['new']['h'] * $koef ); }
+        if( $x && $y )
+        {
+            if( $sizes['old']['w'] >= $sizes['old']['h'] )
+            {
+                $sizes['new']['h'] = ceil( $sizes['new']['w'] / $koef );
+            }
 
-        var_export($sizes);
-        exit;
+            if( $sizes['old']['h'] >= $sizes['old']['w'] )
+            {
+                $sizes['new']['w'] = ceil( $sizes['new']['h'] * $koef );
+            }
+        }
+
+        if( !$x && $y )
+        {
+            $sizes['new']['w']= ceil( $sizes['new']['h'] * $koef );
+        }
+
+        if( $x && !$y )
+        {
+            $sizes['new']['h'] = ceil( $sizes['new']['w'] / $koef );
+        }
+
+        $sizes['new']['w'] = self::integer( $sizes['new']['w'] );
+        $sizes['new']['h'] = self::integer( $sizes['new']['h'] );
 
         $new_im = imagecreatetruecolor( $sizes['new']['w'], $sizes['new']['h'] );
 
         imagecopyresized( $new_im, $im, 0, 0, 0, 0, $sizes['new']['w'], $sizes['new']['h'], $sizes['old']['w'], $sizes['old']['h'] );
         imagedestroy( $im );
 
-        imagepng( $new_im, $file, 7 );
+        imagepng( $new_im, $file, self::PNG_COMPRESS_LEVEL );
         return true;
     }
 
-    private final function ins2db( $data )
+    static private final function ins2db( $data )
     {
+        $_cl = new images;
 
     }
 

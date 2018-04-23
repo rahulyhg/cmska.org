@@ -432,8 +432,8 @@ input[type="submit"].type8:disabled, input[type="button"].type8:disabled, button
 #file_list{ border: none; padding: 0px; min-height: 400px; width: 400px; float: left; overflow: scroll; overflow-x: hidden; }
 #upload_frame{ border: none; padding: 0px; min-height: 400px; width: 250px; float: right; }
 #upload_frame #upload_config{ margin: 0px; }
-#upload_frame form{ padding: 2px; }
-#upload_frame form input[type="file"]{ border: 1px solid #BFBFBF; border-radius: 3px; width: 100%;  cursor: pointer; padding: 3px;  }
+#upload_frame form{ padding: 2px; text-align: center; }
+#upload_frame form input[type="file"]{ border: 1px solid #BFBFBF; border-radius: 3px; width: 90%;  cursor: pointer; padding: 3px;  }
 #upload_frame form .button-panel{ text-align: center; padding-top: 5px; }
 #upload_frame form .button-panel button{ position: relative; top: 0px; width: 80%; padding: 5px; background-color: #007199; height: 32px;  }
 

@@ -29,9 +29,10 @@
                     <input type="text" class="input" step="1" value="{upload.image.mini.y}" name="upload.image.mini.y" required="required">
                     <span>px</span>
                 </div>
+                <div class="conf"><input data-value="{upload.image.mini.proportion}" id="_upl_conf_proportion" class="input checkbox" type="checkbox" name="upload.image.mini.proportion" value="1"><label class="label red" for="_upl_conf_proportion">Пропорційна мініатюра</label></div>
 
                 <div class="conf ptop"><input data-value="{upload.image.watermark}" id="_upl_conf_addwm" class="input checkbox" type="checkbox" name="upload.image.watermark" value="1"><label class="label blue" for="_upl_conf_addwm">Накласти логотип</label></div>
-                <div class="conf ptop"><input data-value="{upload.image.mini.proportion}" id="_upl_conf_proportion" class="input checkbox" type="checkbox" name="upload.image.mini.proportion" value="1"><label class="label red" for="_upl_conf_proportion">Зберегти пропорції</label></div>
+
             </div>
 
             <input type="hidden" name="max_file_uploads" value="{max_file_uploads}" />
