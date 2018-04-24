@@ -251,14 +251,15 @@ class posts
 
         $SQL =  'SELECT '."\n-- SELECT ".$SELECT."\n-- SELECT\n".
                 'FROM '.$FROM."\n".
-                'WHERE '."\n\t".implode( ' AND'."\n\t", $WHERE )."\n".
+                'WHERE '."\n\t".implode( ' AND'."\n\t", $WHERE )." \n".
                 "-- ORDER\n".
-                'ORDER BY '.implode( ', ', array_values($ORDER) )."\n".
+                'ORDER BY '.implode( ', ', array_values($ORDER) )." \n".
                 "-- ORDER\n".
                 'OFFSET '.$filters['offset'].' LIMIT '.$filters['limit'].';'."\n".
                 ($filters['uncache']?'':self::trim(QUERY_CACHABLE))."\n-- USER_ID: ".abs(intval(CURRENT_USER_ID));
 
         $countSQL = preg_replace( '!-- SELECT(.+?)-- SELECT!is', ' count( posts.id ) as count ', $SQL );
+
         $countSQL = preg_replace( '!(OFFSET|LIMIT)(\s+?)(\d+)!is', '', $countSQL );
         $countSQL = preg_replace( '!-- ORDER(.+?)-- ORDER!is', '', $countSQL );
 
@@ -272,6 +273,7 @@ class posts
             $data['rows'] = array();
 
             $SQL  =  $this->db->query( $SQL );
+
             while( $row = $this->db->get_row($SQL) )
             {
                 $row['post.created_time'] = self::en_date( $row['post.created_time'], 'Y.m.d H:i' );
@@ -282,23 +284,33 @@ class posts
                     if( !isset($data['rows'][$row['post.id']][$k[0]]) ){ $data['rows'][$row['post.id']][$k[0]] = array(); }
                     $data['rows'][$row['post.id']][$k[0]][$k[1]] = $v;
                 }
-                // Get tags
-                $tagSQL =   'SELECT tags.* '.
-                            'FROM posts_tags as ptags '.
-                            'LEFT JOIN tags as tags ON (tags.id = ptags.tag_id) '.
-                            'WHERE tags.id > 0 AND ptags.post_id = '.self::integer($row['post.id']).
-                            'ORDER by tags.name;';
+
+                $data['rows'][$row['post.id']]['tags'] = array();
+            }
+            $this->db->free( $SQL );
+
+            if( is_array($data['rows']) && count( $data['rows'] ) )
+            {
+                $tagSQL =   'SELECT tg.*, ptags.post_id '.
+                            'FROM tags as tg '.
+                            'LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) '.
+                            'WHERE tg.id > 0 AND ptags.post_id IN ('.implode(',',array_keys($data['rows'])).') '.
+                            'ORDER by tg.name; '.($filters['uncache']?'':self::trim(QUERY_CACHABLE));
 
                 $tagSQL = $this->db->query( $tagSQL );
 
-                $data['rows'][$row['post.id']]['tags'] = array();
                 while( ($tag = $this->db->get_row($tagSQL))!=false )
                 {
-                    $data['rows'][$row['post.id']]['tags'][$tag['id']] = $tag;
+                    if( !isset($data['rows'][$tag['post_id']]['tags'][$tag['id']]) )
+                    {
+                        $data['rows'][$tag['post_id']]['tags'][$tag['id']] = array();
+                    }
+                    $data['rows'][$tag['post_id']]['tags'][$tag['id']] = $tag;
                 }
-
-                //
+                $this->db->free( $tagSQL );
             }
+
+
 
             cache::set( $_var, $data );
         }

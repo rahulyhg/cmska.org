@@ -622,7 +622,7 @@ SELECT pg_catalog.setval('"site"."user_groups_id_seq"', 1, true);
 --
 
 INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (0, '--', '--', 'root@cmska.org', '0.0.0.0', '0', 0);
-INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (1, 'admin', '6b5d3fde336ba463eb445a2d5bcfc30e', 'admin@cmska.org', '192.168.2.104', '1d39db813f9c5d86255a2007e43ac51f', 1);
+INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (1, 'admin', '6b5d3fde336ba463eb445a2d5bcfc30e', 'admin@cmska.org', '217.115.100.95', 'e92214a0914357c034e5b46e31b7d0d6', 1);
 
 
 --

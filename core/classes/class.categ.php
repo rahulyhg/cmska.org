@@ -56,6 +56,7 @@ class categ
                 $data[$row['id']]['name'] = self::htmlspecialchars( $data[$row['id']]['name'] );
                 $data[$row['id']]['altname'] = self::totranslit( $data[$row['id']]['altname'] );
             }
+            $this->db->free( $SQL );
             cache::set( $var, $data );
         }
 
