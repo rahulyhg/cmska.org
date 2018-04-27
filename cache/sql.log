@@ -1,4 +1,8 @@
-2018.04.24 22:12:57:
+2018.04.27 20:54:09:
+--------------------------------
+SELECT id FROM users WHERE email='admin@cmska.org' and password='5729c5f66821340f23f4559243a8a2eb' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.04.27 20:54:09:
 --------------------------------
 SELECT 
  count( posts.id ) as count 
@@ -16,7 +20,7 @@ WHERE
 -- %QUERY_CACHABLE
 -- USER_ID: 0
 --------------------------------
-2018.04.24 22:12:57:
+2018.04.27 20:54:09:
 --------------------------------
 SELECT 
 -- SELECT 
@@ -53,11 +57,11 @@ OFFSET 0 LIMIT 10;
 -- %QUERY_CACHABLE
 -- USER_ID: 0
 --------------------------------
-2018.04.24 22:12:57:
+2018.04.27 20:54:09:
 --------------------------------
 SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:12:57:
+2018.04.27 20:54:09:
 --------------------------------
 SELECT 
  count( posts.id ) as count 
@@ -75,7 +79,7 @@ WHERE
 -- %QUERY_CACHABLE
 -- USER_ID: 0
 --------------------------------
-2018.04.24 22:12:57:
+2018.04.27 20:54:09:
 --------------------------------
 SELECT 
 -- SELECT 
@@ -112,928 +116,41 @@ OFFSET 0 LIMIT 10;
 -- %QUERY_CACHABLE
 -- USER_ID: 0
 --------------------------------
-2018.04.24 22:12:57:
+2018.04.27 20:54:09:
 --------------------------------
 SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:13:58:
+2018.04.27 20:54:45:
 --------------------------------
-SELECT 
- count( posts.id ) as count 
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
-
- ;
--- %QUERY_CACHABLE
--- USER_ID: 0
+SELECT id FROM users WHERE email='admin@cmska.org' and password='5729c5f66821340f23f4559243a8a2eb' LIMIT 1 OFFSET 0;
 --------------------------------
-2018.04.24 22:13:58:
+2018.04.27 20:54:45:
 --------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
+UPDATE users SET token='ddb03d42addea59f77e4205fbb5ee242', last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:18:22:
---------------------------------
-SELECT 
- count( posts.id ) as count 
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
-
- ;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:18:22:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:18:30:
---------------------------------
-SELECT 
- count( posts.id ) as count 
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
-
- ;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:18:30:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:18:30:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:18:31:
---------------------------------
-SELECT 
- count( posts.id ) as count 
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
-
- ;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:18:31:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:18:31:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:18:33:
---------------------------------
-SELECT 
- count( posts.id ) as count 
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 AND
-	posts.id = 4 
-
- ;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:18:33:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email", 
-	posts.full_post as "post.full_post"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 AND
-	posts.id = 4 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:18:33:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:19:37:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email", 
-	posts.full_post as "post.full_post"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 AND
-	posts.id = 4 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:19:37:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:19:40:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:19:40:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:19:40:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:19:40:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:19:41:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id = 1 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:19:41:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:19:43:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:19:43:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:19:43:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:19:43:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:19:44:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:19:44:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:19:44:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:19:44:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:20:30:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:20:42:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:20:42:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:20:44:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email", 
-	posts.full_post as "post.full_post"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 AND
-	posts.id = 4 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:20:44:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:20:48:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:20:48:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:20:48:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:20:48:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:20:50:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:20:50:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:20:50:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 0
---------------------------------
-2018.04.24 22:20:50:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:20:55:
---------------------------------
-SELECT id FROM users WHERE email='admin@cmska.org' and password='6b5d3fde336ba463eb445a2d5bcfc30e' LIMIT 1 OFFSET 0;
---------------------------------
-2018.04.24 22:20:55:
---------------------------------
-UPDATE users SET token='e92214a0914357c034e5b46e31b7d0d6', last_ip='217.115.100.95' WHERE id = 1;
---------------------------------
-2018.04.24 22:20:55:
+2018.04.27 20:54:45:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:20:55:
+2018.04.27 20:54:45:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.04.27 20:54:45:
 --------------------------------
 SELECT 
 -- SELECT 
@@ -1070,23 +187,41 @@ OFFSET 0 LIMIT 10;
 -- %QUERY_CACHABLE
 -- USER_ID: 1
 --------------------------------
-2018.04.24 22:20:55:
+2018.04.27 20:54:45:
 --------------------------------
 SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:20:55:
+2018.04.27 20:54:46:
 --------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
 --------------------------------
-2018.04.24 22:20:55:
+2018.04.27 20:54:46:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:20:55:
+2018.04.27 20:54:46:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:20:55:
+2018.04.27 20:54:46:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.04.27 20:54:46:
 --------------------------------
 SELECT 
 -- SELECT 
@@ -1123,47 +258,75 @@ OFFSET 0 LIMIT 10;
 -- %QUERY_CACHABLE
 -- USER_ID: 1
 --------------------------------
-2018.04.24 22:20:55:
+2018.04.27 20:54:46:
 --------------------------------
 SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:20:58:
+2018.04.27 20:54:46:
 --------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+SELECT 
+	users.id as "user.id",
+	users.login as "user.login",
+	users.email as "user.email",
+	users.group_id as "user.group_id"
+FROM users as users 
+WHERE users.id = 1
+ORDER by users.id; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:20:58:
+2018.04.27 20:54:49:
 --------------------------------
-UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
 --------------------------------
-2018.04.24 22:20:58:
---------------------------------
-SELECT * FROM users WHERE id = 1;
---------------------------------
-2018.04.24 22:20:58:
---------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
---------------------------------
-2018.04.24 22:20:58:
---------------------------------
-UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
---------------------------------
-2018.04.24 22:20:58:
---------------------------------
-SELECT * FROM users WHERE id = 1;
---------------------------------
-2018.04.24 22:21:02:
---------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
---------------------------------
-2018.04.24 22:21:02:
+2018.04.27 20:54:49:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:21:02:
+2018.04.27 20:54:49:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:21:02:
+2018.04.27 20:54:49:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.04.27 20:54:49:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.04.27 20:54:49:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.04.27 20:54:55:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.04.27 20:54:55:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.04.27 20:54:55:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.04.27 20:54:55:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.04.27 20:54:55:
 --------------------------------
 SELECT 
 -- SELECT 
@@ -1199,23 +362,110 @@ OFFSET 0 LIMIT 10;
 -- %QUERY_CACHABLE
 -- USER_ID: 1
 --------------------------------
-2018.04.24 22:21:02:
+2018.04.27 20:54:55:
 --------------------------------
 SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:21:04:
+2018.04.27 20:56:26:
 --------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
 --------------------------------
-2018.04.24 22:21:04:
+2018.04.27 20:56:26:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:21:04:
+2018.04.27 20:56:26:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:21:04:
+2018.04.27 20:56:26:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.04.27 20:56:26:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.04.27 20:56:26:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.04.27 20:56:32:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.04.27 20:56:32:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.04.27 20:56:32:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.04.27 20:56:32:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.id = 4 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.04.27 20:56:32:
 --------------------------------
 SELECT 
 -- SELECT 
@@ -1253,23 +503,41 @@ OFFSET 0 LIMIT 10;
 -- %QUERY_CACHABLE
 -- USER_ID: 1
 --------------------------------
-2018.04.24 22:21:04:
+2018.04.27 20:56:32:
 --------------------------------
 SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4) ORDER by tg.name; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:21:29:
+2018.04.27 20:56:34:
 --------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
 --------------------------------
-2018.04.24 22:21:29:
+2018.04.27 20:56:34:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:21:29:
+2018.04.27 20:56:34:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:21:29:
+2018.04.27 20:56:34:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.04.27 20:56:34:
 --------------------------------
 SELECT 
 -- SELECT 
@@ -1306,23 +574,41 @@ OFFSET 0 LIMIT 10;
 -- %QUERY_CACHABLE
 -- USER_ID: 1
 --------------------------------
-2018.04.24 22:21:29:
+2018.04.27 20:56:34:
 --------------------------------
 SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:21:29:
+2018.04.27 20:56:34:
 --------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
 --------------------------------
-2018.04.24 22:21:29:
+2018.04.27 20:56:34:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:21:29:
+2018.04.27 20:56:34:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:21:29:
+2018.04.27 20:56:34:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.04.27 20:56:34:
 --------------------------------
 SELECT 
 -- SELECT 
@@ -1359,23 +645,52 @@ OFFSET 0 LIMIT 10;
 -- %QUERY_CACHABLE
 -- USER_ID: 1
 --------------------------------
-2018.04.24 22:21:29:
+2018.04.27 20:56:34:
 --------------------------------
 SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:22:34:
+2018.04.27 20:56:34:
 --------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+SELECT 
+	users.id as "user.id",
+	users.login as "user.login",
+	users.email as "user.email",
+	users.group_id as "user.group_id"
+FROM users as users 
+WHERE users.id = 1
+ORDER by users.id; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:22:34:
+2018.04.27 20:56:43:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.04.27 20:56:43:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:22:34:
+2018.04.27 20:56:43:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:22:34:
+2018.04.27 20:56:43:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.04.27 20:56:43:
 --------------------------------
 SELECT 
 -- SELECT 
@@ -1412,23 +727,124 @@ OFFSET 0 LIMIT 10;
 -- %QUERY_CACHABLE
 -- USER_ID: 1
 --------------------------------
-2018.04.24 22:22:34:
+2018.04.27 20:56:43:
 --------------------------------
 SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:22:38:
+2018.04.27 20:56:43:
 --------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
 --------------------------------
-2018.04.24 22:22:38:
+2018.04.27 20:56:43:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:22:38:
+2018.04.27 20:56:43:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:22:38:
+2018.04.27 20:56:43:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.04.27 20:56:43:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.04.27 20:56:43:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.04.27 20:56:43:
+--------------------------------
+SELECT 
+	users.id as "user.id",
+	users.login as "user.login",
+	users.email as "user.email",
+	users.group_id as "user.group_id"
+FROM users as users 
+WHERE users.id = 1
+ORDER by users.id; -- %QUERY_CACHABLE
+--------------------------------
+2018.04.27 20:56:44:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.04.27 20:56:44:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.04.27 20:56:44:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.04.27 20:56:44:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 4 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.04.27 20:56:44:
 --------------------------------
 SELECT 
 -- SELECT 
@@ -1459,7 +875,7 @@ WHERE
 	posts.id > 0 AND
 	categ.id > 0 AND
 	posts.posted = 1 AND
-	posts.id = 1 
+	posts.id = 4 
 -- ORDER
 ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
 -- ORDER
@@ -1467,235 +883,34 @@ OFFSET 0 LIMIT 10;
 -- %QUERY_CACHABLE
 -- USER_ID: 1
 --------------------------------
-2018.04.24 22:22:38:
+2018.04.27 20:56:44:
 --------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (1) ORDER by tg.name; -- %QUERY_CACHABLE
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4) ORDER by tg.name; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:22:40:
---------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
---------------------------------
-2018.04.24 22:22:40:
---------------------------------
-UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
---------------------------------
-2018.04.24 22:22:40:
---------------------------------
-SELECT * FROM users WHERE id = 1;
---------------------------------
-2018.04.24 22:22:40:
+2018.04.27 20:56:44:
 --------------------------------
 SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 1
+	users.id as "user.id",
+	users.login as "user.login",
+	users.email as "user.email",
+	users.group_id as "user.group_id"
+FROM users as users 
+WHERE users.id = 1
+ORDER by users.id; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:22:40:
+2018.04.27 20:56:46:
 --------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
 --------------------------------
-2018.04.24 22:22:40:
---------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
---------------------------------
-2018.04.24 22:22:40:
+2018.04.27 20:56:46:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:22:40:
+2018.04.27 20:56:46:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:22:40:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 1
---------------------------------
-2018.04.24 22:22:40:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:23:02:
---------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
---------------------------------
-2018.04.24 22:23:02:
---------------------------------
-UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
---------------------------------
-2018.04.24 22:23:02:
---------------------------------
-SELECT * FROM users WHERE id = 1;
---------------------------------
-2018.04.24 22:23:02:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 1
---------------------------------
-2018.04.24 22:23:02:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:23:10:
---------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
---------------------------------
-2018.04.24 22:23:10:
---------------------------------
-UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
---------------------------------
-2018.04.24 22:23:10:
---------------------------------
-SELECT * FROM users WHERE id = 1;
---------------------------------
-2018.04.24 22:23:10:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 1
---------------------------------
-2018.04.24 22:23:10:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:24:38:
---------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
---------------------------------
-2018.04.24 22:24:38:
---------------------------------
-UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
---------------------------------
-2018.04.24 22:24:38:
---------------------------------
-SELECT * FROM users WHERE id = 1;
---------------------------------
-2018.04.24 22:24:38:
+2018.04.27 20:56:46:
 --------------------------------
 SELECT 
  count( posts.id ) as count 
@@ -1713,7 +928,7 @@ WHERE
 -- %QUERY_CACHABLE
 -- USER_ID: 1
 --------------------------------
-2018.04.24 22:24:38:
+2018.04.27 20:56:46:
 --------------------------------
 SELECT 
 -- SELECT 
@@ -1750,23 +965,23 @@ OFFSET 0 LIMIT 10;
 -- %QUERY_CACHABLE
 -- USER_ID: 1
 --------------------------------
-2018.04.24 22:24:38:
+2018.04.27 20:56:46:
 --------------------------------
 SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:24:38:
+2018.04.27 20:56:46:
 --------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
 --------------------------------
-2018.04.24 22:24:38:
+2018.04.27 20:56:46:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:24:38:
+2018.04.27 20:56:46:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:24:38:
+2018.04.27 20:56:46:
 --------------------------------
 SELECT 
  count( posts.id ) as count 
@@ -1784,7 +999,7 @@ WHERE
 -- %QUERY_CACHABLE
 -- USER_ID: 1
 --------------------------------
-2018.04.24 22:24:38:
+2018.04.27 20:56:46:
 --------------------------------
 SELECT 
 -- SELECT 
@@ -1821,23 +1036,34 @@ OFFSET 0 LIMIT 10;
 -- %QUERY_CACHABLE
 -- USER_ID: 1
 --------------------------------
-2018.04.24 22:24:38:
+2018.04.27 20:56:46:
 --------------------------------
 SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:30:48:
+2018.04.27 20:56:46:
 --------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+SELECT 
+	users.id as "user.id",
+	users.login as "user.login",
+	users.email as "user.email",
+	users.group_id as "user.group_id"
+FROM users as users 
+WHERE users.id = 1
+ORDER by users.id; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:30:48:
+2018.04.27 20:57:01:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.04.27 20:57:01:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:30:48:
+2018.04.27 20:57:01:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:30:48:
+2018.04.27 20:57:01:
 --------------------------------
 SELECT 
  count( posts.id ) as count 
@@ -1855,7 +1081,7 @@ WHERE
 -- %QUERY_CACHABLE
 -- USER_ID: 1
 --------------------------------
-2018.04.24 22:30:48:
+2018.04.27 20:57:01:
 --------------------------------
 SELECT 
 -- SELECT 
@@ -1892,23 +1118,23 @@ OFFSET 0 LIMIT 10;
 -- %QUERY_CACHABLE
 -- USER_ID: 1
 --------------------------------
-2018.04.24 22:30:48:
+2018.04.27 20:57:01:
 --------------------------------
 SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:30:48:
+2018.04.27 20:57:01:
 --------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
 --------------------------------
-2018.04.24 22:30:48:
+2018.04.27 20:57:01:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:30:48:
+2018.04.27 20:57:01:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:30:48:
+2018.04.27 20:57:01:
 --------------------------------
 SELECT 
  count( posts.id ) as count 
@@ -1926,7 +1152,7 @@ WHERE
 -- %QUERY_CACHABLE
 -- USER_ID: 1
 --------------------------------
-2018.04.24 22:30:48:
+2018.04.27 20:57:01:
 --------------------------------
 SELECT 
 -- SELECT 
@@ -1963,432 +1189,90 @@ OFFSET 0 LIMIT 10;
 -- %QUERY_CACHABLE
 -- USER_ID: 1
 --------------------------------
-2018.04.24 22:30:48:
+2018.04.27 20:57:01:
 --------------------------------
 SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:30:50:
+2018.04.27 20:57:01:
 --------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+SELECT 
+	users.id as "user.id",
+	users.login as "user.login",
+	users.email as "user.email",
+	users.group_id as "user.group_id"
+FROM users as users 
+WHERE users.id = 1
+ORDER by users.id; -- %QUERY_CACHABLE
 --------------------------------
-2018.04.24 22:30:50:
+2018.04.27 22:07:00:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.04.27 22:07:00:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:30:50:
+2018.04.27 22:07:00:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:30:50:
+2018.04.27 22:07:00:
 --------------------------------
-SELECT 
- count( posts.id ) as count 
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
-
- ;
--- %QUERY_CACHABLE
--- USER_ID: 1
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
 --------------------------------
-2018.04.24 22:30:50:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 1
---------------------------------
-2018.04.24 22:30:50:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:30:50:
---------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
---------------------------------
-2018.04.24 22:30:50:
+2018.04.27 22:07:00:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:30:50:
+2018.04.27 22:07:00:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:30:50:
+2018.04.27 22:07:31:
 --------------------------------
-SELECT 
- count( posts.id ) as count 
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
-
- ;
--- %QUERY_CACHABLE
--- USER_ID: 1
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
 --------------------------------
-2018.04.24 22:30:50:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 1
---------------------------------
-2018.04.24 22:30:50:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:32:54:
---------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
---------------------------------
-2018.04.24 22:32:54:
+2018.04.27 22:07:31:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:32:54:
+2018.04.27 22:07:31:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:32:54:
+2018.04.27 22:07:31:
 --------------------------------
-SELECT 
- count( posts.id ) as count 
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
-
- ;
--- %QUERY_CACHABLE
--- USER_ID: 1
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
 --------------------------------
-2018.04.24 22:32:54:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 1
---------------------------------
-2018.04.24 22:32:54:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:32:54:
---------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
---------------------------------
-2018.04.24 22:32:54:
+2018.04.27 22:07:31:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:32:54:
+2018.04.27 22:07:31:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:32:54:
+2018.04.27 22:07:48:
 --------------------------------
-SELECT 
- count( posts.id ) as count 
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
-
- ;
--- %QUERY_CACHABLE
--- USER_ID: 1
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
 --------------------------------
-2018.04.24 22:32:54:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.posted = 1 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 1
---------------------------------
-2018.04.24 22:32:54:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:37:07:
---------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
---------------------------------
-2018.04.24 22:37:07:
+2018.04.27 22:07:48:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:37:07:
+2018.04.27 22:07:48:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
-2018.04.24 22:37:07:
+2018.04.27 22:07:48:
 --------------------------------
-SELECT 
- count( posts.id ) as count 
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 
-
- ;
--- %QUERY_CACHABLE
--- USER_ID: 1
+SELECT id, last_ip FROM users WHERE token='ddb03d42addea59f77e4205fbb5ee242' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
 --------------------------------
-2018.04.24 22:37:07:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 1
---------------------------------
-2018.04.24 22:37:07:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
---------------------------------
-2018.04.24 22:37:09:
---------------------------------
-SELECT id, last_ip FROM users WHERE token='e92214a0914357c034e5b46e31b7d0d6' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
---------------------------------
-2018.04.24 22:37:09:
+2018.04.27 22:07:48:
 --------------------------------
 UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
-2018.04.24 22:37:09:
+2018.04.27 22:07:48:
 --------------------------------
 SELECT * FROM users WHERE id = 1;
---------------------------------
-2018.04.24 22:37:09:
---------------------------------
-SELECT 
- count( posts.id ) as count 
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.id = 3 
-
- ;
--- %QUERY_CACHABLE
--- USER_ID: 1
---------------------------------
-2018.04.24 22:37:09:
---------------------------------
-SELECT 
--- SELECT 
-	posts.id as "post.id", 
-	posts.title as "post.title", 
-	posts.alt_title as "post.alt_title", 
-	posts.descr as "post.descr", 
-	posts.short_post as "post.short_post", 
-	posts.author_id as "post.author_id", 
-	posts.created_time as "post.created_time", 
-	posts.keywords as "post.keywords", 
-	posts.posted as "post.posted", 
-	posts.fixed as "post.fixed", 
-	posts.static as "post.static", 
-	categ.id as "categ.id", 
-	categ.altname as "categ.altname", 
-	categ.name as "categ.name", 
-	usr.login as "usr.login", 
-	usr.email as "usr.email", 
-	posts.full_post as "post.full_post"
--- SELECT
-FROM 
-	posts
-	LEFT JOIN categories as categ ON ( categ.id = posts.category )
-	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
-	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
-WHERE 
-	posts.id > 0 AND
-	categ.id > 0 AND
-	posts.id = 3 
--- ORDER
-ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
--- ORDER
-OFFSET 0 LIMIT 10;
--- %QUERY_CACHABLE
--- USER_ID: 1
---------------------------------
-2018.04.24 22:37:09:
---------------------------------
-SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (3) ORDER by tg.name; -- %QUERY_CACHABLE
 --------------------------------

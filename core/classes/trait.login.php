@@ -22,7 +22,6 @@ trait login
 	
 	public final function check_auth()
 	{
-
 		$login = false;
 		$pass  = false;
 		$token = false;
@@ -96,7 +95,7 @@ trait login
         foreach( $SELECT as $k=>&$v ){ $v = ''.$k.' as "'.$v.'"'; }
         $SQL = 'SELECT '."\n\t".implode( ','."\n\t", $SELECT )."\n".'FROM '.implode(' ', $FROM ).' '.(count($WHERE)?"\n".'WHERE '.implode( $WHERE, ' AND ' ):'')."\n".'ORDER by users.id;'.QUERY_CACHABLE;
 
-        $var = 'user_data-'.md5($SQL);
+        $var = 'user-data'.self::md5($SQL);
         $data = cache::get( $var );
         if( is_array($data) && count($data) ){ return $data; }
 
@@ -177,7 +176,7 @@ trait login
 		while( $i > 0 )
 		{
 			$i--;
-			$str = md5( base64_encode( sha1( self::$PASS_SALT ) . sha1( $str ) ) . $str . strrev( $str ) );			
+			$str = self::md5( base64_encode( sha1( self::$PASS_SALT ) . sha1( $str ) ) . $str . strrev( $str ) );
 		}
 		return $str;
 	}

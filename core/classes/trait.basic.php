@@ -66,6 +66,20 @@ trait basic
         return htmlspecialchars_decode( $data, ENT_QUOTES | ENT_HTML5 );
     }
 
+    static public final function md5( $data )
+    {
+        if( !is_scalar( $data ) && !is_array( $data )  ){ self::err( ''.__CLASS__.'::'.__METHOD__.' accepts string or array only!' ); }
+        if( is_array($data) ){ return array_map( 'self::'.__METHOD__, $data ); }
+        return md5( $data . CMS_KEY );
+    }
+
+    static public final function sha1( $data )
+    {
+        if( !is_scalar( $data ) && !is_array( $data )  ){ self::err( ''.__CLASS__.'::'.__METHOD__.' accepts string or array only!' ); }
+        if( is_array($data) ){ return array_map( 'self::'.__METHOD__, $data ); }
+        return sha1( $data . CMS_KEY );
+    }
+
 	static public final function integer( $data )
 	{
         if( !is_numeric( $data ) && !is_scalar( $data ) && !is_array( $data )  ){ self::err( ''.__CLASS__.'::'.__METHOD__.' accepts string or array only!' ); }

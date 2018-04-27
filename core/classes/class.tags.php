@@ -15,6 +15,8 @@ class tags
 {
     use basic, db_connect;
 
+    const CACHE_VAR_TAGS = 'tags';
+
     public final static function tag_decode( $tag )
     {
         return self::utf2win( self::urldecode( $tag ) );
@@ -39,8 +41,7 @@ class tags
 
     public final function get_tags()
     {
-        $var= 'tags';
-        $data = cache::get( $var );
+        $data = cache::get( self::CACHE_VAR_TAGS );
 
         if( !$data || !is_array($data) || !count($data) )
         {
@@ -55,7 +56,7 @@ class tags
                 $data[$row['id']]['altname'] = self::totranslit( $data[$row['id']]['altname'] );
             }
             $this->db->free( $SQL );
-            cache::set( $var, $data );
+            cache::set( self::CACHE_VAR_TAGS, $data );
         }
 
         return $data;

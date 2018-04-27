@@ -15,6 +15,8 @@ class categ
 {
     use basic, db_connect;
 
+    const CACHE_VAR_CATEG = 'categ';
+
     public final function get_categ_opts()
     {
       $data = array();
@@ -41,8 +43,7 @@ class categ
 
     public final function get_categories()
     {
-        $var= 'categ';
-        $data = cache::get( $var );
+        $data = cache::get( self::CACHE_VAR_CATEG );
 
         if( !$data || !is_array($data) || !count($data) )
         {
@@ -57,7 +58,7 @@ class categ
                 $data[$row['id']]['altname'] = self::totranslit( $data[$row['id']]['altname'] );
             }
             $this->db->free( $SQL );
-            cache::set( $var, $data );
+            cache::set( self::CACHE_VAR_CATEG, $data );
         }
 
         return $data;

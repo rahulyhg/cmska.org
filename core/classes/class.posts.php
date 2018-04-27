@@ -16,6 +16,8 @@ class posts
 {
     use basic, db_connect;
 
+    const CACHE_VAR_POSTS = 'posts';
+
     public final function save( $data = false )
     {
       if( !$data || !is_array($data) || !count($data) )
@@ -76,7 +78,7 @@ class posts
         $SQL = 'INSERT INTO posts ("'.implode('", "', array_keys($_2db)).'") VALUES (\''.implode('\', \'', array_values($_2db)).'\') RETURNING id;';
       }
 
-      cache::clean( 'posts' );
+      cache::clean( self::CACHE_VAR_POSTS );
 
       $_ID = $this->db->super_query( $SQL );
       $_ID = isset($_ID['id'])?self::integer($_ID['id']):0;
@@ -263,7 +265,7 @@ class posts
         $countSQL = preg_replace( '!(OFFSET|LIMIT)(\s+?)(\d+)!is', '', $countSQL );
         $countSQL = preg_replace( '!-- ORDER(.+?)-- ORDER!is', '', $countSQL );
 
-        $_var = 'posts-'.md5($SQL);
+        $_var = self::CACHE_VAR_POSTS.'-'.self::md5($SQL);
         $data = cache::get( $_var );
 
         if( !$data )
