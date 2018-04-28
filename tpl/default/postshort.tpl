@@ -1,6 +1,6 @@
 <section class="article short">
     <header class="article_top">
-        <div class="topcateg date"><span>{post:created_time}</span></div>
+        <div class="topcateg date"><span>{post:created_time:Y.m.d}</span></div>
         <div class="topcateg anim"><a rel="chapter" title="{categ:name}" href="{categ:url}">{categ:name}</a></div>
         <h1>{post:title}</h1>
     </header>

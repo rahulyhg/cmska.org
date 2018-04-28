@@ -68,13 +68,16 @@ class posts
       $_2db = array_map( array( &$this->db, 'safesql' ), $_2db );
 
       $SQL = '';
+      $new_post = false;
       if( $_ID )
       {
+        $new_post = false;
         foreach( $_2db as $k=>$v ){ $_2db[$k] = '"'.$k.'" = \''.$v.'\''; }
         $SQL = 'UPDATE posts SET '.implode( ', ', $_2db ).' WHERE id=\''.$_ID.'\' RETURNING id;';
       }
       else
       {
+        $new_post = true;
         $SQL = 'INSERT INTO posts ("'.implode('", "', array_keys($_2db)).'") VALUES (\''.implode('\', \'', array_values($_2db)).'\') RETURNING id;';
       }
 
@@ -82,6 +85,13 @@ class posts
 
       $_ID = $this->db->super_query( $SQL );
       $_ID = isset($_ID['id'])?self::integer($_ID['id']):0;
+
+      if( $new_post )
+      {
+          images::update( $_ID );
+          files::update( $_ID );
+      }
+
       echo $_ID;
       exit;
     }
@@ -278,7 +288,7 @@ class posts
 
             while( $row = $this->db->get_row($SQL) )
             {
-                $row['post.created_time'] = self::en_date( $row['post.created_time'], 'Y.m.d H:i' );
+                $row['post.created_time'] = self::en_date( $row['post.created_time'], 'Y-m-d H:i:s' );
                 $data['rows'][$row['post.id']] = array();
                 foreach( $row as $k => $v )
                 {
@@ -338,6 +348,9 @@ class posts
         $tpl->set( '{categ:id}',         self::integer( $data['categ']['id'] ) );
         $tpl->set( '{categ:url}',        $_CATEG->get_url( self::integer($data['categ']['id']) ) );
 
+        $tpl->set( '{post:created_time:','{post:'.self::strtotime($data['post']['created_time']).':' );
+        $tpl->set_callback( '!\{post:(\d+?):(.+?)\}!i', __CLASS__.'::parse_date' );
+
         if( isset($data['post']['full_post']) ){ $tpl->set( '{post:full_post}',   self::trim( $data['post']['full_post'] ) ); }
 
         foreach( $data as $key => $value )
@@ -369,6 +382,16 @@ class posts
 
         $tpl->compile( $skin );
         return false;
+    }
+
+    public final static function parse_date( $array = array() )
+    {
+        $date = isset($array[1])?self::integer($array[1]):false;
+        $mask = isset($array[2])?self::filter($array[2]):false;
+
+        if( !$date || !$mask ){ return false; }
+
+        return date( $mask, $date );
     }
 
     public final function editpost_html( $data = array(), &$tpl = false /*OBJECT*/, $skin = 'post_edit' )

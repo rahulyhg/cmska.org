@@ -440,8 +440,10 @@ input[type="submit"].type8:disabled, input[type="button"].type8:disabled, button
 #overlay .close{ position: fixed; top: 10px; right: 10px; width: 50px; height: 50px; z-index: 1005; background: url(../img/overlay-close.png) no-repeat 50% 50%; border-radius: 25px; cursor: pointer; opacity: 0.3; }
 #overlay .close:hover{ opacity: 1.0; }
 
-#file_list{ border: none; padding: 0px; min-height: 400px; width: 400px; float: left; overflow: scroll; overflow-x: hidden; }
-#upload_frame{ border: none; padding: 0px; min-height: 400px; width: 250px; float: right; }
+#file_list,#upload_frame{ height: 400px; }
+
+#file_list{ border: none; padding: 3px; width: 500px; float: left; overflow: scroll; overflow-x: hidden; background: #F7F7F7; }
+#upload_frame{ border: none; padding: 0px; width: 250px; float: right; }
 #upload_frame #upload_config{ margin: 0px; }
 #upload_frame form{ padding: 2px; text-align: center; }
 #upload_frame form input[type="file"]{ border: 1px solid #BFBFBF; border-radius: 3px; width: 90%;  cursor: pointer; padding: 3px;  }
@@ -453,4 +455,9 @@ input[type="submit"].type8:disabled, input[type="button"].type8:disabled, button
 #upload_config .conf{ padding: 2px; text-align: left; }
 #upload_config .conf.ptop{ padding-top: 15px; }
 #upload_config span{ padding: 2px; }
+
+#file_list .uploaded{ height: 132px; width: 112px; border: 1px solid #DCDCDC; background: #FFFFFF; margin: 3px; display: block; float: left; padding: 5px; cursor: pointer; text-align: center; opacity: 0.8; transition: all .2s; }
+#file_list .uploaded:hover{ opacity: 1.0; }
+#file_list .uploaded:active{ background: #CC0000; }
+#file_list .uploaded img{ max-height: 95px; max-width: 95px; border: 1px solid #555555; }
 

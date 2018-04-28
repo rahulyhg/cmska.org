@@ -264,7 +264,8 @@ CREATE TABLE "site"."images" (
     "post_id" bigint DEFAULT 0 NOT NULL,
     "user_id" bigint DEFAULT 0 NOT NULL,
     "serv_name" character varying(32) DEFAULT ''::character varying NOT NULL,
-    "load_time" timestamp without time zone DEFAULT ("now"())::timestamp without time zone NOT NULL
+    "load_time" timestamp without time zone DEFAULT ("now"())::timestamp without time zone NOT NULL,
+    "is_mini" smallint DEFAULT 0 NOT NULL
 );
 
 
@@ -555,6 +556,11 @@ SELECT pg_catalog.setval('"site"."categories_id_seq"', 6, true);
 -- Data for Name: images; Type: TABLE DATA; Schema: site; Owner: -
 --
 
+INSERT INTO "site"."images" ("post_id", "user_id", "serv_name", "load_time", "is_mini") VALUES (4, 1, '07-02-40-84f0f6e7.png', '2018-04-28 07:02:41', 0);
+INSERT INTO "site"."images" ("post_id", "user_id", "serv_name", "load_time", "is_mini") VALUES (4, 1, '07-26-21-82b835f0.png', '2018-04-28 07:26:22', 0);
+INSERT INTO "site"."images" ("post_id", "user_id", "serv_name", "load_time", "is_mini") VALUES (4, 1, '07-27-39-c938815b.png', '2018-04-28 07:27:39', 1);
+INSERT INTO "site"."images" ("post_id", "user_id", "serv_name", "load_time", "is_mini") VALUES (4, 1, '08-08-57-d0fc5f7f.png', '2018-04-28 08:08:57', 1);
+INSERT INTO "site"."images" ("post_id", "user_id", "serv_name", "load_time", "is_mini") VALUES (4, 1, '08-09-40-bdffee3e.png', '2018-04-28 08:09:40', 0);
 
 
 --
@@ -809,6 +815,38 @@ ALTER TABLE ONLY "site"."admin_menu_accesses"
 
 ALTER TABLE ONLY "site"."admin_menu_accesses"
     ADD CONSTRAINT "admin_menu_accesses_item_id_fkey" FOREIGN KEY ("item_id") REFERENCES "site"."admin_menu"("id") ON UPDATE CASCADE ON DELETE CASCADE;
+
+
+--
+-- Name: files_post_id_fkey; Type: FK CONSTRAINT; Schema: site; Owner: -
+--
+
+ALTER TABLE ONLY "site"."files"
+    ADD CONSTRAINT "files_post_id_fkey" FOREIGN KEY ("post_id") REFERENCES "site"."posts"("id") ON UPDATE CASCADE ON DELETE CASCADE;
+
+
+--
+-- Name: files_user_id_fkey; Type: FK CONSTRAINT; Schema: site; Owner: -
+--
+
+ALTER TABLE ONLY "site"."files"
+    ADD CONSTRAINT "files_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "site"."users"("id") ON UPDATE CASCADE ON DELETE SET DEFAULT;
+
+
+--
+-- Name: images_post_id_fkey; Type: FK CONSTRAINT; Schema: site; Owner: -
+--
+
+ALTER TABLE ONLY "site"."images"
+    ADD CONSTRAINT "images_post_id_fkey" FOREIGN KEY ("post_id") REFERENCES "site"."posts"("id") ON UPDATE CASCADE ON DELETE CASCADE;
+
+
+--
+-- Name: images_user_id_fkey; Type: FK CONSTRAINT; Schema: site; Owner: -
+--
+
+ALTER TABLE ONLY "site"."images"
+    ADD CONSTRAINT "images_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "site"."users"("id") ON UPDATE CASCADE ON DELETE SET DEFAULT;
 
 
 --

@@ -1,5 +1,5 @@
 <?php if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
- /* CACHE CREATED: 1524851792.306 (2018-04-27 20:56:32) */
+ /* CACHE CREATED: 1524897590.4762 (2018-04-28 09:39:50) */
 return array (
   'count' => 1,
   'rows' => 
@@ -14,7 +14,7 @@ return array (
         'descr' => '',
         'short_post' => 'На сьогоднішній день ми стикнулись з проблемою, що притаманна мабуть переважній більшості не комерційних авторських розробок - вихід оновлень.',
         'author_id' => '1',
-        'created_time' => '2018.03.04 22:28',
+        'created_time' => '2018-03-04 22:28:45',
         'keywords' => '',
         'posted' => '1',
         'fixed' => '0',

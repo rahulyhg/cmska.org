@@ -75,15 +75,30 @@ class tpl
         }
     }
 
+    public final function set_callback( $mask, $callback = false, $skin = false )
+    {
+        $skin = $skin?$skin:$this->current;
+
+        if( isset($this->theme[$skin]) )
+        {
+            if( is_array($mask) )
+            {
+                self::err( 'mask '.$mask.' have array value! String is needed! File: '.__FILE__ );
+                exit;
+            }
+            $this->theme[$skin] = preg_replace_callback( $mask, $callback, $this->theme[$skin] );
+        }
+    }
+
     public final function set_block( $mask, $value, $skin=false )
     {
         $skin = $skin?$skin:$this->current;
 
         if( isset($this->theme[$skin]) )
         {
-            if( is_array($value) )
+            if( is_array($mask) || is_array($value) )
             {
-                self::err( 'mask '.$mask.' have array value! String is needed! File: '.__FILE__ );
+                self::err( 'mask have array value! String is needed! File: '.__FILE__ );
                 exit;
             }
             $this->theme[$skin] = preg_replace( $mask, $value, $this->theme[$skin] );

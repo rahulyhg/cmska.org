@@ -6,10 +6,11 @@ var uploader = new function()
             common.close_dialog( did );
 
         var post = {};
-            post['ajax']    = 1;
-            post['action']  = 10;
-            post['mod']     = 'admin';
-            post['subaction'] = 0;
+            post['ajax']        = 1;
+            post['action']      = 10;
+            post['mod']         = 'admin';
+            post['subaction']   = 0;
+            post['post_id']    = parseInt( $('input[data-role="uploader:post_id"]').val() );
 
         $.ajax({ data: post }).done( function( _r )
         {
@@ -22,7 +23,7 @@ var uploader = new function()
             var dialog = {};
                 dialog["zIndex"]  = 1001;
                 dialog["modal"]   = true;
-                dialog["width"]   = '660';
+                dialog["width"]   = '760';
 
 
 
@@ -43,6 +44,7 @@ var uploader = new function()
                 uploader.config();
                 uploader.init_check();
                 uploader.submit();
+                uploader.show_uploaded();
 
             $('#'+did).dialog( dialog );
         } );
@@ -85,7 +87,7 @@ var uploader = new function()
                 //form.find('input[type="file"]').val( false );
                 form.find('button[type="submit"]').attr( 'disabled', true );
                 common.hide_loader();
-                alert( _r );
+                uploader.show_uploaded();
             });
 
             return false;
@@ -113,6 +115,7 @@ var uploader = new function()
             }
         });
     }
+
     this.check_files = function( obj )
     {
         if( !obj.prop('files').length ){ return false; }
@@ -144,5 +147,47 @@ var uploader = new function()
         }
 
         button.attr( 'disabled', false );
+    }
+
+    this.show_uploaded = function()
+    {
+        var post = {};
+            post['ajax']        = 1;
+            post['action']      = 11;
+            post['mod']         = 'admin';
+            post['subaction']   = 0;
+            post['post_id']    = parseInt( $('input[data-role="uploader:post_id"]').val() );
+
+        $.ajax({ data: post }).done( function( _r )
+        {
+            try{ _r = jQuery.parseJSON( _r ); }catch(err){ alert( 'ERROR: '+err+"\n\n"+_r ); return false; }
+            if( parseInt(_r['error'])>0 ){ alert( _r['error_text'] ); return false; }
+
+            $('#file_list').html( _r['template'] );
+
+            $('#file_list .uploaded').unbind().click(
+            function()
+            {
+                var txt = $(this).find('img').attr('src');
+                    txt = 13570;
+
+                var aux = document.createElement("p");
+
+                $('#file_list')
+
+                /*
+                var aux = document.createElement("input");
+
+                aux.setAttribute("type", "text");
+                aux.setAttribute("contentEditable", true);
+                aux.setAttribute("value", txt );
+
+                document.appendChild(aux);
+
+                aux.select();
+                document.execCommand("copy");
+                //document.removeChild(aux); */
+            });
+        });
     }
 }

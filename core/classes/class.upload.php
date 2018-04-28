@@ -16,9 +16,10 @@ class upload
 {
     use basic;
 
-    static public final function process( $files, $conf )
+    static public final function process( $files, $conf, $post_id )
     {
         $cms_config = config::get();
+        $post_id = self::integer( $post_id );
 
         $file_max_size  = self::iniBytes2normalBytes( ini_get( 'upload_max_filesize' ) );
         $image_max_size = $file_max_size;
@@ -28,6 +29,7 @@ class upload
 
         foreach( $files as $id => $file )
         {
+            $file['post_id'] = $post_id;
             $file['name'] = self::utf2win( $file['name'] );
             $ext = self::fileExt( $file['name'] );
 

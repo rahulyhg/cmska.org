@@ -58,8 +58,8 @@ class images
 
         $file['size']     = filesize( $file['filename'] );
 
-
         self::ins2db( $file );
+
         return $file;
     }
 
@@ -273,6 +273,45 @@ class images
     {
         $_cl = new images;
 
+        $_2db = array();
+        $_2db['post_id']    =   isset($data['post_id'])?self::integer($data['post_id']):0;
+        $_2db['user_id']    =   CURRENT_USER_ID;
+        $_2db['serv_name']  =   $_cl->db->safesql( basename( $data['filename'] ) );
+        $_2db['load_time']  =   date('Y-m-d H:i:s');
+        $_2db['is_mini']    =   $data['mini']?1:0;
+
+        $SQL = 'INSERT INTO images ("'.implode('", "', array_keys($_2db)).'") VALUES (\''.implode('\', \'', array_values($_2db)).'\');';
+        $_cl->db->query( $SQL );
+        $_cl->db->free();
+        $_cl = false;
+        return true;
+    }
+
+    static public final function update( $post_id = 0 )
+    {
+        $post_id = self::integer( $post_id );
+        $_cl = new images;
+        $SQL = 'UPDATE images SET post_id='.$post_id.' WHERE post_id=0;';
+        $_cl->db->query( $SQL );
+        $_cl->db->free();
+        $_cl = false;
+        return true;
+    }
+
+    static public final function get( $post_id = 0 )
+    {
+        $post_id = self::integer( $post_id );
+        $_cl = new images;
+        $SQL = 'SELECT * FROM images WHERE post_id='.$post_id.' ORDER BY load_time DESC;';
+        $SQL = $_cl->db->query( $SQL );
+
+        $images = array();
+        while( ($row = $_cl->db->get_row($SQL)) !== false ){ $images[] = $row; }
+
+        $_cl->db->free();
+        $_cl = false;
+
+        return $images;
     }
 
 }

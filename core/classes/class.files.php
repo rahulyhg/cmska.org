@@ -15,10 +15,15 @@ class files
 {
     use basic, db_connect;
 
-    static final function _upload_process( $file, $config )
+    public static final function _upload_process( $file, $config )
     {
 
         return $file;
+    }
+
+    public static final function update( $post_id )
+    {
+        
     }
 
 }

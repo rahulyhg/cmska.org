@@ -149,6 +149,13 @@ trait basic
         return mb_strtolower( $data, CHARSET );
     }
 
+    static public final function strtotime( $data )
+    {
+        if( !is_scalar( $data ) && !is_array( $data )  ){ self::err( ''.__CLASS__.'::'.__METHOD__.' accepts string or array only!' ); }
+        if( is_array($data) ){ return array_map( 'self::'.__METHOD__, $data ); }
+        return strtotime( $data );
+    }
+
     static public final function urlencode( $data )
     {
         if( !is_scalar( $data ) && !is_array( $data )  ){ self::err( ''.__CLASS__.'::'.__METHOD__.' accepts string or array only!' ); }
@@ -202,7 +209,7 @@ trait basic
     static public final function en_date( $date, $format = 'd.m.Y H:i:s' )
     {
         if( !is_scalar( $date ) ){ self::err( ''.__CLASS__.'::'.__METHOD__.' accepts string only!' ); }
-        $date = strtotime( $date );
+        $date = self::strtotime( $date );
         $date = intval( $date );
         $date = date( $format, $date );
         return $date;

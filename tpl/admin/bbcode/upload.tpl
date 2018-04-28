@@ -3,8 +3,7 @@
 </div>
 
 <div id="upload_frame">
-    <!-- IFRAME: /index.php?ajax=1&mod={MOD}&action=11 -->
-        <form name="file" enctype="multipart/form-data" action="/index.php?ajax=1&mod={MOD}&action=12" method="post">
+        <form name="file" enctype="multipart/form-data" action="/index.php?ajax=1&mod={MOD}&action=12&post_id={post:id}" method="post">
             <div id="upload_config">
                 <div class="conf ptop">
                     <input data-value="{upload.image.compress}" id="_upl_conf_resize_image" class="input checkbox" type="checkbox" name="upload.image.compress" value="1">

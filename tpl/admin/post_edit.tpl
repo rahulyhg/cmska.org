@@ -1,6 +1,6 @@
 <div class="elemblock admpage editpost" id="posteditor">
 
-    <input type="hidden" name="post:id" value="{post:id}" data-save="1" />
+    <input type="hidden" name="post:id" value="{post:id}" data-role="uploader:post_id" data-area="post" data-save="1" />
 
     <div class="admpage_nav">
         <ul class="reset">
