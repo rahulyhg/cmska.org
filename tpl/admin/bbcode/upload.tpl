@@ -1,5 +1,10 @@
 <div id="file_list">
-
+    <div id="ins"></div>
+    <div id="lnks">
+        <div><input type="text" name="imgtagtitle"></div>
+        <div><input type="text" name="url" readonly="readonly"></div>
+        <div><input type="text" name="tag" readonly="readonly"></div>
+    </div>
 </div>
 
 <div id="upload_frame">

@@ -92,8 +92,7 @@ class posts
           files::update( $_ID );
       }
 
-      echo $_ID;
-      exit;
+      return $_ID;
     }
 
     public final function listposts_html( $data = array(), &$tpl = false /*OBJECT*/, $skin = 'post_list' )

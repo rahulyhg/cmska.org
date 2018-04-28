@@ -57,10 +57,33 @@ class images
         }
 
         $file['size']     = filesize( $file['filename'] );
+        $file['md5']      = self::md5_file( $file['filename'] );
 
         self::ins2db( $file );
 
         return $file;
+    }
+
+    static public final function del( $hash = false )
+    {
+        if( !$hash ){ return false; }
+
+        $SQL = 'SELECT * FROM images WHERE md5=\''.self::strtolower(self::filter($hash)).'\';';
+        $_cl = new images;
+        $image = $_cl->db->super_query($SQL);
+
+        if( !$image || !is_array($image) || !isset($image['serv_name']) ){ return false; }
+
+        $url = UPL_DIR.DS.'images'.DS.date( 'Y-m-d', strtotime($image['load_time']) ).DS.$image['serv_name'];
+        $mini_url = UPL_DIR.DS.'images'.DS.date( 'Y-m-d', strtotime($image['load_time']) ).DS.'mini'.DS.$image['serv_name'];
+
+        if( file_exists($url) ){ unlink($url); }
+        if( file_exists($mini_url) ){ unlink($mini_url); }
+
+        $SQL = 'DELETE FROM images WHERE md5=\''.$image['md5'].'\';';
+        $image = $_cl->db->query($SQL);
+        $_cl->db->free();
+        return true;
     }
 
     static private final function get_image_type( $data = false )
@@ -275,10 +298,20 @@ class images
 
         $_2db = array();
         $_2db['post_id']    =   isset($data['post_id'])?self::integer($data['post_id']):0;
+        $_2db['md5']        =   $_cl->db->safesql( isset($data['md5'])?self::filter($data['md5']):0 );
         $_2db['user_id']    =   CURRENT_USER_ID;
         $_2db['serv_name']  =   $_cl->db->safesql( basename( $data['filename'] ) );
         $_2db['load_time']  =   date('Y-m-d H:i:s');
         $_2db['is_mini']    =   $data['mini']?1:0;
+
+        if( !file_exists($data['filename']) ){ return false; }
+
+        $SQL = 'SELECT COUNT(md5) as count FROM images WHERE md5=\''.$_2db['md5'].'\';';
+        if( $_cl->db->get_count($SQL) )
+        {
+            unlink( $data['filename'] );
+            return false;
+        }
 
         $SQL = 'INSERT INTO images ("'.implode('", "', array_keys($_2db)).'") VALUES (\''.implode('\', \'', array_values($_2db)).'\');';
         $_cl->db->query( $SQL );

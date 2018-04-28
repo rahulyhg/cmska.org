@@ -19,17 +19,41 @@ class bbcode
     public final static function bbcode2html( $text = false )
     {
         $text = self::simple_tags( $text );
+        $text = preg_replace_callback( '!\[(img)(\|.+?|)\](.+?)\[\/\1\]!is', 'self::process_image', $text );
         return $text;
     }
 
     public final static function html2bbcode( $text = false )
     {
         $text = self::simple_tags( $text, true );
+        $text = preg_replace_callback( '!<img(.+?)>!is', 'self::process_image', $text );
         return $text;
     }
 
+    private final static function process_image( $array )
+    {
+        if( strpos( isset($array[0])?$array[0]:'', '[/img]' ) !== false )
+        {
+            $img = array();
+            $img['src']     = isset($array[3])?$array[3]:false;
+            $img['alt']     = isset($array[2])?self::htmlentities($array[2]):false;
+            $img['title']   = $img['alt'];
 
+            return '<img class="post_img" src="'.$img['src'].'" alt="'.$img['alt'].'" title="'.$img['title'].'" />';
+        }
 
+        if( strpos( isset($array[0])?$array[0]:'', '<img' ) !== false )
+        {
+            $img = array();
+            $img['src']         = preg_replace( '!(.*)src=\"(.+?)\"(.*)!is', '$2', $array['0'] );
+            $img['title']       = preg_filter( '!(.*)title=\"(.+?)\"(.*)!is', '$2', $array['0'] );
+
+            $img['src']   = $img['src']?$img['src']:false;
+            $img['title'] = $img['title']?$img['title']:false;
+
+            return '[img'.($img['title']?'|'.$img['title']:'').']'.$img['src'].'[/img]';
+        }
+    }
 
     private final static function simple_tags( $text = false, $html2bbcode = false )
     {

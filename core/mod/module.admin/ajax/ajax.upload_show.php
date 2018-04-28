@@ -13,6 +13,7 @@ foreach( $data as $image )
     $file = UPL_DIR.DS.'images'.DS.common::en_date($image['load_time'],'Y-m-d').DS.$image['serv_name'];
 
     $tpl->set( '{SRC}', str_replace( ROOT_DIR, '', $file ) );
+    $tpl->set( '{MD5}', $image['md5'] );
 
     $tpl->compile( 'bbcode/show_uploaded_file' );
 }

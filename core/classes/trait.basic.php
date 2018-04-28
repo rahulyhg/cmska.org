@@ -73,6 +73,14 @@ trait basic
         return md5( $data . CMS_KEY );
     }
 
+    static public final function md5_file( $data )
+    {
+        if( !is_scalar( $data ) && !is_array( $data )  ){ self::err( ''.__CLASS__.'::'.__METHOD__.' accepts string or array only!' ); }
+        if( is_array($data) ){ return array_map( 'self::'.__METHOD__, $data ); }
+        if( !file_exists($data) ){ self::err( ''.__CLASS__.'::'.__METHOD__.' -> file not found!' ); }
+        return md5_file( $data );
+    }
+
     static public final function sha1( $data )
     {
         if( !is_scalar( $data ) && !is_array( $data )  ){ self::err( ''.__CLASS__.'::'.__METHOD__.' accepts string or array only!' ); }

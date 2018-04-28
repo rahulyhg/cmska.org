@@ -26,6 +26,10 @@ switch( _ACTION_ )
     $_action_file = 'upload_process';
   break;
 
+  case 13: //UPLOAD
+    $_action_file = 'upload_delete';
+  break;
+
   default:
     ajax::set_error( 1, 'Action "'._ACTION_.'" not defined!' );
 }

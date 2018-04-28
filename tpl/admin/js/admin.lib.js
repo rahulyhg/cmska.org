@@ -35,8 +35,6 @@ var posts = new function()
             post['subaction'] = 1;
             post['save'] = {};
 
-        //var b = '';
-
         $('#posteditor').find('[data-save="1"]').not('input[type="checkbox"]').each(function()
         {
             post['save'][$(this).attr('name')] = $(this).val();
@@ -47,14 +45,37 @@ var posts = new function()
             post['save'][$(this).attr('name')] = parseInt( $(this).prop('checked')?1:0 );
         });
 
-        $.ajax({ data: post }).done(function( _r )
+        $('#posteditor').find('button[data-role="save"]').prop('disabled', true );
+        common.show_loader();
+
+        setTimeout(function()
         {
-            try{ _r = jQuery.parseJSON( _r ); }catch(err){ common.se( 'ERROR: '+err+"\n\n"+_r, 'warning' ); return false; }
-            if( parseInt(_r['error'])>0 ){ common.se( _r['error_text'], 'warning' ); return false; }
+            $.ajax({ "data": post }).done(function( _r )
+            {
+                try{ _r = jQuery.parseJSON( _r ); }catch(err){ common.se( 'ERROR: '+err+"\n\n"+_r, 'warning' ); return false; }
+                if( parseInt(_r['error'])>0 ){ common.se( _r['error_text'], 'warning' ); return false; }
+
+                    _r['post_id'] = parseInt( _r['post_id'] );
+                var curr_post_id = parseInt( window.location.href.match(/post_id=([^&]+)/)[1] );
+
+                if( _r['post_id'] != curr_post_id )
+                {
+                    window.location.href = window.location.href.replace(/post_id=([^&]+)/g, 'post_id='+_r['post_id']);
+                }
+                else
+                {
+                    setTimeout(function()
+                    {
+                        $('#posteditor').find('button[data-role="save"]').prop('disabled', false );
+                    }, 100 );
+                }
+                return true;
+            });
+        }, 800);
 
 
-            return true;
-        });
+
+
         return true;
     }
 }

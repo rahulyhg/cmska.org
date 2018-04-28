@@ -149,6 +149,43 @@ var uploader = new function()
         button.attr( 'disabled', false );
     }
 
+    this.tag = function()
+    {
+        var url = $('#lnks').find('input[name="url"]').val();
+        var ttl = $('#lnks').find('input[name="imgtagtitle"]').val();
+
+        if( ttl.length > 0 ){ ttl = '|'+ttl; }
+        else{ ttl = ''; }
+
+        var tag = '[img'+ttl+']'+url+'[/img]';
+        $('#lnks').find('input[name="tag"]').val(tag);
+        $('#lnks').find('input[name="tag"]').select();
+        document.execCommand("copy");
+    }
+
+    this.del = function( hash, area )
+    {
+        var post = {};
+            post['ajax']        = 1;
+            post['action']      = 13;
+            post['mod']         = 'admin';
+            post['subaction']   = 0;
+            post['hash']    = hash;
+            post['area']    = area;
+
+
+        $.ajax({ data: post }).done( function( _r )
+        {
+            try{ _r = jQuery.parseJSON( _r ); }catch(err){ alert( 'ERROR: '+err+"\n\n"+_r ); return false; }
+            if( parseInt(_r['error'])>0 ){ alert( _r['error_text'] ); return false; }
+
+            $('#lnks').find('input[name="url"]').val( '' );
+            $('#lnks').find('input[name="tag"]').val( '' );
+
+            uploader.show_uploaded();
+        });
+    }
+
     this.show_uploaded = function()
     {
         var post = {};
@@ -163,30 +200,23 @@ var uploader = new function()
             try{ _r = jQuery.parseJSON( _r ); }catch(err){ alert( 'ERROR: '+err+"\n\n"+_r ); return false; }
             if( parseInt(_r['error'])>0 ){ alert( _r['error_text'] ); return false; }
 
-            $('#file_list').html( _r['template'] );
+            $('#file_list #ins').html( _r['template'] );
+
+            $('#file_list #ins').find('.bttns .del').click(function()
+            {
+                uploader.del( $(this).parents('.uploaded').unbind().find('img').attr('data-hash'), 'image' );
+            });
 
             $('#file_list .uploaded').unbind().click(
             function()
             {
-                var txt = $(this).find('img').attr('src');
-                    txt = 13570;
+                $('#lnks').find('input[name="url"]').val( $(this).find('img').attr('src') );
 
-                var aux = document.createElement("p");
+                uploader.tag();
 
-                $('#file_list')
-
-                /*
-                var aux = document.createElement("input");
-
-                aux.setAttribute("type", "text");
-                aux.setAttribute("contentEditable", true);
-                aux.setAttribute("value", txt );
-
-                document.appendChild(aux);
-
-                aux.select();
-                document.execCommand("copy");
-                //document.removeChild(aux); */
+                $('#lnks').find('input[name="tag"]').unbind().click(function(){$(this).select();});
+                $('#lnks').find('input[name="url"]').unbind().click(function(){$(this).select();});
+                $('#lnks').find('input[name="imgtagtitle"]').unbind().change(function(){uploader.tag();});
             });
         });
     }

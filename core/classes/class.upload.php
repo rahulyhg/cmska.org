@@ -16,6 +16,20 @@ class upload
 {
     use basic;
 
+    static public final function del( $hash, $area )
+    {
+        if( $area == 'image' )
+        {
+            return images::del( $hash )?1:0;
+        }
+
+        if( $area == 'files' )
+        {
+
+        }
+        return false;
+    }
+
     static public final function process( $files, $conf, $post_id )
     {
         $cms_config = config::get();
