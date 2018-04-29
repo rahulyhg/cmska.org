@@ -6,3 +6,4 @@
     <div class="elem" data-role="postcreated_time">{post:created_time}</div>
     <p class="clear"></p>
 </div>
+<p class="clear"></p>

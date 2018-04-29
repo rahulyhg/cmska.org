@@ -1,5 +1,5 @@
 <?php if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
- /* CACHE CREATED: 1524945938.497 (2018-04-28 23:05:38) */
+ /* CACHE CREATED: 1524992329.5253 (2018-04-29 11:58:49) */
 return array (
   'count' => 4,
   'rows' => 
@@ -10,9 +10,9 @@ return array (
       array (
         'id' => '4',
         'title' => 'Оновлена версія після тривалої паузи',
-        'alt_title' => 'onovlena_versiya_pislya_trivalo_pauzi',
+        'alt_title' => 'onovlena_versiya_pislya_trivaloi_pauzi',
         'descr' => '',
-        'short_post' => 'На сьогоднішній день ми стикнулись з проблемою, що притаманна мабуть переважній більшості не комерційних авторських розробок - вихід оновлень.',
+        'short_post' => 'На сьогоднішній день ми стикнулись з проблемою, що притаманна мабуть переважній більшості не комерційних авторських розробок - вихід оновлень.&#10;',
         'author_id' => '1',
         'created_time' => '2018-03-04 22:28:45',
         'keywords' => '',

@@ -19,7 +19,7 @@
         <script src="/tpl/js/jquery.js" type="text/javascript"></script>
         <script src="/tpl/js/jquery-ui.js" type="text/javascript"></script>
         <script src="{SKINDIR}/js/admin.lib.js" type="text/javascript"></script>
-        <script src="/tpl/js/uploader.js" type="text/javascript"></script>   
+        <script src="/tpl/js/uploader.js" type="text/javascript"></script>
         <script src="{SKINDIR}/js/bbcodes.lib.js" type="text/javascript"></script>
 
     </head>
@@ -37,27 +37,27 @@
                 </div>
             </div>
             -->
+
             <div class="clear"></div>
 
             <div id="nav">
                 <div class="mainbox">
                     {global:main_navigation}
+                    <div class="clear"></div>
                 </div>
-
+                <div class="clear"></div>
             </div>
             <div class="clear"></div>
 
             <div id="content">
                 <div class="mainbox">
-
                     {global:info}
+                    <div class="clear"></div>
                     {global:page_item}
-
+                    <div class="clear"></div>
                 </div>
             </div>
         </div>
-
-
 
         <div id="overlay" class="dnone">
             <div class="overlay"></div>
@@ -67,6 +67,7 @@
         </div>
 
         <div id="ajax"></div>
+        <div class="clear"></div>
 
     </body>
 </html>

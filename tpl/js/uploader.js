@@ -84,6 +84,7 @@ var uploader = new function()
                 "contentType" : false
             }).done(function( _r )
             {
+                //alert( _r );
                 //form.find('input[type="file"]').val( false );
                 form.find('button[type="submit"]').attr( 'disabled', true );
                 common.hide_loader();

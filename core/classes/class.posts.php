@@ -18,6 +18,18 @@ class posts
 
     const CACHE_VAR_POSTS = 'posts';
 
+    public final function delete( $post_id = 0, $hash = false )
+    {
+        $post_id = self::integer( $post_id );
+        if( !$post_id){ ajax::set_error( 1, 'Помилка видалення публікації!' ); }
+        if( self::md5( date('Ymd') . $post_id ) != $hash ){ ajax::set_error( 1, 'Помилка видалення публікації!' ); }
+
+        $SQL = 'DELETE FROM posts WHERE id=\''.$post_id.'\';';
+        $this->db->query( $SQL );
+
+        cache::clean( self::CACHE_VAR_POSTS );
+    }
+
     public final function save( $data = false )
     {
       if( !$data || !is_array($data) || !count($data) )
@@ -339,6 +351,7 @@ class posts
 
         $data = self::stripslashes( $data );
 
+        $tpl->set( '{hash:key}',         self::md5( date('Ymd').self::integer($data['post']['id']) ) );
         $tpl->set( '{post:id}',          self::integer($data['post']['id']));
         $tpl->set( '{post:url}',         self::get_url( $data ) );
         $tpl->set( '{post:author_id}',   self::integer($data['post']['author_id']));
@@ -399,8 +412,9 @@ class posts
       {
         $tpl->load( $skin );
 
+        $tpl->set( '{hash:key}',        self::md5( date('Ymd').self::integer($value['post']['id']) ) );
         $tpl->set( '{post:short_post}', bbcode::html2bbcode( self::stripslashes($value['post']['short_post']) ) );
-        $tpl->set( '{post:full_post}', bbcode::html2bbcode( self::stripslashes($value['post']['full_post']) ) );
+        $tpl->set( '{post:full_post}',  bbcode::html2bbcode( self::stripslashes($value['post']['full_post']) ) );
 
         foreach( $value as $_tag_group => $_inf )
         {

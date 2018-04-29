@@ -36,7 +36,9 @@ class bbcode
         {
             $img = array();
             $img['src']     = isset($array[3])?$array[3]:false;
-            $img['alt']     = isset($array[2])?self::htmlentities($array[2]):false;
+            $img['alt']     = isset($array[2])?self::htmlspecialchars($array[2]):false;
+            $img['alt']     = explode( '|', $img['alt'], 2 );
+            $img['alt']     = end( $img['alt'] );
             $img['title']   = $img['alt'];
 
             return '<img class="post_img" src="'.$img['src'].'" alt="'.$img['alt'].'" title="'.$img['title'].'" />';
@@ -49,7 +51,7 @@ class bbcode
             $img['title']       = preg_filter( '!(.*)title=\"(.+?)\"(.*)!is', '$2', $array['0'] );
 
             $img['src']   = $img['src']?$img['src']:false;
-            $img['title'] = $img['title']?$img['title']:false;
+            $img['title'] = $img['title']?self::htmlspecialchars_decode($img['title']):false;
 
             return '[img'.($img['title']?'|'.$img['title']:'').']'.$img['src'].'[/img]';
         }

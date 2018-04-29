@@ -1,4 +1,4 @@
-<div class="elemblock admpage editpost" id="posteditor">
+<div class="elemblock admpage editpost" id="posteditor" data-post_id="{post:id}" data-hash_key="{hash:key}">
 
     <input type="hidden" name="post:id" value="{post:id}" data-role="uploader:post_id" data-area="post" data-save="1" />
 

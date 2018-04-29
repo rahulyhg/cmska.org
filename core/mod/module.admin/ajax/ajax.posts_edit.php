@@ -19,6 +19,11 @@ switch( _SUBACTION_ )
       }
 
   break;
+  case 2:
+      if( !isset($_REQUEST['post_id']) || !( $_REQUEST['post_id'] = common::integer($_REQUEST['post_id']) ) ){ ajax::set_error( 1, 'Post delete failed!' ); }
+      if( !isset($_REQUEST['post_hash']) || !( $_REQUEST['post_hash'] = common::filter($_REQUEST['post_hash']) ) ){ ajax::set_error( 1, 'Post delete failed!' ); }
+      $_POSTS->delete( $_REQUEST['post_id'], $_REQUEST['post_hash'] );
+  break;
   default: ajax::set_error( 1, 'Subaction "'._SUBACTION_.'" not defined!' );
 }
 
