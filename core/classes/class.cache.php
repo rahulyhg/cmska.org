@@ -1,4 +1,28 @@
 <?php
+/**
+ * class.cache.php
+ *
+ * клас для роботи з кешем
+ *
+ * @category  class
+ * @package   cmska.org
+ * @author    MrGauss <author@cmska.org>
+ * @copyright 2018
+ * @license   GPL
+ * @version   0.4
+ */
+
+/**
+ * [CLASS/FUNCTION INDEX of SCRIPT]
+ *
+ *     43 class cache
+ *
+ * TOTAL FUNCTIONS: 0
+ * (This index is automatically created/updated by the WeBuilder plugin "DocBlock Comments")
+ *
+ */
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -10,11 +34,17 @@ if( !trait_exists( 'basic' ) ){ require( CLASSES_DIR.DS.'trait.basic.php' ); }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * Клас для роботи з системою кешування даних
+ *
+ * @author    MrGauss <author@cmska.org>
+ * @package   cmska.org
+ */
 class cache
 {
     use basic;
 
-    static public final function clean( $prefix = false )
+    final public static function clean( $prefix = false )
     {
         $prefix = self::strtolower( $prefix );
 
@@ -40,7 +70,9 @@ class cache
         return true;
     }
 
-    static public final function set( $name, $data, $log = false )
+
+
+    final public static function set( $name, $data, $log = false )
     {
         $name = self::get_cache_file_path( $name );
         ob_start();
@@ -50,7 +82,9 @@ class cache
         return self::write_file( $name, $data, $log );
     }
 
-    static public final function get( $name )
+
+
+    final public static function get( $name )
     {
          $name = self::get_cache_file_path( $name );
         if( !file_exists($name) ){ return false; }
@@ -62,21 +96,11 @@ class cache
         return require( $name );
     }
 
-    static private final function get_cache_file_path( $name )
+
+    final private static function get_cache_file_path( $name )
     {
         return CACHE_DIR.DS.'cache-'.self::strtolower( trim( $name ) ).'.'.DOMAIN.'.php';
     }
 }
-
-//////////////////////////////////////////////////////////////////////////////////////////
-
-$_MEMCACHE = false;
-
-if( defined('CACHE_TYPE') && CACHE_TYPE == 'MEM' )
-{
-    cache::mem_init( 'unix:/var/run/memcached.sock', 0 );
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////
 
 ?>

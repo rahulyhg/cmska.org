@@ -1,4 +1,26 @@
 <?php
+/**
+ * class.categ.php
+ *
+ * клас для роботи з категоріями
+ *
+ * @category  class
+ * @package   cmska.org
+ * @author    MrGauss <author@cmska.org>
+ * @copyright 2018
+ * @license   GPL
+ * @version   0.4
+ */
+
+/**
+ * [CLASS/FUNCTION INDEX of SCRIPT]
+ *
+ *     42 class categ
+ *
+ * TOTAL FUNCTIONS: 0
+ * (This index is automatically created/updated by the WeBuilder plugin "DocBlock Comments")
+ *
+ */
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -11,13 +33,27 @@ if( !trait_exists( 'db_connect' ) ){ require( CLASSES_DIR.DS.'trait.db_connect.p
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * Клас для роботи з категоріями
+ *
+ * @author    MrGauss <author@cmska.org>
+ * @package   cmska.org
+ */
 class categ
 {
     use basic, db_connect;
 
     const CACHE_VAR_CATEG = 'categ';
 
-    public final function get_categ_opts()
+    /**
+     * Отримання дерева категорій у вигляді елементів <option...>
+     *
+     * @var final function get_categ_opts()
+     *
+     * @access public
+     * @return string
+     */
+    final public function get_categ_opts()
     {
       $data = array();
 
@@ -41,7 +77,15 @@ class categ
       return $data;
     }
 
-    public final function get_categories()
+    /**
+     * Отримання дерева категорій з БД
+     *
+     * @var final function get_categories()
+     *
+     * @access public
+     * @return array
+     */
+    final public function get_categories()
     {
         $data = cache::get( self::CACHE_VAR_CATEG );
 
@@ -64,6 +108,13 @@ class categ
         return $data;
     }
 
+    /**
+     * [add description]
+     *
+     * @var final function get_id( $altname )
+     *
+     * @access public
+     */
     public final function get_id( $altname )
     {
         foreach( $this->get_categories() as $id => $value )
@@ -76,6 +127,13 @@ class categ
         return false;
     }
 
+    /**
+     * [add description]
+     *
+     * @var final function get_url( $id )
+     *
+     * @access public
+     */
     public final function get_url( $id )
     {
         $data = $this->get_categories();

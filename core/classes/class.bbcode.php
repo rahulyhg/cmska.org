@@ -1,4 +1,26 @@
 <?php
+/**
+ * class.bbcode.php
+ *
+ * клас обробки bbcode
+ *
+ * @category  class
+ * @package   cmska.org
+ * @author    MrGauss <author@cmska.org>
+ * @copyright 2018
+ * @license   GPL
+ * @version   0.4
+ */
+
+/**
+ * [CLASS/FUNCTION INDEX of SCRIPT]
+ *
+ *     41 class bbcode
+ *
+ * TOTAL FUNCTIONS: 0
+ * (This index is automatically created/updated by the WeBuilder plugin "DocBlock Comments")
+ *
+ */
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -10,27 +32,62 @@ if( !trait_exists( 'basic' ) ){ require( CLASSES_DIR.DS.'trait.basic.php' ); }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * Клас обробки bbcode
+ *
+ * @author    MrGauss <author@cmska.org>
+ * @package   cmska.org
+ */
 class bbcode
 {
     use basic;
 
+    /**
+     * Перелік "простих" тегів
+     * Зазвичай ці теги не мають додаткових параметрів
+     *
+     * @var static $simple_tags
+     *
+     * @access public
+     */
     public static $simple_tags = array( 'b', 'i', 'u', 's', 'p', 'h2', 'h3', 'li', 'ol', 'ul', 'sub', 'sup', 'span' );
 
-    public final static function bbcode2html( $text = false )
+    /**
+     * Кодування bbcode в html
+     *
+     * @var final static function bbcode2html( $text
+     *
+     * @access public
+     */
+    final public static function bbcode2html( $text = false )
     {
         $text = self::simple_tags( $text );
         $text = preg_replace_callback( '!\[(img)(\|.+?|)\](.+?)\[\/\1\]!is', 'self::process_image', $text );
         return $text;
     }
 
-    public final static function html2bbcode( $text = false )
+    /**
+     * Декодування html в bbcode
+     *
+     * @var final static function html2bbcode( $text
+     *
+     * @access public
+     */
+    final public static function html2bbcode( $text = false )
     {
         $text = self::simple_tags( $text, true );
         $text = preg_replace_callback( '!<img(.+?)>!is', 'self::process_image', $text );
         return $text;
     }
 
-    private final static function process_image( $array )
+    /**
+     * Кодування/декодування bbcode-тегу [img...] та html-тегу <img...>
+     *
+     * @var final static function process_image( $array )
+     *
+     * @access private
+     */
+    final private static function process_image( $array )
     {
         if( strpos( isset($array[0])?$array[0]:'', '[/img]' ) !== false )
         {
@@ -57,7 +114,14 @@ class bbcode
         }
     }
 
-    private final static function simple_tags( $text = false, $html2bbcode = false )
+    /**
+     * Конвертація "простих" тегів html <-> bbcode
+     *
+     * @var final static function simple_tags( $text
+     *
+     * @access private
+     */
+    final private static function simple_tags( $text = false, $html2bbcode = false )
     {
         if( $html2bbcode )
         {
@@ -90,21 +154,44 @@ class bbcode
         return $text;
     }
 
-    private final static function _replace_code_html2bb( $array )
+    /**
+     * Конвертація html-тегу <code> в bbcode-тег [code]
+     * Символи в тегах <code></code> будуть розкодовані через html_entity
+     *
+     * @var final static function _replace_code_html2bb( $array )
+     *
+     * @access private
+     */
+    final private static function _replace_code_html2bb( $array )
     {
         $text = $array[2];
         $text = self::html_entity_decode( self::trim( $text ) );
         return '[code]'.$text.'[/code]';
     }
 
-    private final static function _replace_code_bb2html( $array )
+    /**
+     * Конвертація bbcode-тегу [code] в html-тег <code>
+     * Символи в тегах [code][/code] закодовуються в html_entity
+     *
+     * @var final static function _replace_code_bb2html( $array )
+     *
+     * @access private
+     */
+    final private static function _replace_code_bb2html( $array )
     {
         $text = $array[2];
         $text = self::htmlentities( self::trim( $text ) );
         return '<code class="bb_code">'.$text.'</code>';
     }
 
-    private final static function _replace_simple_html2bb( $array )
+    /**
+     * Конвертація простих html-тегів в bbcode
+     *
+     * @var final static function _replace_simple_html2bb( $array )
+     *
+     * @access private
+     */
+    final private static function _replace_simple_html2bb( $array )
     {
         $tag = self::totranslit($array[1]);
         $text = end( $array );
@@ -114,7 +201,14 @@ class bbcode
         return '['.$tag.''.$align.''.$title.']'.$text.'[/'.$tag.']';
     }
 
-    private final static function _replace_simple_bb2html( $array )
+    /**
+     * Конвертація простих bbcode-тегів в html
+     *
+     * @var final static function _replace_simple_bb2html( $array )
+     *
+     * @access private
+     */
+    final private static function _replace_simple_bb2html( $array )
     {
         $tag = self::trim(self::totranslit($array[1]));
         $text = end( $array );
