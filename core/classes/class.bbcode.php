@@ -56,8 +56,8 @@ class bbcode
      * Кодування bbcode в html
      *
      * @var final static function bbcode2html( $text
-     *
      * @access public
+     * @return string
      */
     final public static function bbcode2html( $text = false )
     {
@@ -70,7 +70,7 @@ class bbcode
      * Декодування html в bbcode
      *
      * @var final static function html2bbcode( $text
-     *
+     * @static
      * @access public
      */
     final public static function html2bbcode( $text = false )
@@ -84,7 +84,7 @@ class bbcode
      * Кодування/декодування bbcode-тегу [img...] та html-тегу <img...>
      *
      * @var final static function process_image( $array )
-     *
+     * @static
      * @access private
      */
     final private static function process_image( $array )
@@ -118,7 +118,7 @@ class bbcode
      * Конвертація "простих" тегів html <-> bbcode
      *
      * @var final static function simple_tags( $text
-     *
+     * @static
      * @access private
      */
     final private static function simple_tags( $text = false, $html2bbcode = false )
@@ -159,7 +159,7 @@ class bbcode
      * Символи в тегах <code></code> будуть розкодовані через html_entity
      *
      * @var final static function _replace_code_html2bb( $array )
-     *
+     * @static
      * @access private
      */
     final private static function _replace_code_html2bb( $array )
@@ -174,7 +174,7 @@ class bbcode
      * Символи в тегах [code][/code] закодовуються в html_entity
      *
      * @var final static function _replace_code_bb2html( $array )
-     *
+     * @static
      * @access private
      */
     final private static function _replace_code_bb2html( $array )
@@ -188,7 +188,7 @@ class bbcode
      * Конвертація простих html-тегів в bbcode
      *
      * @var final static function _replace_simple_html2bb( $array )
-     *
+     * @static
      * @access private
      */
     final private static function _replace_simple_html2bb( $array )
@@ -205,7 +205,7 @@ class bbcode
      * Конвертація простих bbcode-тегів в html
      *
      * @var final static function _replace_simple_bb2html( $array )
-     *
+     * @static
      * @access private
      */
     final private static function _replace_simple_bb2html( $array )

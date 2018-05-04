@@ -84,6 +84,7 @@ class ajax
    * @var final static function result()
    * @static
    * @access public
+   * @return string
    */
   final public static function result()
   {
@@ -101,6 +102,7 @@ class ajax
    * @var final static function set_error( $id
    * @static
    * @access public
+   * @return bool
    */
   final public static function set_error( $id = 0, $text = '' )
   {
@@ -115,6 +117,7 @@ class ajax
    * @var final static function set_data( $name
    * @static
    * @access public
+   * @return bool
    */
   final public static function set_data( $name, $data )
   {
