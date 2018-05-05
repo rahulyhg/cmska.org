@@ -25,18 +25,6 @@
  * Тимчасовий захід - на стадії розробки CMS виводить phpinfo() для усих відвідувачів
  * окрім розробників
  */
-if( $_SERVER['HTTP_X_REAL_IP'] != '217.115.100.95' && strpos( $_SERVER['HTTP_X_REAL_IP'], '192.168' ) === false )
-{
-    ob_start();
-	phpinfo();
-    $data = ob_get_clean();
-
-    $data = preg_replace( '!<style(.+?)style>!is', '<link rel="stylesheet" type="text/css" href="/tpl/default/css/phpinfo.css" />', $data );
-
-    echo $data;
-    exit;
-}
-
 
 error_reporting ( E_ALL );
 ini_set ( 'display_errors', true );
@@ -59,10 +47,7 @@ define ( 'USER_IP',         $_SERVER['REMOTE_ADDR'] );
 define ( 'CHARSET',         'Windows-1251' /*'CP1251'*/ );
 define ( 'CACHE_TYPE',      'FILE' /*MEM | FILE*/ );
 
-
-header( 'Content-type: text/html; charset='.CHARSET );
 ob_start();
-
 
 /**
  * Підключення обробника помилок

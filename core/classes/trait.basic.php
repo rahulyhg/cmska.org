@@ -392,7 +392,7 @@
 		 * @param $data
 		 * @return array|string
 		 */
-		static public final function fileinfo($data)
+		static public final function fileinfo($data, $param = FILEINFO_MIME_TYPE)
 		{
 			if (!is_scalar($data) && !is_array($data))
 			{
@@ -402,7 +402,7 @@
 			{
 				return array_map('self::' . __METHOD__, $data);
 			}
-			$finfo = new finfo(FILEINFO_MIME_TYPE);
+			$finfo = new finfo($param );
 			$imtype = $finfo->file($data);
 			unset($finfo);
 			return $imtype;

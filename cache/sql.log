@@ -38250,3 +38250,2220 @@ UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
 --------------------------------
 SELECT * FROM users WHERE id = 1;
 --------------------------------
+2018.05.05 14:20:35:
+--------------------------------
+SELECT id FROM users WHERE email='admin@cmska.org' and password='5729c5f66821340f23f4559243a8a2eb' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:20:35:
+--------------------------------
+UPDATE users SET token='cb7bfe24ba39ef6c5db70bfb75a4d412', last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:20:35:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:20:35:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:20:35:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:20:35:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:20:40:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:20:40:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:20:40:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:20:40:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:20:40:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:20:40:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:20:44:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:20:44:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:20:44:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:20:46:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:20:46:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:20:46:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:20:46:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.id = 4 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.05.05 14:20:46:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.id = 4 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.05.05 14:20:46:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.05.05 14:20:52:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:20:52:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:20:52:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:20:52:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:20:52:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:20:52:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:20:52:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 14:22:26:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:22:26:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:22:26:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:22:26:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:22:26:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:22:26:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:22:26:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 14:23:25:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:23:25:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:23:25:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:23:25:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.id = 4 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.05.05 14:23:25:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.id = 4 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.05.05 14:23:25:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.05.05 14:23:27:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:23:27:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:23:27:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:23:27:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:23:27:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:23:27:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:23:27:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 14:23:32:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:23:32:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:23:32:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:25:19:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:25:19:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:25:19:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:25:19:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 14:25:22:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:25:22:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:25:22:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:21:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:39:21:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:21:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:21:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.id = 4 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.05.05 14:39:21:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.id = 4 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.05.05 14:39:21:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.05.05 14:39:21:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:39:21:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:21:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:21:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 14:39:23:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:39:23:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:23:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:23:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:39:23:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:23:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:23:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 14:39:30:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:39:30:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:30:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:50:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:39:50:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:50:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:50:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 14:39:54:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:39:54:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:54:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:57:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:39:57:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:57:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:39:57:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 14:40:34:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:40:34:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:40:34:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:40:38:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 14:40:38:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 14:40:38:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 14:40:38:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 15:20:42:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:20:42:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:20:42:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:20:44:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:20:44:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:20:44:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:20:44:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:20:44:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:20:44:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:20:44:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 15:20:49:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:20:49:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:20:49:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:24:10:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:24:10:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:24:10:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:24:13:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:24:13:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:24:13:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:24:13:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 15:24:24:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:24:24:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:24:24:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:24:25:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:24:25:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:24:25:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:24:25:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 15:24:44:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:24:44:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:24:44:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:26:31:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:26:31:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:26:31:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:26:36:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:26:36:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:26:36:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:26:36:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 15:42:01:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:42:01:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:42:01:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:43:27:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:43:27:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:43:27:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:43:27:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 15:43:30:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:43:30:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:43:30:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:43:39:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:43:39:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:43:39:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:43:39:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 15:43:42:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:43:42:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:43:42:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:44:27:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:44:27:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:44:27:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:44:27:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 15:45:31:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:45:31:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:45:31:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:45:34:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:45:34:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:45:34:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:45:34:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 15:47:59:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:47:59:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:47:59:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:56:40:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:56:40:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:56:40:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:56:40:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 15:56:42:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:56:42:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:56:42:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:57:47:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:57:47:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:57:47:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:57:47:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 15:57:51:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:57:51:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:57:51:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:57:53:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:57:53:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:57:53:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 15:57:53:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 15:58:09:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 15:58:09:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 15:58:09:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 16:00:24:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 16:00:24:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 16:00:24:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 16:00:24:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 16:01:19:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 16:01:19:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 16:01:19:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 16:01:52:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 16:01:52:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 16:01:52:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 16:01:52:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 16:01:57:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 16:01:57:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 16:01:57:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 16:02:35:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 16:02:35:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 16:02:35:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 16:02:35:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 16:02:38:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 16:02:38:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 16:02:38:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 16:02:53:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 16:02:53:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 16:02:53:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 16:02:53:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 16:02:56:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 16:02:56:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 16:02:56:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 16:03:20:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 16:03:20:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 16:03:20:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 16:03:20:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 16:03:29:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 16:03:29:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 16:03:29:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 16:03:34:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='cb7bfe24ba39ef6c5db70bfb75a4d412' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 16:03:34:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.05.05 16:03:34:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 16:03:34:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 18:54:36:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 18:54:36:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 18:54:37:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 18:55:00:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 18:55:00:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 18:55:02:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 18:55:02:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 18:58:43:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 18:58:43:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:05:30:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:11:29:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:11:30:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:11:31:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:14:17:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:14:18:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:14:31:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:14:31:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:14:34:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:14:34:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 4 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.05.05 19:14:34:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 4 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.05.05 19:14:34:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.05.05 19:20:32:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:21:18:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:21:21:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:21:22:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:21:55:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:37:46:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:37:47:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='22749923b62038095d55bec93aca48f3' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:37:51:
+--------------------------------
+SELECT id FROM users WHERE email='admin@cmska.org' and password='5729c5f66821340f23f4559243a8a2eb' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:37:51:
+--------------------------------
+UPDATE users SET token='0c4be0a27fc82be09c770840c5f98c40', last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:37:51:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:37:51:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:37:51:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:37:51:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:37:53:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:37:53:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:37:53:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:37:58:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:37:58:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:37:58:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:37:58:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:37:58:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:37:58:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:38:04:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:38:04:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:38:04:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:38:04:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:38:04:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:38:04:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:38:10:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:38:10:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:38:10:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:38:11:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:38:11:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:38:11:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:38:19:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:38:19:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:38:19:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:38:19:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:38:19:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:38:19:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:38:19:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 19:38:48:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:38:48:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:38:48:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:41:21:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:41:21:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:41:21:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:41:21:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 19:41:24:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:41:24:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:41:24:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:41:39:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:41:39:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:41:39:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:41:56:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:41:56:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:41:56:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:43:03:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:43:03:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:43:03:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:43:38:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:43:38:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:43:38:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:43:45:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:43:45:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:43:45:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:43:45:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 19:43:51:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:43:51:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:43:51:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:43:53:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:43:53:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:43:53:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:43:53:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 19:45:15:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:45:15:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:45:15:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:46:05:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:46:05:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:46:05:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:54:01:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:54:01:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:54:01:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:54:36:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:54:36:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:54:36:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:55:39:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:55:39:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:55:39:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 19:56:04:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 19:56:04:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 19:56:04:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 20:05:04:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 2 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.05.05 20:05:04:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 2 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.05.05 20:05:04:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (2) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.05.05 20:05:18:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id = 1 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.05.05 20:05:18:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id = 1 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.05.05 20:05:18:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.05.05 20:05:35:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 4 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.05.05 20:05:35:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 4 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.05.05 20:05:35:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.05.05 20:05:56:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.05.05 20:05:56:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.05.05 20:05:56:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.05.05 20:06:37:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 3 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.05.05 20:06:37:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 3 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.05.05 20:06:37:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (3) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.05.05 22:02:25:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:02:25:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:02:25:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:02:25:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:02:25:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:02:25:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:02:25:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 22:02:38:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:02:38:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:02:38:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:02:40:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:02:40:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:02:40:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:02:40:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:02:40:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:02:40:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:02:40:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 22:02:50:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:02:50:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:02:50:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:03:12:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:03:12:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:03:12:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:03:13:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:03:13:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:03:13:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:03:13:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 22:03:26:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:03:26:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:03:26:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:03:28:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:03:28:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:03:28:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:03:28:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 22:03:33:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:03:33:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:03:33:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:12:53:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:12:53:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:12:53:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:12:53:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 22:13:15:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:13:15:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:13:15:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:13:17:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:13:17:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:13:17:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:13:17:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:13:17:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:13:17:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:13:17:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 22:13:25:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:13:25:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:13:25:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:13:37:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:13:37:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:13:37:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:13:37:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 22:13:43:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:13:43:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:13:43:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:13:47:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:13:47:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:13:47:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:13:47:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 22:15:43:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:15:43:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:15:43:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:16:15:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:16:15:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:16:15:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:16:16:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:16:16:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:16:16:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:16:16:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 22:16:19:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:16:19:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:16:19:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:16:19:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:16:19:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:16:19:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:16:19:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 22:16:24:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:16:24:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:16:24:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:18:04:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:18:04:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:18:04:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.05.05 22:18:04:
+--------------------------------
+SELECT * FROM images WHERE post_id=4 ORDER BY load_time DESC;
+--------------------------------
+2018.05.05 22:18:09:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='0c4be0a27fc82be09c770840c5f98c40' AND last_ip='217.115.100.95' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.05.05 22:18:09:
+--------------------------------
+UPDATE users SET last_ip='217.115.100.95' WHERE id = 1;
+--------------------------------
+2018.05.05 22:18:09:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------

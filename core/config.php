@@ -20,5 +20,6 @@ return array (
   'upload.image.mini.proportion' => 1,
   'upload.image.watermark' => 1,
   'upload.file.ext' => '.doc,.pdf,.zip',
+  'upload.file.encode' => 1,
 );
 ?>

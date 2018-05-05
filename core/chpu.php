@@ -2,6 +2,9 @@
 
 if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$data = false;
 if( preg_match( '!^\/index\.(htm|html)$!i', $_SERVER['REQUEST_URI'], $data ) )
 {
     header( 'Location: '.HOME.'' ); exit;
@@ -9,6 +12,25 @@ if( preg_match( '!^\/index\.(htm|html)$!i', $_SERVER['REQUEST_URI'], $data ) )
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+$data = false;
+if( preg_match( '!^\/download/file-(\d+?)(\/|)$!i', $_SERVER['REQUEST_URI'], $data ) )
+{
+    if( !is_array($data) || !isset($data['1']) || common::integer($data['1']) < 1 )
+    {
+        header( 'Location: '.HOME.'' );
+        exit;
+    }
+    else
+    {
+        $_REQUEST['mod'] =  'download';
+        $_REQUEST['file_id'] =  common::integer($data['1']);
+    }
+}
+define( '_DOWNLOAD_ID', common::integer( isset($_REQUEST['file_id'])?$_REQUEST['file_id']:0 ) );
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$data = false;
 if( preg_match( '!\/tag:(.+)(\/|)$!i', $_SERVER['REQUEST_URI'], $data ) )
 {
     $_REQUEST['mod'] =  'posts';

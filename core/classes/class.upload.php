@@ -97,7 +97,7 @@ class upload
         {
             $save_dir = $save_dir.DS.'files';
             $file_mode = 'file';
-            $filename = sha1_file( $file['tmp_name'] ).'.scms';
+            $filename = md5_file( $file['tmp_name'] ).'.scms';
         }
         else if( preg_match( '!\.'.$file['ext'].'(,|$)!i', $cms_config['upload.image.ext'] ) )
         {
@@ -117,7 +117,11 @@ class upload
             if( !mkdir( $save_dir ) ){ self::err( 'Помилка створення каталогу!'."\n" ); }
             if( !mkdir( $save_dir.DS.'mini' ) ){ self::err( 'Помилка створення каталогу!'."\n" ); }
             chmod( $save_dir, 0777 );
-            chmod( $save_dir.DS.'mini', 0777 );
+            if( $file_mode == 'image' )
+			{
+				chmod( $save_dir.DS.'mini', 0777 );
+			}
+
         }
 
         if( move_uploaded_file( $file['tmp_name'], $save_dir.DS.$filename ) )

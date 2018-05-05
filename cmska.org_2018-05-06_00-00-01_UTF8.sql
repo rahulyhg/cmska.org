@@ -247,12 +247,15 @@ ALTER SEQUENCE "site"."categories_id_seq" OWNED BY "site"."categories"."id";
 --
 
 CREATE TABLE "site"."files" (
-    "sha1" character varying(40) DEFAULT ''::character varying NOT NULL,
+    "md5" character varying(32) DEFAULT ''::character varying NOT NULL,
     "load_time" timestamp without time zone DEFAULT ("now"())::timestamp without time zone NOT NULL,
     "orig_name" character varying(255) DEFAULT ''::character varying NOT NULL,
     "size" integer DEFAULT 0 NOT NULL,
     "user_id" bigint DEFAULT 0 NOT NULL,
-    "post_id" bigint DEFAULT 0 NOT NULL
+    "post_id" bigint DEFAULT 0 NOT NULL,
+    "mime" character varying(255) DEFAULT ''::character varying NOT NULL,
+    "encoded" smallint DEFAULT 0 NOT NULL,
+    "keyring" character varying(255) DEFAULT ''::character varying NOT NULL
 );
 
 
@@ -629,7 +632,7 @@ SELECT pg_catalog.setval('"site"."user_groups_id_seq"', 1, true);
 --
 
 INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (0, '--', '--', 'root@cmska.org', '0.0.0.0', '0', 0);
-INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (1, 'admin', '5729c5f66821340f23f4559243a8a2eb', 'admin@cmska.org', '217.115.100.95', '22749923b62038095d55bec93aca48f3', 1);
+INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (1, 'admin', '5729c5f66821340f23f4559243a8a2eb', 'admin@cmska.org', '217.115.100.95', '0c4be0a27fc82be09c770840c5f98c40', 1);
 
 
 --
