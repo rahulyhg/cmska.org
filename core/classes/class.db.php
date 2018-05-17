@@ -24,9 +24,10 @@ class db
     public  $counters = array();
     public  $version = false;
 
-    public final function __construct( $dbhost=false, $dbname=false, $dbuser=false, $dbpass=false, $schema=false, $charset=false, $collate=false )
+    public final function __construct( $dbhost=false, $dbport=5432, $dbname=false, $dbuser=false, $dbpass=false, $schema=false, $charset=false, $collate=false )
     {
         $this->_DBHOST  = $dbhost;
+        $this->_DBPORT  = $dbport;
         $this->_DBNAME  = $dbname;
         $this->_DBUSER  = $dbuser;
         $this->_DBPASS  = $dbpass;
@@ -55,7 +56,7 @@ class db
 
     public function connect()
     {
-        $this->db_id = pg_connect ('host='.$this->_DBHOST.' dbname='.$this->_DBNAME.' user='.$this->_DBUSER.' password='.$this->_DBPASS);
+        $this->db_id = pg_connect ('host='.$this->_DBHOST.' port='.$this->_DBPORT.' dbname='.$this->_DBNAME.' user='.$this->_DBUSER.' password='.$this->_DBPASS);
 
         if( !$this->db_id || pg_connection_status( $this->db_id ) !== PGSQL_CONNECTION_OK )
         {
@@ -136,6 +137,13 @@ class db
         if( count($rows) == 1 ){ $rows = $rows[0]; }
 
         return $rows;
+    }
+
+    public final function pg_version()
+    {
+        if( !$this->connected || !$this->db_id || !pg_ping($this->db_id) ){ $this->connect(); }
+
+        return pg_version();
     }
 
     public final function get_count( $query )

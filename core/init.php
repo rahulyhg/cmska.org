@@ -9,6 +9,7 @@ require( CLASSES_DIR.DS.'class.ajax.php' );
 require( CLASSES_DIR.DS.'class.config.php' );
 require( CLASSES_DIR.DS.'class.cache.php' );
 require( CLASSES_DIR.DS.'class.db.php' );
+require( CLASSES_DIR.DS.'class.stats.php' );
 require( CLASSES_DIR.DS.'class.user.php' );
 require( CLASSES_DIR.DS.'class.tpl.php' );
 require( CLASSES_DIR.DS.'class.admin.php' );

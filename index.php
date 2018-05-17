@@ -20,12 +20,6 @@
  *
  */
 
-
-/**
- * Тимчасовий захід - на стадії розробки CMS виводить phpinfo() для усих відвідувачів
- * окрім розробників
- */
-
 error_reporting ( E_ALL );
 ini_set ( 'display_errors', true );
 ini_set ( 'html_errors', false );
@@ -60,7 +54,6 @@ err_handler::start();
  */
 require( CORE_DIR.DS.'init.php' );
 
-
 /**
  * Виведення даних
  */
@@ -68,6 +61,8 @@ require( CORE_DIR.DS.'init.php' );
         $tpl->load( 'content' );
         $tpl->compile( 'content' );
 echo    $tpl->result( 'content' )."\n".'<!-- Used memory: '.round(memory_get_peak_usage()/1024,2).' kb -->';
+
+
 
 exit;
 
