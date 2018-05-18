@@ -19,22 +19,42 @@ class stats
         $this->__cconnect_2_db();
     }
 
+    private final static function get_folder_size( $dir )
+    {
+        $size = 0;
+        if( !is_dir( $dir ) ){ return $size; }
+
+        foreach( scandir( $dir ) as $name )
+        {
+            if( $name == '.' || $name == '..' ){ continue; }
+
+            $name = $dir.DS.$name;
+
+            if( is_file( $name ) ){ $size = $size + filesize( $name ); }
+            if( is_dir( $name ) ) { $size = $size + self::get_folder_size( $name ); }
+        }
+        return $size;
+    }
+
     public final static function array2html( $data )
     {
 
         $html = array();
         foreach( $data as $categ => $array )
         {
-            $html[] = '<td colspan="2" class="categ">'.$categ.'</td>';
+            $html[$categ] = array();
+            $html[$categ][] = '<tr><td colspan="2" class="categ">'.$categ.'</td></tr>';
             foreach( $array as $key => $value )
             {
-                $html[] =  '<td class="key">'.$key.'</td><td class="val">'.$value.'</td>';
+                $html[$categ][] =  '<tr data-key="'.$key.'"><td class="key">'.$key.'</td><td class="val">'.$value.'</td></tr>';
             }
+            $html[$categ] = '<table data-categ="'.$categ.'" class="full_stats">'.implode('',$html[$categ]).'</table>';
         }
-        $html = '<tr>'.implode('</tr><tr>', $html).'</tr>';
-        $html = '<table class="stats">'.$html.'</table>';
+        $html = ''.implode('', $html).'';
         return $html;
     }
+
+
 
     public final static function get_stats()
     {
@@ -42,9 +62,14 @@ class stats
         $data = array();
 
         $data['server'] = array();
-        $data['server']['OS'] = php_uname();   
+        $data['server']['OS'] = php_uname();
+        $data['server']['disk_free_space'] =    self::integer2size(disk_free_space(ROOT_DIR));
+        $data['server']['disk_total_space'] =   self::integer2size(disk_total_space(ROOT_DIR));
+        $data['server']['used_size'] =          self::integer2size(self::get_folder_size(ROOT_DIR));
+        $data['server']['cache_size'] =          self::integer2size(self::get_folder_size(CACHE_DIR));
 
-        $data['db'] = $stats->db->pg_version();
+        $data['postgresql'] = $stats->db->pg_version();
+        $data['postgresql']['db_size'] = $stats->db->dbsize();
 
         $data['php'] = array();
         $data['php']['user'] = $_SERVER['USER'];
@@ -69,15 +94,13 @@ class stats
         $data['php']['suhosin.simulation'] = abs(intval(ini_get('suhosin.simulation')))?'YES':'NO';
         $data['php']['suhosin.disable_eval'] = abs(intval(ini_get('suhosin.executor.disable_eval')))?'YES':'NO';
         $data['php']['php_ini_loaded_file'] = php_ini_loaded_file();
-        $data['php']['php_ini_scanned_files'] = implode( '<br>', explode(',',php_ini_scanned_files()) );
 
-        $data['php_extensions'] = array();
+        /*$data['php_extensions'] = array();
         foreach (get_loaded_extensions() as $i => $ext)
         {
             $data['php_extensions'][$ext] = explode('-', phpversion($ext))[0];
-        }
-
-
+            if( !$data['php_extensions'][$ext] ){ unset($data['php_extensions'][$ext]); }
+        }*/
 
         return $data;
     }

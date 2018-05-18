@@ -146,6 +146,20 @@ class db
         return pg_version();
     }
 
+    public final function version()
+    {
+        $SQL = 'SHOW server_version;';
+        $SQL = $this->super_query( $SQL );
+        return $SQL['server_version'];
+    }
+
+    public final function dbsize()
+    {
+        $SQL = 'SELECT pg_size_pretty(pg_database_size(\''.$this->_DBNAME.'\')) as size;';
+        $SQL = $this->super_query( $SQL );
+        return $SQL['size'];
+    }
+
     public final function get_count( $query )
     {
         $count = $this->super_query($query);

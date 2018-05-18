@@ -638,6 +638,16 @@
 			return true;
 		}
 
+        static public final function integer2size( $int = 0 )
+        {
+            $suff = 'b';
+            if( $int > 1000 ){ $int = $int / 1024; $suff = 'kb'; }
+            if( $int > 1000 ){ $int = $int / 1024; $suff = 'Mb'; }
+            if( $int > 1000 ){ $int = $int / 1024; $suff = 'Gb'; }
+            if( $int > 1000 ){ $int = $int / 1024; $suff = 'Tb'; }
+            return round( $int, 3 ).' '.$suff;
+        }
+
 	}
 
 ?>
