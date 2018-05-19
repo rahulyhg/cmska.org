@@ -36,6 +36,24 @@ class stats
         return $size;
     }
 
+    public final static function get_html_stats()
+    {
+        $tpl = new tpl;
+        $tpl->load( 'stats' );
+
+        foreach( self::get_stats() as $categ => $array )
+        {
+            if( !is_array($array) ){ continue; }
+            foreach( $array as $k => $v )
+            {
+                $tpl->set( '{'.$categ.':'.$k.'}', $v );
+            }
+        }
+
+        $tpl->compile( 'stats' );
+        return $tpl->result( 'stats' );
+    }
+
     public final static function array2html( $data )
     {
 
@@ -62,7 +80,7 @@ class stats
         $data = array();
 
         $data['server'] = array();
-        $data['server']['OS'] = php_uname();
+        $data['server']['os'] = PHP_OS.' '.php_uname('r');
         $data['server']['disk_free_space'] =    self::integer2size(disk_free_space(ROOT_DIR));
         $data['server']['disk_total_space'] =   self::integer2size(disk_total_space(ROOT_DIR));
         $data['server']['used_size'] =          self::integer2size(self::get_folder_size(ROOT_DIR));
@@ -70,6 +88,8 @@ class stats
 
         $data['postgresql'] = $stats->db->pg_version();
         $data['postgresql']['db_size'] = $stats->db->dbsize();
+
+        $data['server']['db_type'] = explode( ' ', $data['postgresql']['server'] )[0];
 
         $data['php'] = array();
         $data['php']['user'] = $_SERVER['USER'];

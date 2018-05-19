@@ -4,6 +4,7 @@ if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+
 require( CLASSES_DIR.DS.'class.common.php' );
 require( CLASSES_DIR.DS.'class.ajax.php' );
 require( CLASSES_DIR.DS.'class.config.php' );
