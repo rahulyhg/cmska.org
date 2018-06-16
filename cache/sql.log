@@ -44407,3 +44407,7 @@ OFFSET 0 LIMIT 10;
 -- %QUERY_CACHABLE
 -- USER_ID: 0
 --------------------------------
+2018.06.16 17:59:05:
+--------------------------------
+SELECT id FROM users WHERE email='augustshogy' and password='e591d510fa8bc28a165651afbd9adb3c' LIMIT 1 OFFSET 0;
+--------------------------------
