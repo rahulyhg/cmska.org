@@ -1,5 +1,5 @@
 <?php if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
- /* CACHE CREATED: 1520198276.4992 (2018-03-04 23:17:56) */
+ /* CACHE CREATED: 1529792764.4841 (2018-06-24 01:26:04) */
 return array (
   'items' => 
   array (
@@ -68,18 +68,18 @@ return array (
       'altname' => 'users',
       'is_default' => '0',
     ),
-    7 => 
+    13 => 
     array (
-      'id' => '7',
-      'parent_id' => '6',
-      'ptree' => '0-6',
+      'id' => '13',
+      'parent_id' => '12',
+      'ptree' => '0-12',
       'level' => '1',
-      'name' => 'Äîäàòè',
+      'name' => 'Ñòàòèñòèêà',
       'descr' => '',
       'show_at_nav' => '1',
       'position' => '1',
-      'altname' => 'add',
-      'is_default' => '0',
+      'altname' => 'stats',
+      'is_default' => '1',
     ),
     2 => 
     array (
@@ -94,30 +94,30 @@ return array (
       'altname' => 'config',
       'is_default' => '0',
     ),
-    13 => 
+    7 => 
     array (
-      'id' => '13',
-      'parent_id' => '12',
-      'ptree' => '0-12',
+      'id' => '7',
+      'parent_id' => '6',
+      'ptree' => '0-6',
       'level' => '1',
-      'name' => 'Ñòàòèñòèêà',
+      'name' => 'Äîäàòè',
       'descr' => '',
       'show_at_nav' => '1',
       'position' => '1',
-      'altname' => 'stats',
-      'is_default' => '1',
+      'altname' => 'add',
+      'is_default' => '0',
     ),
-    19 => 
+    20 => 
     array (
-      'id' => '19',
-      'parent_id' => '16',
-      'ptree' => '0-16',
+      'id' => '20',
+      'parent_id' => '6',
+      'ptree' => '0-6',
       'level' => '1',
-      'name' => 'Íàëàøòóâàííÿ',
+      'name' => 'Ñïèñîê',
       'descr' => '',
       'show_at_nav' => '1',
       'position' => '2',
-      'altname' => 'config',
+      'altname' => 'list',
       'is_default' => '0',
     ),
     4 => 
@@ -146,30 +146,17 @@ return array (
       'altname' => 'edit',
       'is_default' => '0',
     ),
-    20 => 
+    19 => 
     array (
-      'id' => '20',
-      'parent_id' => '6',
-      'ptree' => '0-6',
+      'id' => '19',
+      'parent_id' => '16',
+      'ptree' => '0-16',
       'level' => '1',
-      'name' => 'Ñïèñîê',
+      'name' => 'Íàëàøòóâàííÿ',
       'descr' => '',
       'show_at_nav' => '1',
       'position' => '2',
-      'altname' => 'list',
-      'is_default' => '0',
-    ),
-    10 => 
-    array (
-      'id' => '10',
-      'parent_id' => '6',
-      'ptree' => '0-6',
-      'level' => '1',
-      'name' => 'Äîäàòêîâ³ ïîëÿ',
-      'descr' => '',
-      'show_at_nav' => '1',
-      'position' => '3',
-      'altname' => 'fields',
+      'altname' => 'config',
       'is_default' => '0',
     ),
     5 => 
@@ -185,6 +172,19 @@ return array (
       'altname' => 'tags',
       'is_default' => '0',
     ),
+    10 => 
+    array (
+      'id' => '10',
+      'parent_id' => '6',
+      'ptree' => '0-6',
+      'level' => '1',
+      'name' => 'Äîäàòêîâ³ ïîëÿ',
+      'descr' => '',
+      'show_at_nav' => '1',
+      'position' => '3',
+      'altname' => 'fields',
+      'is_default' => '0',
+    ),
     17 => 
     array (
       'id' => '17',
@@ -196,32 +196,6 @@ return array (
       'show_at_nav' => '1',
       'position' => '3',
       'altname' => 'groups',
-      'is_default' => '0',
-    ),
-    18 => 
-    array (
-      'id' => '18',
-      'parent_id' => '16',
-      'ptree' => '0-16',
-      'level' => '1',
-      'name' => 'Äîäàòêîâ³ ïîëÿ',
-      'descr' => '',
-      'show_at_nav' => '1',
-      'position' => '4',
-      'altname' => 'fields',
-      'is_default' => '0',
-    ),
-    3 => 
-    array (
-      'id' => '3',
-      'parent_id' => '1',
-      'ptree' => '0-1',
-      'level' => '1',
-      'name' => 'Ğåêëàìà',
-      'descr' => '',
-      'show_at_nav' => '1',
-      'position' => '4',
-      'altname' => 'ads',
       'is_default' => '0',
     ),
     9 => 
@@ -237,17 +211,30 @@ return array (
       'altname' => 'categ',
       'is_default' => '0',
     ),
-    11 => 
+    3 => 
     array (
-      'id' => '11',
-      'parent_id' => '15',
-      'ptree' => '0-15',
+      'id' => '3',
+      'parent_id' => '1',
+      'ptree' => '0-1',
       'level' => '1',
-      'name' => 'Ãîëîñóâàííÿ',
+      'name' => 'Ğåêëàìà',
       'descr' => '',
       'show_at_nav' => '1',
-      'position' => '5',
-      'altname' => 'votes',
+      'position' => '4',
+      'altname' => 'ads',
+      'is_default' => '0',
+    ),
+    18 => 
+    array (
+      'id' => '18',
+      'parent_id' => '16',
+      'ptree' => '0-16',
+      'level' => '1',
+      'name' => 'Äîäàòêîâ³ ïîëÿ',
+      'descr' => '',
+      'show_at_nav' => '1',
+      'position' => '4',
+      'altname' => 'fields',
       'is_default' => '0',
     ),
     14 => 
@@ -263,6 +250,19 @@ return array (
       'altname' => 'admin',
       'is_default' => '0',
     ),
+    11 => 
+    array (
+      'id' => '11',
+      'parent_id' => '15',
+      'ptree' => '0-15',
+      'level' => '1',
+      'name' => 'Ãîëîñóâàííÿ',
+      'descr' => '',
+      'show_at_nav' => '1',
+      'position' => '5',
+      'altname' => 'votes',
+      'is_default' => '0',
+    ),
   ),
   'keys' => 
   array (
@@ -274,13 +274,9 @@ return array (
       3 => '15',
       4 => '16',
     ),
-    6 => 
+    12 => 
     array (
-      0 => '7',
-      1 => '8',
-      2 => '20',
-      3 => '10',
-      4 => '9',
+      0 => '13',
     ),
     1 => 
     array (
@@ -289,9 +285,13 @@ return array (
       2 => '3',
       3 => '14',
     ),
-    12 => 
+    6 => 
     array (
-      0 => '13',
+      0 => '7',
+      1 => '20',
+      2 => '8',
+      3 => '10',
+      4 => '9',
     ),
     16 => 
     array (

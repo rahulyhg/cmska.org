@@ -68,7 +68,8 @@ class posts
       $_2db['descr']            = $data['post:descr'];
       $_2db['short_post']       = $data['post:short_post'];
       $_2db['full_post']        = $data['post:full_post'];
-      $_2db['svector']          = self::strip_tags( self::stripslashes( $data['post:full_post'] ) );
+      //$_2db['svector']          = self::strip_tags( self::stripslashes( self::strip_tags($data['post:full_post']) ) );
+      $_2db['svector']          = false;
       $_2db['keywords']         = $data['post:keywords'];
       $_2db['posted']           = $data['post:posted'];
       $_2db['fixed']            = $data['post:fixed'];
@@ -93,10 +94,12 @@ class posts
         $SQL = 'INSERT INTO posts ("'.implode('", "', array_keys($_2db)).'") VALUES (\''.implode('\', \'', array_values($_2db)).'\') RETURNING id;';
       }
 
-      cache::clean( self::CACHE_VAR_POSTS );
+      file_put_contents(ROOT_DIR.DS.'SQL.txt', $SQL);
 
       $_ID = $this->db->super_query( $SQL );
       $_ID = isset($_ID['id'])?self::integer($_ID['id']):0;
+
+      cache::clean( self::CACHE_VAR_POSTS );
 
       if( $new_post )
       {

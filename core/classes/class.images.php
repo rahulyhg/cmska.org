@@ -81,7 +81,7 @@
 			}
 
 			$file['size'] = filesize($file['filename']);
-			$file['md5'] = self::md5_file($file['filename']);
+			$file['md5']  = self::md5_file($file['filename']);
 
 			self::ins2db($file);
 
