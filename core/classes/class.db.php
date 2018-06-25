@@ -24,6 +24,8 @@ class db
     public  $counters = array();
     public  $version = false;
 
+    public  $num_rows = false;
+
     public final function __construct( $dbhost=false, $dbport=5432, $dbname=false, $dbuser=false, $dbpass=false, $schema=false, $charset=false, $collate=false )
     {
         $this->_DBHOST  = $dbhost;
@@ -75,6 +77,12 @@ class db
         pg_set_client_encoding( $this->db_id, $this->_COLLATE );
     }
 
+    public final function pg_meta_data( $table )
+    {
+        if( !$this->connected || !$this->db_id || !pg_ping($this->db_id) ){ $this->connect(); }
+        return pg_meta_data( $this->db_id, $this->_SCHEMA.'.'.$table );
+    }
+
     public final function safesql( $source )
     {
         return pg_escape_string( $source );
@@ -91,6 +99,9 @@ class db
         if( !$this->connected || !$this->db_id || !pg_ping($this->db_id) ){ $this->connect(); }
 
         $this->query_id = pg_query( $this->db_id, $SQL );
+        $this->num_rows = pg_num_rows($this->query_id);
+        $status = pg_result_status( $this->query_id, PGSQL_STATUS_STRING );
+
         if( self::QUERY_LOG ){ self::log( $SQL ); }
 
         if( !isset($this->counters['queries']) ){ $this->counters['queries'] = 0; }
@@ -98,7 +109,7 @@ class db
 
         $this->counters['queries']++;
 
-        if( strpos( $SQL, '--CACHED' ) ){ $this->counters['cached']++; }
+        if( strpos( $SQL, QUERY_CACHABLE ) !== false ){ $this->counters['cached']++; }
 
         if( $error = pg_last_error() )
         {

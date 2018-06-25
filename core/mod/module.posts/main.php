@@ -9,10 +9,13 @@ if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
 $_POSTS = new posts;
 
 $posts_count = 0;
-$skin = 'postshort';
-$filter = array();
-$url = '/index.php';
+$skin       = 'postshort';
+$filter     = array();
+$url        = '/index.php';
 
+// ÂÑÒÀÍÎÂËÅÍÍß Ô²ËÜÒÐ²Â ÄËß ÏÎØÓÊÓ ÏÓÁË²ÊÀÖ²É ///////////////////////////////////////////
+
+// ÂÈÂ²Ä Ò²ËÜÊÈ ÎÏÓÁË²ÊÎÂÀÍÎÃÎ //
 $filter['post.posted']  = 1;
 
 if( _CATEG_ID ){    $filter['post.categ'] = _CATEG_ID; }
@@ -23,6 +26,7 @@ if( _POST_ID )
     $filter['full_data']    = 1;
     $skin = 'postfull';
 }
+
 
 foreach( $_POSTS->get( $filter, $posts_count ) as $id => $row )
 {
@@ -67,12 +71,5 @@ $tpl->set( '{posts}', $tpl->result( $skin ) );
 $tpl->compile( 'posts' );
 
 //////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
 
 ?>

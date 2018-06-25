@@ -60,9 +60,7 @@ require( CORE_DIR.DS.'init.php' );
 
         $tpl->load( 'content' );
         $tpl->compile( 'content' );
-echo    $tpl->result( 'content' )."\n".'<!-- Used memory: '.round(memory_get_peak_usage()/1024,2).' kb -->';
-
-
+echo    stats::ins2html( $tpl->result( 'content' ) );
 
 exit;
 

@@ -299,6 +299,7 @@ class posts
             $data['rows'] = array();
 
             $SQL  =  $this->db->query( $SQL );
+            //var_export($this->db->num_rows);exit;
 
             while( $row = $this->db->get_row($SQL) )
             {

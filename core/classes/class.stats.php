@@ -19,6 +19,33 @@ class stats
         $this->__cconnect_2_db();
     }
 
+    static public final function ins2html( $html )
+    {
+        if( $GLOBALS['db'] && is_object($GLOBALS['db']) )
+        {
+            $db = &$GLOBALS['db'];
+        }
+        else
+        {
+            $db = false;
+        }
+
+        if( $db && isset($db->counters['queries']) )
+        {
+            $html = str_replace( '{stats:queries}', $db?$db->counters['queries']:0, $html );
+        }
+
+        if( $db && isset($db->counters['cached']) )
+        {
+            $html = str_replace( '{stats:cached}', $db?$db->counters['cached']:0, $html );
+        }
+
+        $html = str_replace( '{stats:used_memory}', common::integer2size(memory_get_peak_usage()), $html );
+        $html = preg_replace( '!\{stats:(.+?)\}!i', '0', $html );
+
+        return $html;
+    }
+
     private final static function get_folder_size( $dir )
     {
         $size = 0;

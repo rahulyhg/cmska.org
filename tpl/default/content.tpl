@@ -74,7 +74,11 @@
 
                 <aside id="aside">
                     <div class="frame">
-                       asdasdasda
+                        <div id="stats_cms">
+                            <p><span>Використано RAM:</span><b>{stats:used_memory}</b></p>
+                            <p><span>Запитів до БД:</span><b>{stats:queries}</b></p>
+                            <p><span>З них поміщено в кеш:</span><b>{stats:cached}</b></p>
+                        </div>
                     </div>
                 </aside>
 
