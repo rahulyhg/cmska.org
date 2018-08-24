@@ -7922,3 +7922,276 @@ OFFSET 0 LIMIT 10;
 --------------------------------
 SELECT id FROM users WHERE email='bdwilefelp' and password='b2e173d7445da4687b4e8f25f9fe1eec' LIMIT 1 OFFSET 0;
 --------------------------------
+2018.08.24 23:46:52:
+--------------------------------
+SELECT id FROM users WHERE email='admin@cmska.org' and password='5729c5f66821340f23f4559243a8a2eb' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.08.24 23:46:52:
+--------------------------------
+UPDATE users SET token='9354da9741fc539856fc85a57d2c6553', last_ip='91.244.56.211' WHERE id = 1;
+--------------------------------
+2018.08.24 23:46:52:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.08.24 23:46:52:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='9354da9741fc539856fc85a57d2c6553' AND last_ip='91.244.56.211' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.08.24 23:46:52:
+--------------------------------
+UPDATE users SET last_ip='91.244.56.211' WHERE id = 1;
+--------------------------------
+2018.08.24 23:46:52:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.08.24 23:46:54:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='9354da9741fc539856fc85a57d2c6553' AND last_ip='91.244.56.211' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.08.24 23:46:54:
+--------------------------------
+UPDATE users SET last_ip='91.244.56.211' WHERE id = 1;
+--------------------------------
+2018.08.24 23:46:54:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.08.24 23:46:55:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='9354da9741fc539856fc85a57d2c6553' AND last_ip='91.244.56.211' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.08.24 23:46:55:
+--------------------------------
+UPDATE users SET last_ip='91.244.56.211' WHERE id = 1;
+--------------------------------
+2018.08.24 23:46:55:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.08.24 23:46:55:
+--------------------------------
+SELECT pg_size_pretty(pg_database_size('cmska.org')) as size;
+--------------------------------
+2018.08.24 23:47:00:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='9354da9741fc539856fc85a57d2c6553' AND last_ip='91.244.56.211' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.08.24 23:47:00:
+--------------------------------
+UPDATE users SET last_ip='91.244.56.211' WHERE id = 1;
+--------------------------------
+2018.08.24 23:47:00:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.08.24 23:47:00:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.08.24 23:47:00:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.08.24 23:47:00:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.08.24 23:47:02:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='9354da9741fc539856fc85a57d2c6553' AND last_ip='91.244.56.211' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.08.24 23:47:02:
+--------------------------------
+UPDATE users SET last_ip='91.244.56.211' WHERE id = 1;
+--------------------------------
+2018.08.24 23:47:02:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.08.24 23:47:02:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.id = 13 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.08.24 23:47:02:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.id = 13 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.08.24 23:47:02:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.08.24 23:47:06:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='9354da9741fc539856fc85a57d2c6553' AND last_ip='91.244.56.211' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.08.24 23:47:06:
+--------------------------------
+UPDATE users SET last_ip='91.244.56.211' WHERE id = 1;
+--------------------------------
+2018.08.24 23:47:06:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.08.24 23:47:06:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='9354da9741fc539856fc85a57d2c6553' AND last_ip='91.244.56.211' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.08.24 23:47:06:
+--------------------------------
+UPDATE users SET last_ip='91.244.56.211' WHERE id = 1;
+--------------------------------
+2018.08.24 23:47:06:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.08.24 23:47:06:
+--------------------------------
+SELECT * FROM images WHERE post_id=13 ORDER BY load_time DESC;
+--------------------------------
+2018.08.24 23:48:04:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='9354da9741fc539856fc85a57d2c6553' AND last_ip='91.244.56.211' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.08.24 23:48:04:
+--------------------------------
+UPDATE users SET last_ip='91.244.56.211' WHERE id = 1;
+--------------------------------
+2018.08.24 23:48:04:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.08.24 23:48:40:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='9354da9741fc539856fc85a57d2c6553' AND last_ip='91.244.56.211' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.08.24 23:48:40:
+--------------------------------
+UPDATE users SET last_ip='91.244.56.211' WHERE id = 1;
+--------------------------------
+2018.08.24 23:48:40:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.08.24 23:48:40:
+--------------------------------
+SELECT * FROM images WHERE post_id=13 ORDER BY load_time DESC;
+--------------------------------
+2018.08.24 23:48:48:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='9354da9741fc539856fc85a57d2c6553' AND last_ip='91.244.56.211' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.08.24 23:48:48:
+--------------------------------
+UPDATE users SET last_ip='91.244.56.211' WHERE id = 1;
+--------------------------------
+2018.08.24 23:48:48:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.08.24 23:48:48:
+--------------------------------
+SELECT id, last_ip FROM users WHERE token='9354da9741fc539856fc85a57d2c6553' AND last_ip='91.244.56.211' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.08.24 23:48:48:
+--------------------------------
+UPDATE users SET last_ip='91.244.56.211' WHERE id = 1;
+--------------------------------
+2018.08.24 23:48:48:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
