@@ -16,8 +16,8 @@
         <link rel="stylesheet" type="text/css" href="{SKINDIR}/css/style.css" media="screen" />
 
         <script src="/tpl/js/lang-ua.js" type="text/javascript"></script>
-        <script src="/tpl/js/jquery.js" type="text/javascript"></script>
-        <script src="/tpl/js/jquery-ui.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
         <script src="{SKINDIR}/js/admin.lib.js" type="text/javascript"></script>
         <script src="/tpl/js/uploader.js" type="text/javascript"></script>
         <script src="{SKINDIR}/js/bbcodes.lib.js" type="text/javascript"></script>
