@@ -84,7 +84,9 @@ var uploader = new function()
                 "contentType" : false
             }).done(function( _r )
             {
-                alert( _r );
+                try{ _r = jQuery.parseJSON( _r ); }catch(err){ alert( 'ERROR: '+err+"\n\n"+_r ); return false; }
+                if( parseInt(_r['error'])>0 ){ alert( _r['error_text'] ); return false; }
+
                 //form.find('input[type="file"]').val( false );
                 form.find('button[type="submit"]').attr( 'disabled', true );
                 common.hide_loader();
