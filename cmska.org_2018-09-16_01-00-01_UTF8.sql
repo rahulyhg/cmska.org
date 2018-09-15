@@ -551,10 +551,6 @@ INSERT INTO "site"."categories" ("id", "altname", "name", "parent_id", "ptree", 
 INSERT INTO "site"."images" ("post_id", "user_id", "serv_name", "load_time", "is_mini", "md5") VALUES (4, 1, '00-06-13-8af1419a.png', '2018-04-29 00:06:13', 1, 'f7d018b03631692cfc37e33a404f6eae');
 INSERT INTO "site"."images" ("post_id", "user_id", "serv_name", "load_time", "is_mini", "md5") VALUES (4, 1, '00-14-31-1676df55.png', '2018-04-29 00:14:32', 0, '8e1b33a91508add02f2f6267e0db954f');
 INSERT INTO "site"."images" ("post_id", "user_id", "serv_name", "load_time", "is_mini", "md5") VALUES (13, 1, '00-58-07-872ad869.png', '2018-06-24 00:58:07', 0, '83d03d3a676134deca85d19753e14db8');
-INSERT INTO "site"."images" ("post_id", "user_id", "serv_name", "load_time", "is_mini", "md5") VALUES (13, 1, '21-57-59-f46a3cf2.png', '2018-08-29 21:57:59', 0, 'f13304a6288327a7224a902e5d658430');
-INSERT INTO "site"."images" ("post_id", "user_id", "serv_name", "load_time", "is_mini", "md5") VALUES (13, 1, '22-01-29-addf9841.png', '2018-08-29 22:01:29', 0, '1f14dc3861219236d17de55b42347080');
-INSERT INTO "site"."images" ("post_id", "user_id", "serv_name", "load_time", "is_mini", "md5") VALUES (13, 1, '22-02-38-cd0b1c12.png', '2018-08-29 22:02:39', 0, '85f9a9d23c4b5fea26b6713b288efbeb');
-INSERT INTO "site"."images" ("post_id", "user_id", "serv_name", "load_time", "is_mini", "md5") VALUES (13, 1, '22-02-51-d8a4225e.png', '2018-08-29 22:02:51', 0, '653c89a6518c23eef6fafbf2a5284e36');
 
 
 --
@@ -602,7 +598,7 @@ INSERT INTO "site"."user_groups" ("id", "name") VALUES (1, 'Администра
 --
 
 INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (0, '--', '--', 'root@cmska.org', '0.0.0.0', '0', 0);
-INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (1, 'admin', '5729c5f66821340f23f4559243a8a2eb', 'admin@cmska.org', '185.103.42.10', '84b69e4250c7108b5d8bfadef6d3f241', 1);
+INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (1, 'admin', '5729c5f66821340f23f4559243a8a2eb', 'admin@cmska.org', '185.103.42.10', '9a7d718a14377d52eaa20d63988a0847', 1);
 
 
 --
