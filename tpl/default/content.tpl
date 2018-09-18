@@ -65,13 +65,12 @@
             <div class="clear"></div>
 
             <div class="wpage content">
-                <main id="content">
-
+                <main id="content" data-area="{AREA}">
                     {global:info}
                     {global:posts}
-
                 </main>
 
+                [nomod:fullpost]
                 <aside id="aside">
                     <div class="frame">
                         <div id="stats_cms">
@@ -81,6 +80,7 @@
                         </div>
                     </div>
                 </aside>
+                [/nomod:fullpost]
 
                 <div class="clear"></div>
             </div>

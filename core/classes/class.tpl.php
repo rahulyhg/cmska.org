@@ -163,6 +163,43 @@ class tpl
     private final function parse_global_tags( $data )
     {
         $data = str_replace( '{MOD}', _MOD_, $data );
+
+        if( !_TAG_ID && !_CATEG_ID && !_POST_ID && _MOD_ == 'posts' )
+        {
+            $data = preg_replace( '!\[mod:(main)\](.+?)\[\/mod:\1\]!is', '$2', $data );
+            $data = preg_replace( '!\[nomod:(main)\](.+?)\[\/nomod:\1\]!is', '', $data );
+            $data = str_replace( '{AREA}', 'main', $data );
+        }
+
+        if( _TAG_ID && !_CATEG_ID && !_POST_ID && _MOD_ == 'posts' )
+        {
+            $data = preg_replace( '!\[mod:(tags)\](.+?)\[\/mod:\1\]!is', '$2', $data );
+            $data = preg_replace( '!\[nomod:(tags)\](.+?)\[\/nomod:\1\]!is', '', $data );
+            $data = str_replace( '{AREA}', 'tags', $data );
+        }
+
+        if( !_TAG_ID && _CATEG_ID && !_POST_ID && _MOD_ == 'posts' )
+        {
+            $data = preg_replace( '!\[mod:(category)\](.+?)\[\/mod:\1\]!is', '$2', $data );
+            $data = preg_replace( '!\[nomod:(category)\](.+?)\[\/nomod:\1\]!is', '', $data );
+            $data = str_replace( '{AREA}', 'category', $data );
+        }
+
+        if( !_TAG_ID && !_CATEG_ID && _POST_ID && _MOD_ == 'posts' )
+        {
+            $data = preg_replace( '!\[mod:(fullpost)\](.+?)\[\/mod:\1\]!is', '$2', $data );
+            $data = preg_replace( '!\[nomod:(fullpost)\](.+?)\[\/nomod:\1\]!is', '', $data );
+            $data = str_replace( '{AREA}', 'fullpost', $data );
+        }
+
+        $data = str_replace( '{AREA}', '', $data );
+
+        $data = preg_replace( '!\[mod:('._MOD_.')\](.+?)\[\/mod:\1\]!is', '$2', $data );
+        $data = preg_replace( '!\[mod:(.+?)\](.+?)\[\/mod:\1\]!is', '', $data );
+
+        $data = preg_replace( '!\[nomod:('._MOD_.')\](.+?)\[\/nomod:\1\]!is', '', $data );
+        $data = preg_replace( '!\[nomod:(.+?)\](.+?)\[\/nomod:\1\]!is', '$2', $data );
+
         $data = str_replace( '{SKINDIR}', str_replace( ROOT_DIR, '', CURRENT_SKIN ), $data );
         $data = str_replace( '{HOME}', HOMEURL, $data );
         $data = str_replace( '{CHARSET}', CHARSET, $data );

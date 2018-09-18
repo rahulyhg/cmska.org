@@ -185,6 +185,7 @@ button:hover{ background-color: #66A7E1; opacity: 1.0; }
 #page .content{ margin-top: 5px; position: relative; z-index: 8; }
 
 #page #content{ width: 65%; padding: 0px 5px 5px 0px; margin: 0px 0px 5px 0px; border-right: 1px solid #AAAAAA; z-index: 9; position: relative; top: 0px; left: 0px; }
+#page #content[data-area="fullpost"]{ width: 100%; border-right: none; }
 #page #aside{ position: absolute; top: 0px; right: 1px; width: 35%; padding: 0px 0px 5px 5px; border-left: 1px solid #AAAAAA; z-index: 10; }
 
 #page #content .cblock{ margin: 0px 0px 5px 0px;  }

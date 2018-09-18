@@ -33,11 +33,15 @@
 		/**
 		 *
 		 */
-		const PNG_COMPRESS_LEVEL = 7;
+		const PNG_COMPRESS_LEVEL = 1;
 		/**
 		 *
 		 */
 		const JPEG_QUALITY_LEVEL = 95;
+		/**
+		 *
+		 */
+		const PNG_QUALITY_LEVEL = 50;
 
 		use basic, db_connect;
 
@@ -82,6 +86,11 @@
 
 			$file['size'] = filesize($file['filename']);
 			$file['md5']  = self::md5_file($file['filename']);
+
+            if( self::IMAGES_CONVERT_EXT == 'png' )
+            {
+                self::png_optimize_using_pngquant( $file['filename'] );
+            }
 
 			self::ins2db($file);
 
@@ -205,6 +214,7 @@
 			if (self::IMAGES_CONVERT_EXT == 'png')
 			{
 				imagepng($im, $_newfile, self::PNG_COMPRESS_LEVEL);
+                //self::png_optimize_using_pngquant( $_newfile );
 			}
 			if (self::IMAGES_CONVERT_EXT == 'jpeg')
 			{
@@ -369,6 +379,7 @@
 			if (self::IMAGES_CONVERT_EXT == 'png')
 			{
 				imagepng($new_im, $file, self::PNG_COMPRESS_LEVEL);
+                self::png_optimize_using_pngquant( $file );
 			}
 			if (self::IMAGES_CONVERT_EXT == 'jpeg')
 			{
@@ -500,6 +511,31 @@
 			$_cl = false;
 			return true;
 		}
+
+        static public final function png_optimize_using_pngquant( $filename )
+        {
+            if( self::IMAGES_CONVERT_EXT != 'png' ){ return $filename; }
+            if( !file_exists( $filename ) ){ return false; }
+
+            $max_quality = self::PNG_QUALITY_LEVEL;
+            $min_quality = $max_quality - round( $max_quality / 2 );
+
+            $compressed_png_content = false;
+            $_filename = escapeshellarg( $filename );
+
+            $cmd = array();
+            $cmd[] = '/usr/bin/pngquant -f --speed 1 --iebug --quality='.$min_quality.'-'.$max_quality.' --output '.$_filename.' '.$_filename;
+
+            $disabled = explode(',', ini_get('disable_functions'));
+            if( function_exists('shell_exec') && !in_array('shell_exec', $disabled) )
+            {
+                foreach( $cmd as $c )
+                {
+                    shell_exec( $c );
+                }
+            }
+            return $filename;
+        }
 
 		/**
 		 * @param int $post_id
