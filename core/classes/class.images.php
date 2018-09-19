@@ -501,7 +501,7 @@
 			$SQL = 'SELECT COUNT(md5) as count FROM images WHERE md5=\'' . $_2db['md5'] . '\';';
 			if ($_cl->db->get_count($SQL))
 			{
-				unlink($data['filename']);
+				// unlink($data['filename']);
 				return false;
 			}
 

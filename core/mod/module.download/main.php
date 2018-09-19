@@ -5,13 +5,9 @@ if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-if( !defined( '_DOWNLOAD_ID' ) )
+if( defined( '_DOWNLOAD_HASH' ) && _DOWNLOAD_HASH )
 {
-
-}
-else
-{
-    files::download( common::integer( isset($_REQUEST['file_id'])?$_REQUEST['file_id']:0 ) );
+    files::download( _DOWNLOAD_HASH, _DOWNLOAD_NAME );
     exit;
 }
 

@@ -50,11 +50,22 @@ require( CORE_DIR.DS.'chpu.php' );
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+define( 'DEFAULT_MOD', 'posts' );
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
 define( '_AJAX_',       isset($_REQUEST['ajax'])?common::integer($_REQUEST['ajax']):false );
-define( '_MOD_',        isset($_REQUEST['mod'])?common::totranslit(common::trim($_REQUEST['mod'])):'posts' );
+define( '_MOD_',        isset($_REQUEST['mod'])?common::totranslit(common::trim($_REQUEST['mod'])):DEFAULT_MOD );
 define( '_SUBMOD_',     isset($_REQUEST['submod'])?common::integer($_REQUEST['submod']):false );
 define( '_ACTION_',     isset($_REQUEST['action'])?common::integer($_REQUEST['action']):false );
 define( '_SUBACTION_',  isset($_REQUEST['subaction'])?common::integer($_REQUEST['subaction']):false );
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+    if( _TAG_ID && !_CATEG_ID && !_POST_ID && _MOD_ == DEFAULT_MOD ){ define( '_AREA_', 'tags' ); }
+elseif( !_TAG_ID && _CATEG_ID && !_POST_ID && _MOD_ == DEFAULT_MOD ){ define( '_AREA_', 'category' ); }
+elseif( !_TAG_ID && !_CATEG_ID && _POST_ID && _MOD_ == DEFAULT_MOD ){ define( '_AREA_', 'fullpost' ); }
+else{ define( '_AREA_', 'main' ); }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -76,7 +87,7 @@ if( !CURRENT_USER_ID && _MOD_ == 'admin' ){             header( 'Location: /' );
 if( in_array( _MOD_, array('admin', 'forum') ) ){       define( 'CURRENT_SKIN', TPL_DIR.DS._MOD_ ); }
 else{ define( 'CURRENT_SKIN', TPL_DIR.DS.$_config['skin'] ); }
 
-
+                  
 //////////////////////////////////////////////////////////////////////////////////////////
 
 if( CURRENT_USER_ID > 0 )

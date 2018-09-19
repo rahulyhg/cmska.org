@@ -576,7 +576,7 @@
 			$str = self::strtolower($str);
 
 			$str = self::trim(self::strip_tags($str));
-			$str = preg_replace('![^a-z0-9\_\-]+!mi', '', $str);
+			$str = preg_replace('![^a-z0-9\_\-\.]+!mi', '', $str);
 			$str = preg_replace('![.]+!i', '.', $str);
 			$str = self::strtolower($str);
 

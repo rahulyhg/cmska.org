@@ -176,7 +176,6 @@ var uploader = new function()
             post['hash']    = hash;
             post['area']    = area;
 
-
         $.ajax({ data: post }).done( function( _r )
         {
             try{ _r = jQuery.parseJSON( _r ); }catch(err){ alert( 'ERROR: '+err+"\n\n"+_r ); return false; }
@@ -207,19 +206,58 @@ var uploader = new function()
 
             $('#file_list #ins').find('.bttns .del').click(function()
             {
-                uploader.del( $(this).parents('.uploaded').unbind().find('img').attr('data-hash'), 'image' );
+                uploader.del( $(this).parents('.uploaded').unbind().find('img').attr('data-hash'), $(this).parents('.uploaded').attr('data-type') );
             });
 
             $('#file_list .uploaded').unbind().click(
             function()
             {
-                $('#lnks').find('input[name="url"]').val( $(this).find('img').attr('src') );
+                if( $(this).attr('data-type') == 'image' )
+                {
+                    $('#lnks').find('input[name="url"]').val( $(this).find('img').attr('src') );
+                    $('#lnks').find('input[name="imgtagtitle"]').val( '' );
 
-                uploader.tag();
 
-                $('#lnks').find('input[name="tag"]').unbind().click(function(){$(this).select();});
-                $('#lnks').find('input[name="url"]').unbind().click(function(){$(this).select();});
-                $('#lnks').find('input[name="imgtagtitle"]').unbind().change(function(){uploader.tag();});
+                    uploader.tag();
+
+                    $('#lnks').find('input[name="tag"]').unbind().click(function(){$(this).select();});
+                    $('#lnks').find('input[name="url"]').unbind().click(function(){$(this).select();});
+                    $('#lnks').find('input[name="imgtagtitle"]').unbind().change(function(){uploader.tag();});
+                }
+
+                if( $(this).attr('data-type') == 'file' )
+                {
+                    $('#lnks').find('input[name="url"]').val( $(this).attr('data-hash') );
+                    $('#lnks').find('input[name="imgtagtitle"]').val( $(this).attr('data-origname') );
+
+                    var url = $('#lnks').find('input[name="url"]').val();
+                    var ttl = $('#lnks').find('input[name="imgtagtitle"]').val();
+
+                    if( ttl.length > 0 ){ ttl = '|'+ttl; }
+                    else{ ttl = ''; }
+
+                    var tag = '[attach]'+url+'[/attach]';
+                    $('#lnks').find('input[name="tag"]').val(tag);
+                    $('#lnks').find('input[name="tag"]').select();
+                    document.execCommand("copy");
+
+                    $('#lnks').find('input[name="tag"]').unbind().click(function(){$(this).select();});
+                    $('#lnks').find('input[name="url"]').unbind().click(function(){$(this).select();});
+                    $('#lnks').find('input[name="imgtagtitle"]').unbind().change(function()
+                    {
+                        var url = $('#lnks').find('input[name="url"]').val();
+                        var ttl = $('#lnks').find('input[name="imgtagtitle"]').val();
+
+                        if( ttl.length > 0 ){ ttl = '|'+ttl; }
+                        else{ ttl = ''; }
+
+                        var tag = '[attach'+ttl+']'+url+'[/attach]';
+                        $('#lnks').find('input[name="tag"]').val(tag);
+                        $('#lnks').find('input[name="tag"]').select();
+                        document.execCommand("copy");
+                    });
+                }
+
             });
         });
     }

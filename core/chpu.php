@@ -13,20 +13,31 @@ if( preg_match( '!^\/index\.(htm|html)$!i', $_SERVER['REQUEST_URI'], $data ) )
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 $data = false;
-if( preg_match( '!^\/download/file-(\d+?)(\/|)$!i', $_SERVER['REQUEST_URI'], $data ) )
+if( preg_match( '!^\/download:(.+?).html$!i', $_SERVER['REQUEST_URI'], $data ) )
 {
-    if( !is_array($data) || !isset($data['1']) || common::integer($data['1']) < 1 )
+    if( is_array($data) && isset($data[1]) )
     {
-        header( 'Location: '.HOME.'' );
-        exit;
+        $data = files::decode_url( $data[1] );
+    }
+
+    if( is_array($data) && isset($data['md5']) && isset($data['name']) )
+    {
+        $_REQUEST['mod'] =  'download';
+        $_REQUEST['file_name'] = $data['name'];
+        $_REQUEST['file_md5']  = $data['md5'];
     }
     else
     {
-        $_REQUEST['mod'] =  'download';
-        $_REQUEST['file_id'] =  common::integer($data['1']);
+        header('HTTP/1.0 404 Not Found');
+        header('HTTP/1.1 404 Not Found');
+        header('Status: 404 Not Found');
+
+        echo( 'Downloading failed! File not found!' );
+        exit;
     }
 }
-define( '_DOWNLOAD_ID', common::integer( isset($_REQUEST['file_id'])?$_REQUEST['file_id']:0 ) );
+define( '_DOWNLOAD_HASH', isset($_REQUEST['file_md5'])?$_REQUEST['file_md5']:false );
+define( '_DOWNLOAD_NAME', isset($_REQUEST['file_name'])?$_REQUEST['file_name']:false );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

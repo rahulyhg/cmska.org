@@ -160,39 +160,34 @@ class tpl
         unset( $this->buffer[$skin] );
     }
 
+    private final function parse_tag_area( $array = array() )
+    {
+        if( !is_array($array) || !isset($array[1]) || !isset($array[2]) ){ return false; }
+
+        $tag        = self::strtolower( self::filter( self::trim( $array[1] ) ) );
+        $area       = explode( '|', $array[2] );
+        $content    = self::trim( $array[3] );
+
+        $area = self::trim( $area );
+        $area = self::filter( $area );
+        $area = self::strtolower( $area );
+
+        if(  in_array( self::strtolower( _AREA_ ), $area ) && $tag == 'area'    ){ return $content; }
+        if( !in_array( self::strtolower( _AREA_ ), $area ) && $tag == 'notarea' ){ return $content; }
+
+        return false;
+    }
+
     private final function parse_global_tags( $data )
     {
-        $data = str_replace( '{MOD}', _MOD_, $data );
+        $data = str_replace( '{MOD}',   _MOD_, $data );
+        $data = str_replace( '{AREA}', _AREA_, $data );
 
-        if( !_TAG_ID && !_CATEG_ID && !_POST_ID && _MOD_ == 'posts' )
-        {
-            $data = preg_replace( '!\[mod:(main)\](.+?)\[\/mod:\1\]!is', '$2', $data );
-            $data = preg_replace( '!\[nomod:(main)\](.+?)\[\/nomod:\1\]!is', '', $data );
-            $data = str_replace( '{AREA}', 'main', $data );
-        }
-
-        if( _TAG_ID && !_CATEG_ID && !_POST_ID && _MOD_ == 'posts' )
-        {
-            $data = preg_replace( '!\[mod:(tags)\](.+?)\[\/mod:\1\]!is', '$2', $data );
-            $data = preg_replace( '!\[nomod:(tags)\](.+?)\[\/nomod:\1\]!is', '', $data );
-            $data = str_replace( '{AREA}', 'tags', $data );
-        }
-
-        if( !_TAG_ID && _CATEG_ID && !_POST_ID && _MOD_ == 'posts' )
-        {
-            $data = preg_replace( '!\[mod:(category)\](.+?)\[\/mod:\1\]!is', '$2', $data );
-            $data = preg_replace( '!\[nomod:(category)\](.+?)\[\/nomod:\1\]!is', '', $data );
-            $data = str_replace( '{AREA}', 'category', $data );
-        }
-
-        if( !_TAG_ID && !_CATEG_ID && _POST_ID && _MOD_ == 'posts' )
-        {
-            $data = preg_replace( '!\[mod:(fullpost)\](.+?)\[\/mod:\1\]!is', '$2', $data );
-            $data = preg_replace( '!\[nomod:(fullpost)\](.+?)\[\/nomod:\1\]!is', '', $data );
-            $data = str_replace( '{AREA}', 'fullpost', $data );
-        }
-
-        $data = str_replace( '{AREA}', '', $data );
+        $data = preg_replace_callback( '!\[(area|notarea):([a-z\|]+?)\](.+?)\[\/\1\]!is', array( $this, 'parse_tag_area' ), $data );
+        $data = preg_replace( '!\[area:('._AREA_.')\](.+?)\[\/area:\1\]!is',        '$2', $data );
+        $data = preg_replace( '!\[area:(.+?)\](.+?)\[\/area:\1\]!is',               '', $data );
+        $data = preg_replace( '!\[notarea:('._AREA_.')\](.+?)\[\/notarea:\1\]!is',  '',   $data );
+        $data = preg_replace( '!\[notarea:(.+?)\](.+?)\[\/notarea:\1\]!is',         '$2', $data );
 
         $data = preg_replace( '!\[mod:('._MOD_.')\](.+?)\[\/mod:\1\]!is', '$2', $data );
         $data = preg_replace( '!\[mod:(.+?)\](.+?)\[\/mod:\1\]!is', '', $data );

@@ -346,6 +346,38 @@ class posts
         return $data['rows'];
     }
 
+    public static final function parse_attach( $array )
+    {
+        if( !is_array($array) || !isset($array['3']) ){ return false; }
+
+        $md5 = self::filter( $array['3'] );
+        if( !$md5 ){ return false; }
+
+        $new_name = self::filter( $array['2'] );
+
+        $data = files::get_info( $md5 );
+
+        if( !$data || !is_array($data) || !count($data) ){ return false; }
+
+        $new_name = $new_name?$new_name:$data['orig_name'];
+        $data['orig_name'] = $new_name;
+
+        $url = files::make_url( $md5, $new_name );
+
+        $attach = new tpl;
+        $attach->load( 'attach' );
+        $attach->set( '{tag:url}', $url );
+
+        foreach( $data as $k=>$v )
+        {
+            $attach->set( '{tag:'.$k.'}', $v );
+        }
+
+
+        $attach->compile( 'attach' );
+        return $attach->result( 'attach' );
+    }
+
     public final function html( $data = array(), &$tpl = false /*OBJECT*/, $skin = 'postshort' )
     {
         if( !isset($GLOBALS['_CATEG']) || !is_object($GLOBALS['_CATEG']) ){ $GLOBALS['_CATEG'] = new categ; }
@@ -354,6 +386,16 @@ class posts
         $tpl->load( $skin );
 
         $data = self::stripslashes( $data );
+
+        if( isset($data['post']['full_post']) )
+        {
+            $data['post']['short_post'] = preg_replace_callback( '!\[attach(|\|(.+?))\](\w+?)\[\/attach\]!i', array( $this, 'parse_attach' ), $data['post']['short_post'] );
+        }
+
+        if( isset($data['post']['full_post']) )
+        {
+            $data['post']['full_post'] = preg_replace_callback( '!\[attach(|\|(.+?))\](\w+?)\[\/attach\]!i', array( $this, 'parse_attach' ), $data['post']['full_post'] );
+        }
 
         $tpl->set( '{hash:key}',         self::md5( date('Ymd').self::integer($data['post']['id']) ) );
         $tpl->set( '{post:id}',          self::integer($data['post']['id']));

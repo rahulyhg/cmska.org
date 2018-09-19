@@ -6,9 +6,9 @@ if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-if( !trait_exists( 'basic'  ) ){ require( CLASSES_DIR.DS.'trait.basic.php' ); }
+if( !trait_exists( 'basic'  ) ){ require( CLASSES_DIR.DS.'trait.basic.php' );  }
 if( !class_exists( 'images' ) ){ require( CLASSES_DIR.DS.'class.images.php' ); }
-if( !class_exists( 'files'  ) ){ require( CLASSES_DIR.DS.'class.files.php' ); }
+if( !class_exists( 'files'  ) ){ require( CLASSES_DIR.DS.'class.files.php' );  }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -23,9 +23,9 @@ class upload
             return images::del( $hash )?1:0;
         }
 
-        if( $area == 'files' )
+        if( $area == 'file' )
         {
-
+            return files::del( $hash )?1:0;
         }
         return false;
     }
@@ -107,7 +107,7 @@ class upload
         }
         else
         {
-            self::err( 'Спроба завантаження забороненого файлу!'."\n" );
+            self::err( 'Спроба завантаження забороненого типу файлу!'."\n" );
         }
 
         $save_dir = $save_dir.DS.date('Y-m-d');

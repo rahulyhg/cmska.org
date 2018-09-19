@@ -70,7 +70,7 @@
                     {global:posts}
                 </main>
 
-                [nomod:fullpost]
+                [notarea:fullpost]
                 <aside id="aside">
                     <div class="frame">
                         <div id="stats_cms">
@@ -80,7 +80,7 @@
                         </div>
                     </div>
                 </aside>
-                [/nomod:fullpost]
+                [/notarea]
 
                 <div class="clear"></div>
             </div>
