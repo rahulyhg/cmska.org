@@ -134,12 +134,10 @@ class files
 
         $key = substr( $keyline, 0, 32 );
         $md5 = substr( $keyline, -32, 32 );
-        $name = substr( $keyline, 32, 32 );
+        $name = str_replace( $key, '', str_replace( $md5, '', $keyline ) );
+        $name = strlen($name) < 3 ? false : $name;
 
-        if( self::strlen( $key ) != 32 || self::strlen( $md5 ) != 32 )
-        {
-            return false;
-        }
+        if( self::strlen( $key ) != 32 || self::strlen( $md5 ) != 32 ){ return false; }
 
         $name = self::decode_string( $name );
 
@@ -155,6 +153,8 @@ class files
     {
         $cms_config = config::get();
         if( !$md5 ){ return false; }
+
+        $new_name = false;
 
         $key = md5( sha1( sha1($md5) . sha1($cms_config['key']) ) . date('Y.m.d') ).($new_name?self::encode_string($new_name):'').$md5;
         $key = self::encode_string( $key );
@@ -180,8 +180,9 @@ class files
         $SQL = 'SELECT * FROM files WHERE md5 = \''.$md5.'\';';
         $file = $_cl->db->super_query( $SQL );
 
+        if( !is_array($file) || !count($file) ){ exit; return false; }
+
         $file['parth'] = UPL_DIR.DS.'files'.DS.date( 'Y-m-d', self::strtotime($file['load_time']) ).DS.'encoded:'.$file['md5'].'.scms';
-        // $file['orig_name'] = $newname?$newname:$file['orig_name'];
 
         self::_headers( $file );
 
@@ -226,15 +227,16 @@ class files
         $md5 = self::filter( $md5 );
         if( !$md5 ){ return false; }
 
-        $cache_name = posts::CACHE_VAR_POSTS.'_file_'.$md5;
+        $cache_name = posts::CACHE_VAR_POSTS.'-file-'.$md5;
 
         $data = cache::get( $cache_name );
+
         if( is_array($data) && count($data) ){ return $data; }
 
         //////////////////////
         cache::clean( $cache_name );
         $files = new files;
-        $SQL = 'SELECT * FROM files WHERE md5 = \''.$md5.'\';';
+        $SQL = 'SELECT * FROM files WHERE md5 = \''.$md5.'\'; '.QUERY_CACHABLE;
         $data = $files->db->super_query( $SQL );
         $files = false;
         unset( $data['keyring'] );

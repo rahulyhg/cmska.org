@@ -1,5 +1,12 @@
 <!DOCTYPE HTML>
 <html lang="ua">
+    <!-- Використано RAM:   {stats:used_memory} -->
+    <!-- Запитів до БД:     {stats:queries} -->
+    <!--    SELECT:         {stats:select} -->
+    <!--        поміщено в кеш: {stats:cached} -->
+    <!--    INSERT:         {stats:inset} -->
+    <!--    UPDATE:         {stats:update} -->
+    <!--    DELETE:         {stats:delete} -->
 	<head>
         <meta http-equiv="Content-Type" content="text/html; charset={charset}" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -74,9 +81,14 @@
                 <aside id="aside">
                     <div class="frame">
                         <div id="stats_cms">
-                            <p><span>Використано RAM:</span><b>{stats:used_memory}</b></p>
-                            <p><span>Запитів до БД:</span><b>{stats:queries}</b></p>
-                            <p><span>З них поміщено в кеш:</span><b>{stats:cached}</b></p>
+                            <p class="ram"><span>Використано RAM:</span><b>{stats:used_memory}</b></p>
+                            <p class="db"><span>Запитів до БД:</span><b>{stats:queries}</b></p>
+                            <p class="db sub"><span>SELECT:</span><b>{stats:select}</b></p>
+                            <p class="db subsub"><span>поміщено в кеш:</span><b>{stats:cached}</b></p>
+                            <p class="db sub"><span>INSERT:</span><b>{stats:insert}</b></p>
+                            <p class="db sub"><span>UPDATE:</span><b>{stats:update}</b></p>
+                            <p class="db sub"><span>DELETE:</span><b>{stats:delete}</b></p>
+                            <div class="clear"></div>
                         </div>
                     </div>
                 </aside>
@@ -87,8 +99,7 @@
             <div class="clear"></div>
 
             <div class="wpage footer">
-                f<br>o<br>o<br>t<br>e<br>r
-                <div class="clear"></div>
+                cmska.org &copy; 2007-2019<div class="clear"></div>
             </div>
             <div class="clear"></div>
 

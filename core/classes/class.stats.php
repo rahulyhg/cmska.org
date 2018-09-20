@@ -40,6 +40,26 @@ class stats
             $html = str_replace( '{stats:cached}', $db?$db->counters['cached']:0, $html );
         }
 
+        if( $db && isset($db->counters['select']) )
+        {
+            $html = str_replace( '{stats:select}', $db?$db->counters['select']:0, $html );
+        }
+
+        if( $db && isset($db->counters['update']) )
+        {
+            $html = str_replace( '{stats:update}', $db?$db->counters['update']:0, $html );
+        }
+
+        if( $db && isset($db->counters['delete']) )
+        {
+            $html = str_replace( '{stats:delete}', $db?$db->counters['delete']:0, $html );
+        }
+
+        if( $db && isset($db->counters['insert']) )
+        {
+            $html = str_replace( '{stats:insert}', $db?$db->counters['insert']:0, $html );
+        }
+
         $html = str_replace( '{stats:used_memory}', common::integer2size(memory_get_peak_usage()), $html );
         $html = preg_replace( '!\{stats:(.+?)\}!i', '0', $html );
 

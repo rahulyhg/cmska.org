@@ -86,13 +86,15 @@ class cache
 
     final public static function get( $name )
     {
-         $name = self::get_cache_file_path( $name );
+        $name = self::get_cache_file_path( $name );
+
         if( !file_exists($name) ){ return false; }
-        if( filemtime($name)>time()-60*60 )
+        if( ! ( ( filemtime($name) + 60*60 ) > time() ) )
         {
             unlink( $name );
             return false;
         }
+
         return require( $name );
     }
 

@@ -41,7 +41,7 @@
 		/**
 		 *
 		 */
-		const PNG_QUALITY_LEVEL = 50;
+		const PNG_QUALITY_LEVEL = 100;
 
 		use basic, db_connect;
 

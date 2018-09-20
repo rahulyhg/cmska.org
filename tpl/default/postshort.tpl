@@ -6,9 +6,9 @@
     </header>
 
     <div class="post_short_image">
-        <img src="{SKINDIR}/img/spacer.gif" alt="{post:title}" title="{post:title}">
+        <img src="[image:0]{image:0}[/image][noimage:0]{SKINDIR}/img/spacer.gif[/noimage]" alt="{post:title}" title="{post:title}">
     </div>
-    <div class="text">{post:short_post}<div class="clear"></div></div>
+    <div class="text">{post:short_post:strip}<div class="clear"></div></div>
     <div class="clear"></div>
 
     <div class="attr_panel">

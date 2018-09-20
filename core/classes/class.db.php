@@ -106,10 +106,18 @@ class db
 
         if( !isset($this->counters['queries']) ){ $this->counters['queries'] = 0; }
         if( !isset($this->counters['cached']) ){ $this->counters['cached'] = 0; }
+        if( !isset($this->counters['select']) ){ $this->counters['select'] = 0; }
+        if( !isset($this->counters['update']) ){ $this->counters['update'] = 0; }
+        if( !isset($this->counters['delete']) ){ $this->counters['delete'] = 0; }
+        if( !isset($this->counters['insert']) ){ $this->counters['insert'] = 0; }
 
         $this->counters['queries']++;
 
-        if( strpos( $SQL, QUERY_CACHABLE ) !== false ){ $this->counters['cached']++; }
+        if( strpos( $SQL, self::trim( QUERY_CACHABLE ) ) !== false ){ $this->counters['cached']++; }
+        if( strpos( self::strtolower(self::trim($SQL)), self::strtolower('SELECT') ) === 0 ){ $this->counters['select']++; }
+        if( strpos( self::strtolower(self::trim($SQL)), self::strtolower('UPDATE') ) === 0 ){ $this->counters['update']++; }
+        if( strpos( self::strtolower(self::trim($SQL)), self::strtolower('INSERT') ) === 0 ){ $this->counters['insert']++; }
+        if( strpos( self::strtolower(self::trim($SQL)), self::strtolower('DELETE') ) === 0 ){ $this->counters['delete']++; }
 
         if( $error = pg_last_error() )
         {

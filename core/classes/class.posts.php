@@ -1,5 +1,4 @@
 <?php
-
 //////////////////////////////////////////////////////////////////////////////////////////
 
 if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
@@ -30,12 +29,9 @@ class posts
         cache::clean( self::CACHE_VAR_POSTS );
     }
 
-    public final function save( $data = false )
+    public final function save( $data = false ): int
     {
-      if( !$data || !is_array($data) || !count($data) )
-      {
-        return false;
-      }
+      if( !$data || !is_array($data) || !count($data) ){ return 0; }
       $data = self::stripslashes( $data );
 
       $data['post:id']          = isset($data['post:id'])?          self::integer($data['post:id']):false;
@@ -346,7 +342,7 @@ class posts
         return $data['rows'];
     }
 
-    public static final function parse_attach( $array )
+    public static final function parse_attach( array $array )
     {
         if( !is_array($array) || !isset($array['3']) ){ return false; }
 
@@ -378,7 +374,27 @@ class posts
         return $attach->result( 'attach' );
     }
 
-    public final function html( $data = array(), &$tpl = false /*OBJECT*/, $skin = 'postshort' )
+    private final static function parse_images2tags( string $text, object &$tpl )
+    {
+        preg_match_all( '!<img(.+?)src="(.+?)"!i', $text, $text );
+        if( is_array( $text ) && isset($text[2]) && is_array($text[2]) && count($text[2]) )
+        {
+            foreach( array_values($text[2]) as $i => $img )
+            {
+                $tpl->set( '{image:'.$i.'}', $img );
+                $tpl->set_block( '!\[(image):'.$i.'\](.+?)\[\/\1\]!is', '$2');
+                $tpl->set_block( '!\[(noimage):'.$i.'\](.+?)\[\/\1\]!is', '' );
+            }
+        }
+
+        $tpl->set_block( '!\[(image):(\d+?)\](.+?|)\[\/\1\]!is', '' );
+        $tpl->set_block( '!\[(noimage):(\d+?)\](.+?)\[\/\1\]!is', '$3' );
+        $tpl->set_block( '!\{image:(\d+?)\}!is', '' );
+
+        return false;
+    }
+
+    public final function html( array $data = array(), object &$tpl, string $skin = 'postshort' )
     {
         if( !isset($GLOBALS['_CATEG']) || !is_object($GLOBALS['_CATEG']) ){ $GLOBALS['_CATEG'] = new categ; }
         $_CATEG = &$GLOBALS['_CATEG'];
@@ -387,14 +403,16 @@ class posts
 
         $data = self::stripslashes( $data );
 
-        if( isset($data['post']['full_post']) )
+        if( isset($data['post']['short_post']) )
         {
             $data['post']['short_post'] = preg_replace_callback( '!\[attach(|\|(.+?))\](\w+?)\[\/attach\]!i', array( $this, 'parse_attach' ), $data['post']['short_post'] );
+            self::parse_images2tags( $data['post']['short_post'], $tpl );
         }
 
         if( isset($data['post']['full_post']) )
         {
             $data['post']['full_post'] = preg_replace_callback( '!\[attach(|\|(.+?))\](\w+?)\[\/attach\]!i', array( $this, 'parse_attach' ), $data['post']['full_post'] );
+            self::parse_images2tags( $data['post']['full_post'], $tpl );
         }
 
         $tpl->set( '{hash:key}',         self::md5( date('Ymd').self::integer($data['post']['id']) ) );
@@ -417,7 +435,8 @@ class posts
             {
                 foreach( $value as $k=>$v )
                 {
-                    $tpl->set( '{'.$key.':'.$k.'}', self::htmlspecialchars( self::stripslashes($v) ) );
+                    $tpl->set( '{'.$key.':'.$k.'}',         self::htmlspecialchars( self::html_entity_decode( self::stripslashes($v) ) ) );
+                    $tpl->set( '{'.$key.':'.$k.':strip}',   self::htmlspecialchars( self::strip_tags( self::html_entity_decode( self::stripslashes($v) ) ) ) );
                 }
             }
         }

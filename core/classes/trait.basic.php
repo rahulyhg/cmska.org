@@ -286,6 +286,20 @@
 			return html_entity_decode($data, ENT_QUOTES | ENT_HTML5, CHARSET);;
 		}
 
+
+		static public final function r_n_2_space( $data )
+		{
+			if (!is_scalar($data) && !is_array($data))
+			{
+				self::err('' . __CLASS__ . '::' . __METHOD__ . ' accepts string or array only!');
+			}
+			if (is_array($data))
+			{
+				return array_map('self::'.__METHOD__, $data);
+			}
+			return preg_replace( '!([\r\n]+)!is', ' ', $data );
+		}
+
 		/**
 		 * @param $data
 		 * @return array|string
@@ -645,7 +659,7 @@
             if( $int > 1000 ){ $int = $int / 1024; $suff = 'Mb'; }
             if( $int > 1000 ){ $int = $int / 1024; $suff = 'Gb'; }
             if( $int > 1000 ){ $int = $int / 1024; $suff = 'Tb'; }
-            return round( $int, 3 ).' '.$suff;
+            return round( $int, 1 ).' '.$suff;
         }
 
 	}

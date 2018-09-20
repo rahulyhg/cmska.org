@@ -187,6 +187,8 @@ button:hover{ background-color: #66A7E1; opacity: 1.0; }
 #page #content{ width: 65%; padding: 0px 5px 5px 0px; margin: 0px 0px 5px 0px; border-right: 1px solid #AAAAAA; z-index: 9; position: relative; top: 0px; left: 0px; }
 #page #content[data-area="fullpost"]{ width: 100%; border-right: none; }
 #page #aside{ position: absolute; top: 0px; right: 1px; width: 35%; padding: 0px 0px 5px 5px; border-left: 1px solid #AAAAAA; z-index: 10; }
+#page #aside .frame{ border-bottom: 1px solid #CCCCCC; padding: 5px 0px 5px 0px; }
+#page #aside .frame:first-of-type{ padding-top: 0px; }
 
 #page #content .cblock{ margin: 0px 0px 5px 0px;  }
 #page #content .info{ border: 1px solid #FF00FF; padding: 5px; background: #FF00FF; color: #FF00FF; text-align: justify;  }
@@ -196,7 +198,7 @@ button:hover{ background-color: #66A7E1; opacity: 1.0; }
 #page #content .info.notice{ border-color: #FF6600; background-color: #FFE699; color: #333333; }
 #page #content .info.good{ border-color: #0F4C00; background-color: #CAFFBD; color: #333333; }
 
-#page .footer{ border-top: 3px solid #000000; }
+#page .footer{ border-top: 3px solid #000000; padding: 20px; text-align: center; }
 
 
 #loginform{ padding: 25px 0px 25px 0px; }
@@ -231,7 +233,7 @@ button:hover{ background-color: #66A7E1; opacity: 1.0; }
 #user_panel ul li:hover{ background: #398DD8; }
 #user_panel ul li:hover a{ color: #FFFFFF; }
 
-#page #content .article{ border-bottom: 1px solid #AAAAAA; padding: 0px 0px 5px 0px; margin: 0px 0px 5px 0px; position: relative; overflow: hidden; }
+#page #content .article{ border-bottom: 1px solid #AAAAAA; padding: 0px 0px 5px 0px; margin: 0px 0px 5px 0px; position: relative; overflow: hidden;  }
 #page #content .article .article_top{ padding: 2px 0px 5px 0px; }
 #page #content .article .article_top h1{ font-size: 14px; text-align: justify; text-transform: uppercase;color: #222222; display: inline; }
 #page #content .article .article_top .topcateg{ display: inline-block; min-width: 100px; max-width: 150px; text-align: center; background: #777777; border: 1px solid #777777; padding: 1px 5px 1px 5px; margin: 0px 5px 0px 0px; position: relative; top: -1px; cursor: pointer; }
@@ -273,6 +275,15 @@ button:hover{ background-color: #66A7E1; opacity: 1.0; }
 #page #content .article.short .post_short_image{ border: 1px solid #888888; width: 188px; height: 108px; float: left; }
 #page #content .article.short .post_short_image img{ margin: 2px; width: 180px; height: 100px; background: #DDDDDD; border: 1px solid #CCCCCC; }
 #page #content .article.short .text{ width: 420px; float: right; }
+
+#page #aside .frame #stats_cms{  }
+#page #aside .frame #stats_cms p{ float: none; font-size: 12px; position: relative; margin: 0px; padding: 5px 10px 0px 5px; text-transform: uppercase; font-weight: bold; }
+#page #aside .frame #stats_cms p.db{  }
+#page #aside .frame #stats_cms p.sub{ padding-left: 40px; }
+#page #aside .frame #stats_cms p.subsub span{ padding-left: 70px; font-weight: normal; font-style: italic; }
+#page #aside .frame #stats_cms p:first-of-type{ padding-top: 0px; }
+#page #aside .frame #stats_cms p span{ display: inline-block; width: 60%; text-align: left; }
+#page #aside .frame #stats_cms p span+b{ display: inline-block; width: 40%; text-align: right; font-weight: bold; color: #2370B3; }
 
 
 
