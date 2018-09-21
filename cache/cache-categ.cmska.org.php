@@ -1,5 +1,5 @@
 <?php if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
- /* CACHE CREATED: 1537473822.6042 (2018-09-20 23:03:42) */
+ /* CACHE CREATED: 1537555831.5548 (2018-09-21 21:50:31) */
 return array (
   0 => 
   array (
@@ -23,16 +23,6 @@ return array (
   ),
   2 => 
   array (
-    'id' => '2',
-    'altname' => 'release',
-    'name' => 'Релізи',
-    'parent_id' => '0',
-    'ptree' => '0',
-    'position' => '0',
-    'level' => '0',
-  ),
-  3 => 
-  array (
     'id' => '3',
     'altname' => 'addon',
     'name' => 'Доповнення',
@@ -41,7 +31,27 @@ return array (
     'position' => '0',
     'level' => '0',
   ),
+  3 => 
+  array (
+    'id' => '2',
+    'altname' => 'release',
+    'name' => 'Релізи',
+    'parent_id' => '0',
+    'ptree' => '0',
+    'position' => '0',
+    'level' => '0',
+  ),
   4 => 
+  array (
+    'id' => '6',
+    'altname' => 'newfunc',
+    'name' => 'Нові функції',
+    'parent_id' => '1',
+    'ptree' => '0-1',
+    'position' => '0',
+    'level' => '1',
+  ),
+  5 => 
   array (
     'id' => '4',
     'altname' => 'hack',
@@ -51,21 +61,11 @@ return array (
     'position' => '0',
     'level' => '1',
   ),
-  5 => 
+  6 => 
   array (
     'id' => '5',
     'altname' => 'tpl',
     'name' => 'Зовнішній вигляд',
-    'parent_id' => '3',
-    'ptree' => '0-3',
-    'position' => '0',
-    'level' => '1',
-  ),
-  6 => 
-  array (
-    'id' => '6',
-    'altname' => 'newfunc',
-    'name' => 'Нові функції',
     'parent_id' => '3',
     'ptree' => '0-3',
     'position' => '0',

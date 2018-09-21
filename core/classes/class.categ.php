@@ -85,9 +85,49 @@ class categ
      * @access public
      * @return array
      */
-    final public function get_categories()
+    private final static function sort( $a, $b )
     {
-        $data = cache::get( self::CACHE_VAR_CATEG );
+        $a['ptree'] = explode( '-', $a['ptree'] );
+        $b['ptree'] = explode( '-', $b['ptree'] );
+
+        $a['ptree'] = self::integer( $a['ptree'] );
+        $b['ptree'] = self::integer( $b['ptree'] );
+
+        /*$e = end( $a['ptree'] );
+        if( self::integer($b['id']) == $e ){ return -1; }
+
+        $e = end( $b['ptree'] );
+        if( self::integer($a['id']) == $e ){ return 1; } */
+
+        // echo $a['id'].'.'.implode('-',$a['ptree'])."\t".$b['id'].'.'.implode('-',$b['ptree'])."\n";
+
+        $frch = ( count($a['ptree']) > count($a['ptree']) )?array_keys( $a['ptree'] ):array_keys( $b['ptree'] );
+
+
+        foreach( $frch as $indx )
+        {
+            if( !isset($a['ptree'][$indx]) ){ return -1; }
+            if( !isset($b['ptree'][$indx]) ){ return 1; }
+
+            if( $a['ptree'][$indx] > $b['ptree'][$indx] ){ return  1; }
+            if( $a['ptree'][$indx] < $b['ptree'][$indx] ){ return -1; }
+        }
+
+
+        $frch = array( $a['id'] => $a['name'], $b['id'] => $b['name'] );
+        sort( $frch, SORT_LOCALE_STRING );
+        $frch = reset( $frch );
+
+        if( $frch == $a['name'] ){ return -1; }
+        if( $frch == $b['name'] ){ return 1; }
+
+        return 0;
+    }
+
+    public final function get_categories()
+    {
+        $data = false;
+        //$data = cache::get( self::CACHE_VAR_CATEG );
 
         if( !$data || !is_array($data) || !count($data) )
         {
@@ -102,10 +142,21 @@ class categ
                 $data[$row['id']]['altname'] = self::totranslit( $data[$row['id']]['altname'] );
             }
             $this->db->free( $SQL );
+
+            usort( $data, 'self::sort' );
+
             cache::set( self::CACHE_VAR_CATEG, $data );
         }
 
         return $data;
+    }
+
+    public final function html( $data = array(), string $skin )
+    {
+        if( !is_array($data) || !count($data) ){ return false; }
+        if( isset($data[0]) ){ unset($data[0]); }
+
+        var_export($data);
     }
 
     /**

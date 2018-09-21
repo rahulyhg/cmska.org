@@ -159,6 +159,24 @@ BEGIN
 END;$$;
 
 
+--
+-- Name: upd_token_time(); Type: FUNCTION; Schema: site; Owner: -
+--
+
+CREATE FUNCTION "site"."upd_token_time"() RETURNS "trigger"
+    LANGUAGE "plpgsql"
+    AS $$
+	DECLARE
+
+BEGIN
+
+  NEW.token_upd_time = NOW()::timestamp;
+  RETURN NEW;
+	
+END
+$$;
+
+
 SET default_tablespace = '';
 
 SET default_with_oids = false;
@@ -407,7 +425,8 @@ CREATE TABLE "site"."users" (
     "email" character varying(255) DEFAULT ''::character varying NOT NULL,
     "last_ip" character varying(16) DEFAULT '0.0.0.0'::character varying NOT NULL,
     "token" character varying(32) DEFAULT ''::character varying NOT NULL,
-    "group_id" integer DEFAULT 0 NOT NULL
+    "group_id" integer DEFAULT 0 NOT NULL,
+    "token_upd_time" timestamp without time zone DEFAULT (("now"() - '1 day'::interval))::timestamp without time zone NOT NULL
 );
 
 
@@ -535,7 +554,7 @@ INSERT INTO "site"."categories" ("id", "altname", "name", "parent_id", "ptree", 
 INSERT INTO "site"."categories" ("id", "altname", "name", "parent_id", "ptree", "position", "level") VALUES (3, 'addon', 'Доповнення', 0, '0', 0, 0);
 INSERT INTO "site"."categories" ("id", "altname", "name", "parent_id", "ptree", "position", "level") VALUES (4, 'hack', 'Дрібні хаки', 3, '0-3', 0, 1);
 INSERT INTO "site"."categories" ("id", "altname", "name", "parent_id", "ptree", "position", "level") VALUES (5, 'tpl', 'Зовнішній вигляд', 3, '0-3', 0, 1);
-INSERT INTO "site"."categories" ("id", "altname", "name", "parent_id", "ptree", "position", "level") VALUES (6, 'newfunc', 'Нові функції', 3, '0-3', 0, 1);
+INSERT INTO "site"."categories" ("id", "altname", "name", "parent_id", "ptree", "position", "level") VALUES (6, 'newfunc', 'Нові функції', 1, '0-1', 0, 1);
 
 
 --
@@ -603,8 +622,8 @@ INSERT INTO "site"."user_groups" ("id", "name") VALUES (1, 'Администра
 -- Data for Name: users; Type: TABLE DATA; Schema: site; Owner: -
 --
 
-INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (0, '--', '--', 'root@cmska.org', '0.0.0.0', '0', 0);
-INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id") VALUES (1, 'admin', '5729c5f66821340f23f4559243a8a2eb', 'admin@cmska.org', '192.168.2.104', '530dcd3c2aacc900d57df37597caf391', 1);
+INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id", "token_upd_time") VALUES (0, '--', '--', 'root@cmska.org', '0.0.0.0', '0', 0, '2018-09-20 13:40:23.769809');
+INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id", "token_upd_time") VALUES (1, 'admin', '5729c5f66821340f23f4559243a8a2eb', 'admin@cmska.org', '192.168.2.104', '25c9665a2ced7e61acfd4e0a77ab9ebb', 1, '2018-09-21 16:37:06.410441');
 
 
 --
@@ -818,6 +837,13 @@ CREATE TRIGGER "categories_after_any" AFTER INSERT OR DELETE OR UPDATE OF "id", 
 --
 
 CREATE TRIGGER "categories_before_ins_upd" BEFORE INSERT OR UPDATE OF "id", "parent_id", "ptree", "level" ON "site"."categories" FOR EACH ROW EXECUTE PROCEDURE "site"."GEN_PTREE_MULTILIS_BEFORE"();
+
+
+--
+-- Name: users upd_token_time; Type: TRIGGER; Schema: site; Owner: -
+--
+
+CREATE TRIGGER "upd_token_time" BEFORE INSERT OR UPDATE OF "token", "last_ip" ON "site"."users" FOR EACH ROW EXECUTE PROCEDURE "site"."upd_token_time"();
 
 
 --

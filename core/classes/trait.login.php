@@ -8,7 +8,7 @@ if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
 
 trait login
 {
-	private static $COOKIE_LIFE_TIME = 24;
+    private static $TOKEN_UPD_TIME = 900;
 	private static $PASS_SALT = 'NKDlkvro83,sv-2l;mf2emopfv';
 	
 	private $logged = false;
@@ -30,6 +30,8 @@ trait login
 		{
 		  $login = self::filter( $_POST['login'] );
 		  $pass  = self::passencode( $_POST['pass'] );
+          $_POST['login'] = false;
+          $_POST['pass'] = false;
 		}
 		elseif( isset($_SESSION['token']) ){ $token  = strip_tags( $_SESSION['token'] ); }
 		elseif( isset($_COOKIE['token']) ){  $token  = strip_tags( $_COOKIE['token'] ); }
@@ -116,7 +118,7 @@ trait login
         return $data;
     }
 
-	private final function update_token(  )
+	private final function update_token()
 	{
 		$token = str_shuffle( sha1( mt_rand( 0, 99999 ) ) );
 		$token = self::passencode( $token.USER_IP );
@@ -130,15 +132,21 @@ trait login
 	private final function check_token( $token )
 	{
 		$token = $this->strtolower( $this->db->safesql( $token ) );
-		
-		$SQL = 'SELECT id, last_ip FROM users WHERE token=\''.$token.'\' AND last_ip=\''.USER_IP.'\' LIMIT 1 OFFSET 0;';
+
+		$SQL = 'SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token=\''.$token.'\' AND last_ip=\''.USER_IP.'\' LIMIT 1 OFFSET 0;';
+
 		$id = $this->db->super_query( $SQL );
-		
-		if( is_array($id) && isset($id['id']) )
-		{ 
-			$id = $id['id']; 
-			define( 'CURRENT_USER_ID', abs(intval($id)) );
-			$SQL = 'UPDATE users SET last_ip=\''.USER_IP.'\' WHERE id = '.abs(intval(CURRENT_USER_ID)).';';
+
+		if( is_array($id) && isset($id['id']) && isset($id['token_time_diff']) && self::integer( $id['token_time_diff'] ) < self::$TOKEN_UPD_TIME )
+		{
+			$id = self::integer( $id['id'] );
+			define( 'CURRENT_USER_ID', $id );
+			$SQL = 'UPDATE users SET last_ip=\''.USER_IP.'\', token_upd_time = NOW()::timestamp WHERE id = '.CURRENT_USER_ID.';';
 			$this->db->query( $SQL );
 		}
 		else
@@ -183,7 +191,7 @@ trait login
 	
 	public final static function set_cookie( $name, $value )
 	{
-		$expires = time() + (self::$COOKIE_LIFE_TIME*60*60);
+		$expires = time() + (self::$TOKEN_UPD_TIME);
 		setcookie( $name, $value, $expires, "/", DOMAIN, TRUE, TRUE );
 	}
 
@@ -194,7 +202,7 @@ trait login
 
 		$params['secure'] = true;
 		$params['httponly'] = true;
-		$params['lifetime'] = 60*60*self::$COOKIE_LIFE_TIME;
+		$params['lifetime'] = self::$TOKEN_UPD_TIME;
 
         session_set_cookie_params($params['lifetime'], "/", $params['domain'], $params['secure'], true );
 

@@ -41,8 +41,7 @@ define ( 'USER_IP',         $_SERVER['REMOTE_ADDR'] );
 define ( 'CHARSET',         'Windows-1251' /*'CP1251'*/ );
 define ( 'CACHE_TYPE',      'FILE' /*MEM | FILE*/ );
 
-// Access-Control-Allow-Origin: http://www.a.com
-
+setlocale ( LC_ALL, 'uk_UA.utf8' );
 ob_start();
 
 /**
