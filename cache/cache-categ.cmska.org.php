@@ -1,5 +1,5 @@
 <?php if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
- /* CACHE CREATED: 1537637636.0983 (2018-09-22 20:33:56) */
+ /* CACHE CREATED: 1537738555,7082 (2018-09-24 00:35:55) */
 return array (
   0 => 
   array (
@@ -23,9 +23,9 @@ return array (
   ),
   2 => 
   array (
-    'id' => '3',
-    'altname' => 'addon',
-    'name' => 'Доповнення',
+    'id' => '2',
+    'altname' => 'release',
+    'name' => 'Релізи',
     'parent_id' => '0',
     'ptree' => '0',
     'position' => '0',
@@ -33,9 +33,9 @@ return array (
   ),
   3 => 
   array (
-    'id' => '2',
-    'altname' => 'release',
-    'name' => 'Релізи',
+    'id' => '3',
+    'altname' => 'addon',
+    'name' => 'Доповнення',
     'parent_id' => '0',
     'ptree' => '0',
     'position' => '0',
