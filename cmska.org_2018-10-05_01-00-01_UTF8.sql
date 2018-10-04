@@ -623,7 +623,7 @@ INSERT INTO "site"."user_groups" ("id", "name") VALUES (1, 'Администра
 --
 
 INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id", "token_upd_time") VALUES (0, '--', '--', 'root@cmska.org', '0.0.0.0', '0', 0, '2018-09-20 13:40:23.769809');
-INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id", "token_upd_time") VALUES (1, 'admin', '5729c5f66821340f23f4559243a8a2eb', 'admin@cmska.org', '185.103.42.10', '5debcac968edbdd3c117b73f7e891013', 1, '2018-09-23 11:45:38.447656');
+INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id", "token_upd_time") VALUES (1, 'admin', '5729c5f66821340f23f4559243a8a2eb', 'admin@cmska.org', '192.168.2.104', 'd82b44cb11dcf377e7e2cccda1175c02', 1, '2018-10-04 12:04:19.19874');
 
 
 --
