@@ -34573,3 +34573,3975 @@ SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
 --------------------------------
 SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
 --------------------------------
+2018.10.09 01:58:29:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 01:58:29:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 01:58:29:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 01:58:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 05:41:25:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 05:41:25:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 05:41:25:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 05:41:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 05:41:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 05:41:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 05:41:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 05:41:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 05:41:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 05:41:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 05:41:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 05:41:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 05:41:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 06:00:23:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 07:39:54:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 07:39:54:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 07:39:54:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 07:39:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 07:39:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 07:39:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 07:39:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 07:39:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 07:39:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 07:39:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 07:39:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 07:39:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 07:39:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 08:47:19:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 08:47:19:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 08:47:19:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 08:47:19:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 08:47:19:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 08:47:19:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 08:47:19:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 08:47:19:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 08:47:19:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 08:47:19:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 08:47:19:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 08:47:19:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 08:47:19:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:12:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 10:05:12:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 10:05:12:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:12:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:12:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:12:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:12:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:12:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:12:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:12:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:12:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:12:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:12:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 10:05:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:25:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT id FROM users WHERE email='admin@cmska.org' and password='5729c5f66821340f23f4559243a8a2eb' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+UPDATE users SET token='99dbdde4118ff0e2eafbff45d554385a', last_ip='192.168.2.104' WHERE id = 1;
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:29:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:30:
+--------------------------------
+SELECT 
+	users.id as "user.id",
+	users.login as "user.login",
+	users.email as "user.email",
+	users.group_id as "user.group_id"
+FROM users as users 
+WHERE users.id = 1
+ORDER by users.id; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:32:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:07:32:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:07:32:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:07:32:
+--------------------------------
+
+            SELECT *
+            FROM
+                admin_menu
+            WHERE
+                id > 0
+                AND
+                id IN ( SELECT item_id FROM admin_menu_accesses WHERE group_id = 1 )
+            ORDER by level, position;
+--------------------------------
+2018.10.09 11:07:33:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:07:33:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:07:33:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:07:33:
+--------------------------------
+SELECT pg_size_pretty(pg_database_size('cmska.org')) as size;
+--------------------------------
+2018.10.09 11:07:38:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:07:38:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:07:38:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:07:38:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.10.09 11:07:38:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.10.09 11:07:38:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:40:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:07:40:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:07:40:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:07:40:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.id = 13 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.10.09 11:07:40:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.id = 13 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.10.09 11:07:40:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:07:40:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:05:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:08:05:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:05:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:05:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 13 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.10.09 11:08:05:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 13 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.10.09 11:08:05:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:05:
+--------------------------------
+SELECT * FROM files WHERE md5 = 'e3fc5cea3153f5864423a48f617c93d0';  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:05:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:05:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:05:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:22:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:08:22:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:22:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:24:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:08:24:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:24:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:24:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.id = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.10.09 11:08:24:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.id = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.10.09 11:08:24:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:24:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:28:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:08:28:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:28:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:28:
+--------------------------------
+UPDATE posts SET "title" = 'Нова розробка - нова історія', "alt_title" = 'nova_rozrobka_cms_z_visokim_rivnem_zahistu', "descr" = '', "short_post" = 'Це перша публікація в даній CMS. В ній я розповім про нову структуру, можливості та особливості сайту. Також постараюсь трішки торкнутись історії та розповім про причини створення даного ресурсу.&#10;&#10;<img class="post_img" src="/uploads/images/2018-09-20/15-22-47-22678c58.png" alt="" title="" />', "full_post" = '<p class=\"bb_p\">Розпочнемо мабуть з початку, а саме з причин створення як ресурсу в цілому так і його серверної частини. Доречі в рамках історичного екскурсу можуть зачіпатись теми, які багатьом припікають сраки, тому хто вже відчуває нестабільність температурного режиму - далі не читайте :)</p>&#10;&#10;<h2 class=\"bb_h2\">CMSka.org v.1.0 - <span class=\"bb_span\" title="Всім похуй">Nemo curat</span></h2>&#10;<p class=\"bb_p\">Історія ресурсу cmska.org розпочалась в далекому 2007 році з реєстрації доменного імені "cmska.org.ua". Спочатку це був аматорський сайт двох студентів, яким було просто цікаво дізнатись як працюють сайти. Наступним кроком була спеціалізація контенту - в якості каркасу для сайту було обрано CMS DLE (тоді ще не загиджений), а сам сайт цілком перетворено на сайт підтримки даної CMS.</p>&#10;<p class=\"bb_p\">Так тривало довго. Змінювався склад аматорів, змінювався зовнішній вигляд сайту, незмінною були лише домен та тематика. І тривало так до моменту виходу в світ першої розробки від одного з авторів "cmska.org.ua".</p>&#10;<p class=\"bb_p\">Перша розробка дала рушійну силу (WMZ) і розуміння того, що web-сфера не заповнена в необхідній мірі, а виходячи з того, що знайовся покупець на відверту аматорську роботу - web-сфера вимагала продовження.</p>&#10;&#10;<h2 class=\"bb_h2\">CMSka.org v.2.0 - <span class=\"bb_span\" title="Довіряй, але дивись кому">Fide, sed cui fidas, vide</span></h2>&#10;<p class=\"bb_p\">В 2009 році було придбано домен "cmska.org". На цей період авторський склад час від часу випускав модулі для CMS DLE та приймав активну участь у тодішньому main-stream - створення автоматизованої системи для швидкого і якісного генерування сайтів. Останнє заняття давало значну фінансову підтримку - вміння генерувати "унікальний" контент + володіння навичками SEO завжди давали гарний прибуток.</p>&#10;<p class=\"bb_p\">На початку 10-х серед авторського складу проекту cmska стався перший розкол - всі чотири учасники вирішили розпочати власний шлях... і жоден не хотів продовжувати попередню тематику. Причина проста - зі збільшенням популярності проекту, збільшувались і випадки витоку платного контенту, в результаті чого місяці розробки втрачали можливість бути оплачуваними. Тематика CMS DLE втратила актуальність як неоплачувана.</p>&#10;<p class=\"bb_p\">Весь проект, всі вихідні коди залишились в одного з співавторів - в мене. Я завжди притримувався ідей публічності та допомоги починаючим web-розробникам, а тому через деякий час після припинення діяльності було прийняте рішення "відродити" проект - продовжити створення унікального функціоналу та контенту. Але все ж слід приймати до уваги, що тематика "неофіційної підтримки" комерційного програмного засобу - ідея абсурдна. Тому...</p>&#10;&#10;<h2 class=\"bb_h2\">CMSka.org v.3.0 - <span class=\"bb_span\" title="Все змінюється, ніщо не зникає безслідно">Omnia mutantur, nihil interit</span></h2>&#10;<p class=\"bb_p\">З середини 2015 року було розпочато розробку нової CMS - некомерційного продукту з відкритим вихідним кодом, який би враховував не примхи й забаганки "project manager", а рекомендації щодо безпеки та продуктивності.</p>&#10;&#10;', "svector" = '', "keywords" = '', "posted" = '1', "fixed" = '1', "static" = '0', "category" = '1' WHERE id='1' RETURNING id;
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (1,13,4,3,2) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:30:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:35:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:08:35:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:35:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:35:
+--------------------------------
+UPDATE posts SET "title" = 'Нова розробка - нова історія', "alt_title" = 'nova_rozrobka_cms_z_visokim_rivnem_zahistu', "descr" = '', "short_post" = 'Це перша публікація в даній CMS. В ній я розповім про нову структуру, можливості та особливості сайту. Також постараюсь трішки торкнутись історії та розповім про причини створення даного ресурсу.&#10;&#10;<img class="post_img" src="/uploads/images/2018-09-20/15-22-47-22678c58.png" alt="" title="" />', "full_post" = '<p class=\"bb_p\">Розпочнемо мабуть з початку, а саме з причин створення як ресурсу в цілому так і його серверної частини. Доречі в рамках історичного екскурсу можуть зачіпатись теми, які багатьом припікають сраки, тому хто вже відчуває нестабільність температурного режиму - далі не читайте :)</p>&#10;&#10;<h2 class=\"bb_h2\">CMSka.org v.1.0 - <span class=\"bb_span\" title="Всім похуй">Nemo curat</span></h2>&#10;<p class=\"bb_p\">Історія ресурсу cmska.org розпочалась в далекому 2007 році з реєстрації доменного імені "cmska.org.ua". Спочатку це був аматорський сайт двох студентів, яким було просто цікаво дізнатись як працюють сайти. Наступним кроком була спеціалізація контенту - в якості каркасу для сайту було обрано CMS DLE (тоді ще не загиджений), а сам сайт цілком перетворено на сайт підтримки даної CMS.</p>&#10;<p class=\"bb_p\">Так тривало довго. Змінювався склад аматорів, змінювався зовнішній вигляд сайту, незмінною були лише домен та тематика. І тривало так до моменту виходу в світ першої розробки від одного з авторів "cmska.org.ua".</p>&#10;<p class=\"bb_p\">Перша розробка дала рушійну силу (WMZ) і розуміння того, що web-сфера не заповнена в необхідній мірі, а виходячи з того, що знайовся покупець на відверту аматорську роботу - web-сфера вимагала продовження.</p>&#10;&#10;<h2 class=\"bb_h2\">CMSka.org v.2.0 - <span class=\"bb_span\" title="Довіряй, але дивись кому">Fide, sed cui fidas, vide</span></h2>&#10;<p class=\"bb_p\">В 2009 році було придбано домен "cmska.org". На цей період авторський склад час від часу випускав модулі для CMS DLE та приймав активну участь у тодішньому main-stream - створення автоматизованої системи для швидкого і якісного генерування сайтів. Останнє заняття давало значну фінансову підтримку - вміння генерувати "унікальний" контент + володіння навичками SEO завжди давали гарний прибуток.</p>&#10;<p class=\"bb_p\">На початку 10-х серед авторського складу проекту cmska стався перший розкол - всі чотири учасники вирішили розпочати власний шлях... і жоден не хотів продовжувати попередню тематику. Причина проста - зі збільшенням популярності проекту, збільшувались і випадки витоку платного контенту, в результаті чого місяці розробки втрачали можливість бути оплачуваними. Тематика CMS DLE втратила актуальність як неоплачувана.</p>&#10;<p class=\"bb_p\">Весь проект, всі вихідні коди залишились в одного з співавторів - в мене. Я завжди притримувався ідей публічності та допомоги починаючим web-розробникам, а тому через деякий час після припинення діяльності було прийняте рішення "відродити" проект - продовжити створення унікального функціоналу та контенту. Але все ж слід приймати до уваги, що тематика "неофіційної підтримки" комерційного програмного засобу - ідея абсурдна. Тому...</p>&#10;&#10;<h2 class=\"bb_h2\">CMSka.org v.3.0 - <span class=\"bb_span\" title="Все змінюється, ніщо не зникає безслідно">Omnia mutantur, nihil interit</span></h2>&#10;<p class=\"bb_p\">З середини 2015 року було розпочато розробку нової CMS - некомерційного продукту з відкритим вихідним кодом, який би враховував не примхи й забаганки "project manager", а рекомендації щодо безпеки та продуктивності.</p>&#10;&#10;', "svector" = '', "keywords" = '', "posted" = '1', "fixed" = '0', "static" = '0', "category" = '1' WHERE id='1' RETURNING id;
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:37:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:44:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:45:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:46:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:46:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:08:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:08:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:09:08:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:09:08:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:09:08:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:08:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:08:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:08:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:08:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:08:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:08:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:08:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:08:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:08:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:09:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:09:09:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:09:09:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:09:09:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:09:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:09:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:09:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:09:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:09:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:09:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:09:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:09:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:09:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:16:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 11:09:16:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 11:09:16:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:16:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:16:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:16:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:16:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:16:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:16:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:09:17:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:20:03:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:20:03:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:20:03:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:20:03:
+--------------------------------
+UPDATE posts SET "title" = 'Нова розробка - нова історія', "alt_title" = 'nova_rozrobka_cms_z_visokim_rivnem_zahistu', "descr" = 'ertyudf ghfdghfghgfh', "short_post" = 'Це перша публікація в даній CMS. В ній я розповім про нову структуру, можливості та особливості сайту. Також постараюсь трішки торкнутись історії та розповім про причини створення даного ресурсу.&#10;&#10;<img class="post_img" src="/uploads/images/2018-09-20/15-22-47-22678c58.png" alt="" title="" />', "full_post" = '<p class=\"bb_p\">Розпочнемо мабуть з початку, а саме з причин створення як ресурсу в цілому так і його серверної частини. Доречі в рамках історичного екскурсу можуть зачіпатись теми, які багатьом припікають сраки, тому хто вже відчуває нестабільність температурного режиму - далі не читайте :)</p>&#10;&#10;<h2 class=\"bb_h2\">CMSka.org v.1.0 - <span class=\"bb_span\" title="Всім похуй">Nemo curat</span></h2>&#10;<p class=\"bb_p\">Історія ресурсу cmska.org розпочалась в далекому 2007 році з реєстрації доменного імені "cmska.org.ua". Спочатку це був аматорський сайт двох студентів, яким було просто цікаво дізнатись як працюють сайти. Наступним кроком була спеціалізація контенту - в якості каркасу для сайту було обрано CMS DLE (тоді ще не загиджений), а сам сайт цілком перетворено на сайт підтримки даної CMS.</p>&#10;<p class=\"bb_p\">Так тривало довго. Змінювався склад аматорів, змінювався зовнішній вигляд сайту, незмінною були лише домен та тематика. І тривало так до моменту виходу в світ першої розробки від одного з авторів "cmska.org.ua".</p>&#10;<p class=\"bb_p\">Перша розробка дала рушійну силу (WMZ) і розуміння того, що web-сфера не заповнена в необхідній мірі, а виходячи з того, що знайовся покупець на відверту аматорську роботу - web-сфера вимагала продовження.</p>&#10;&#10;<h2 class=\"bb_h2\">CMSka.org v.2.0 - <span class=\"bb_span\" title="Довіряй, але дивись кому">Fide, sed cui fidas, vide</span></h2>&#10;<p class=\"bb_p\">В 2009 році було придбано домен "cmska.org". На цей період авторський склад час від часу випускав модулі для CMS DLE та приймав активну участь у тодішньому main-stream - створення автоматизованої системи для швидкого і якісного генерування сайтів. Останнє заняття давало значну фінансову підтримку - вміння генерувати "унікальний" контент + володіння навичками SEO завжди давали гарний прибуток.</p>&#10;<p class=\"bb_p\">На початку 10-х серед авторського складу проекту cmska стався перший розкол - всі чотири учасники вирішили розпочати власний шлях... і жоден не хотів продовжувати попередню тематику. Причина проста - зі збільшенням популярності проекту, збільшувались і випадки витоку платного контенту, в результаті чого місяці розробки втрачали можливість бути оплачуваними. Тематика CMS DLE втратила актуальність як неоплачувана.</p>&#10;<p class=\"bb_p\">Весь проект, всі вихідні коди залишились в одного з співавторів - в мене. Я завжди притримувався ідей публічності та допомоги починаючим web-розробникам, а тому через деякий час після припинення діяльності було прийняте рішення "відродити" проект - продовжити створення унікального функціоналу та контенту. Але все ж слід приймати до уваги, що тематика "неофіційної підтримки" комерційного програмного засобу - ідея абсурдна. Тому...</p>&#10;&#10;<h2 class=\"bb_h2\">CMSka.org v.3.0 - <span class=\"bb_span\" title="Все змінюється, ніщо не зникає безслідно">Omnia mutantur, nihil interit</span></h2>&#10;<p class=\"bb_p\">З середини 2015 року було розпочато розробку нової CMS - некомерційного продукту з відкритим вихідним кодом, який би враховував не примхи й забаганки "project manager", а рекомендації щодо безпеки та продуктивності.</p>&#10;&#10;', "svector" = '', "keywords" = '', "posted" = '1', "fixed" = '0', "static" = '0', "category" = '1' WHERE id='1' RETURNING id;
+--------------------------------
+2018.10.09 11:20:10:
+--------------------------------
+SELECT
+                        id,
+                        last_ip,
+                        ( extract(epoch from NOW()::timestamp) - extract(epoch from token_upd_time::timestamp) )::integer as token_time_diff
+                        FROM
+                        users WHERE token='99dbdde4118ff0e2eafbff45d554385a' AND last_ip='192.168.2.104' LIMIT 1 OFFSET 0;
+--------------------------------
+2018.10.09 11:20:10:
+--------------------------------
+UPDATE users SET last_ip='192.168.2.104', token_upd_time = NOW()::timestamp WHERE id = 1;
+--------------------------------
+2018.10.09 11:20:10:
+--------------------------------
+SELECT * FROM users WHERE id = 1;
+--------------------------------
+2018.10.09 11:20:10:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.10.09 11:20:10:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 1
+--------------------------------
+2018.10.09 11:20:10:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:20:10:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:20:10:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 11:20:10:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 12:31:13:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:27:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 14:32:27:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 14:32:27:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:27:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:27:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:27:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:27:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:27:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:27:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:27:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:27:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:27:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:27:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:28:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:28:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:28:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:28:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:28:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:28:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:28:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:28:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:28:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 14:32:28:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:48:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 16:06:48:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 16:06:48:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:48:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:48:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:48:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:48:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:48:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:48:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:48:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:48:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:48:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:48:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:49:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:49:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:49:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:49:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:49:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:49:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:49:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:49:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:49:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:06:49:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:36:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:50:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 16:46:51:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 18:32:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 18:32:14:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id = 1 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 18:32:14:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id = 1 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 18:32:14:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 18:32:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 18:32:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 18:32:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 18:32:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 18:32:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 18:32:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 18:32:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 18:32:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 18:32:14:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 18:32:15:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 18:32:15:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 18:32:15:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 19:38:54:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 2 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 19:38:54:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 2 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 19:38:54:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (2) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 19:38:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 19:38:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 19:38:54:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:38:59:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 21:38:59:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.09 21:38:59:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:38:59:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:38:59:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:38:59:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:38:59:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:38:59:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:38:59:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:38:59:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:38:59:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:38:59:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:38:59:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:39:00:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:39:00:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:39:00:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:39:00:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:39:00:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:39:00:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:39:00:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:39:00:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:39:00:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.09 21:39:00:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id = 1 AND
+	posts.posted = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 13 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id = 1 AND
+	posts.posted = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13,4,3,2,1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 13 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (13) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM files WHERE md5 = 'e3fc5cea3153f5864423a48f617c93d0';  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 3 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 3 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (3) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 2 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 2 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (2) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 4 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 4 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (4) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:47:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:48:
+--------------------------------
+SELECT 
+ count( posts.id ) as count 
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 1 
+
+ ;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.10 00:36:48:
+--------------------------------
+SELECT 
+-- SELECT 
+	posts.id as "post.id", 
+	posts.title as "post.title", 
+	posts.alt_title as "post.alt_title", 
+	posts.descr as "post.descr", 
+	posts.short_post as "post.short_post", 
+	posts.author_id as "post.author_id", 
+	posts.created_time as "post.created_time", 
+	posts.keywords as "post.keywords", 
+	posts.posted as "post.posted", 
+	posts.fixed as "post.fixed", 
+	posts.static as "post.static", 
+	categ.id as "categ.id", 
+	categ.altname as "categ.altname", 
+	categ.name as "categ.name", 
+	usr.login as "usr.login", 
+	usr.email as "usr.email", 
+	posts.full_post as "post.full_post"
+-- SELECT
+FROM 
+	posts
+	LEFT JOIN categories as categ ON ( categ.id = posts.category )
+	LEFT JOIN posts_tags as ptags ON ( ptags.post_id = posts.id AND ptags.tag_id > 0 )
+	LEFT JOIN users as usr ON ( usr.id = posts.author_id )
+WHERE 
+	posts.id > 0 AND
+	categ.id > 0 AND
+	posts.posted = 1 AND
+	posts.id = 1 
+-- ORDER
+ORDER BY posts.posted ASC, posts.fixed DESC, posts.created_time DESC 
+-- ORDER
+OFFSET 0 LIMIT 10;
+-- %QUERY_CACHABLE
+-- USER_ID: 0
+--------------------------------
+2018.10.10 00:36:48:
+--------------------------------
+SELECT tg.*, ptags.post_id FROM tags as tg LEFT JOIN posts_tags as ptags ON (tg.id = ptags.tag_id) WHERE tg.id > 0 AND ptags.post_id IN (1) ORDER by tg.name; -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:48:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:48:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------
+2018.10.10 00:36:48:
+--------------------------------
+SELECT * FROM categories ORDER BY level;  -- %QUERY_CACHABLE
+--------------------------------

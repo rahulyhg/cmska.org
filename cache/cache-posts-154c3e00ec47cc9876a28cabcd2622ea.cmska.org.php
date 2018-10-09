@@ -1,5 +1,5 @@
 <?php if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
- /* CACHE CREATED: 1538997472,1161 (2018-10-08 14:17:52) */
+ /* CACHE CREATED: 1539121007,3424 (2018-10-10 00:36:47) */
 return array (
   'count' => 5,
   'rows' => 
@@ -135,7 +135,7 @@ return array (
         'id' => '1',
         'title' => 'Нова розробка - нова історія',
         'alt_title' => 'nova_rozrobka_cms_z_visokim_rivnem_zahistu',
-        'descr' => '',
+        'descr' => 'ertyudf ghfdghfghgfh',
         'short_post' => 'Це перша публікація в даній CMS. В ній я розповім про нову структуру, можливості та особливості сайту. Також постараюсь трішки торкнутись історії та розповім про причини створення даного ресурсу.&#10;&#10;<img class="post_img" src="/uploads/images/2018-09-20/15-22-47-22678c58.png" alt="" title="" />',
         'author_id' => '1',
         'created_time' => '2017-02-12 16:38:41',
