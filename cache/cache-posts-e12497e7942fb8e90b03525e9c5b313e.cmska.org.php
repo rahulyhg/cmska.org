@@ -1,5 +1,5 @@
 <?php if( !defined('GAUSS_CMS') ){ echo basename(__FILE__); exit; }
- /* CACHE CREATED: 1543827191,6518 (2018-12-03 10:53:11) */
+ /* CACHE CREATED: 1544027363,0127 (2018-12-05 18:29:23) */
 return array (
   'count' => 1,
   'rows' => 
