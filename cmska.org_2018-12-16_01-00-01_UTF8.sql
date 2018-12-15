@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 10.5 (Debian 10.5-1.pgdg80+1)
--- Dumped by pg_dump version 10.5 (Debian 10.5-1.pgdg80+1)
+-- Dumped from database version 10.6 (Debian 10.6-1.pgdg80+1)
+-- Dumped by pg_dump version 10.6 (Debian 10.6-1.pgdg80+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -623,7 +623,7 @@ INSERT INTO "site"."user_groups" ("id", "name") VALUES (1, 'Администра
 --
 
 INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id", "token_upd_time") VALUES (0, '--', '--', 'root@cmska.org', '0.0.0.0', '0', 0, '2018-09-20 13:40:23.769809');
-INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id", "token_upd_time") VALUES (1, 'admin', '5729c5f66821340f23f4559243a8a2eb', 'admin@cmska.org', '78.137.22.47', '3064168cac0b34aff71071c583e2fd4b', 1, '2018-12-09 11:27:58.578172');
+INSERT INTO "site"."users" ("id", "login", "password", "email", "last_ip", "token", "group_id", "token_upd_time") VALUES (1, 'admin', '5729c5f66821340f23f4559243a8a2eb', 'admin@cmska.org', '78.137.22.47', 'e3ed0d65a1a574336e9b5cdcdaf1d050', 1, '2018-12-15 20:35:38.873091');
 
 
 --
