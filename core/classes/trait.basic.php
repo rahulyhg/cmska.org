@@ -624,7 +624,7 @@
 		 * @param bool $log
 		 * @return bool
 		 */
-		static protected final function write_file($filename, $data = false, $log = false)
+		static public final function write_file($filename, $data = false, $log = false)
 		{
 			if (!file_exists($filename))
 			{

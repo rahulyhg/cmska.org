@@ -69,6 +69,20 @@ else{ define( '_AREA_', 'main' ); }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+if( _MOD_ == 'ban' )
+{
+    ob_start();
+        echo '$_SERVER = ';
+        var_export( $_SERVER );
+        echo "\n\n\n";
+        echo '$_REQUEST = ';
+        var_export( $_REQUEST );
+        common::write_file( LOGS_DIR.DS.USER_IP, ob_get_clean() );
+    exit;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
 $_user = new user;
 $_user->check_auth();
 if( !defined('CURRENT_USER_ID') )

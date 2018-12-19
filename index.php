@@ -33,6 +33,7 @@ define ( 'HOMEURL',         SCHEME.'://'.DOMAIN.HOME );
 define ( 'GAUSS_CMS',       true );
 define ( 'DS',              DIRECTORY_SEPARATOR );
 define ( 'ROOT_DIR',        dirname ( __FILE__ ) );
+define ( 'LOGS_DIR',        dirname ( ROOT_DIR ).DS.'logs' );
 define ( 'CORE_DIR',        ROOT_DIR.DS.'core' );
 define ( 'CLASSES_DIR',     CORE_DIR.DS.'classes' );
 define ( 'CACHE_DIR',       ROOT_DIR.DS.'cache' );
